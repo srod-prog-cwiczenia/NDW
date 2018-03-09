@@ -448,10 +448,6 @@ $$\I = MB(\mathcal{F}) = \{X\subseteq\N\ :\ \forall_{F\in\mathcal{F}} \exists_{G
 %Jeśli $\I$ jest MBC, to dla wielu ideałów $\J$ (np. sumowalnych, gęstościowych...) mamy $\J\nsubseteq \I$.\\
 \textbf{Remark:} $\Fin = MB(\mathcal{F})$, where $\mathcal{F}= \{[n, \infty]\cap\N\ :\ n\in\N\}$, 
 hence $\Fin\in MBC$.\\
-\textbf{Remark:} $\mathrm{NWD}$ has the $\mathcal{MBC}$ property. Indeed, let $b\colon \N \to \Q$
-be a fixed bijection. Define
-$\mathcal{F} = \lbrace \lbrace n\in\N\colon b(n) \in (p, q)\rbrace\colon p < q, p, q \in \Q\rbrace$.
-One can see that $MB(\mathcal{F}) = \mathrm{NWD}$.
 		
     \color{teal}
 
@@ -501,7 +497,6 @@ Let us formulate a little more general lemma
 \begin{lem}
 Every \emph{MBC} ideal is of type $F_{\sigma\delta}$.
 \end{lem}
-%@@
 \begin{proof}
 Suppose that $|\mathcal{F}|\leq\aleph_0$, $\mathcal{F}\subseteq [\omega]^\omega$ is such that $\I = MB(\mathcal{F})$.
 Then $X\in MB(\mathcal{F}) \equiv X\in \bigcap_{F\in\mathcal{F}} \bigcup_{G\subseteq F, G\in\mathcal{F}} \{x\in 2^\omega\ :\ x\upharpoonright G = 0\upharpoonright G\}$ 
@@ -817,8 +812,17 @@ Clearly, $\N$ with Furstenberg's topology is homeomorphic to $\Q$ (with the natu
 Then $f$ is an isomorphism between the ideals $\I$ and $\textrm{NWD}(\Q)$.
 \end{proof}
 
+\textbf{Remark:} Notice that one can easy see that the ideal $\textrm{NWD}(\Q)$ has the 
+$\mathcal{MBC}$ property. Indeed, let $b\colon \N \to \Q$
+be a fixed bijection. Define
+$\mathcal{F} = \lbrace \lbrace n\in\N\colon b(n) \in (p, q)\rbrace\colon p < q, p, q \in \Q\rbrace$.
+One can see that $MB(\mathcal{F}) = \mathrm{NWD}$. Indeed, if $A\in MB(\mathcal{F})$
+and $p < q, p, q \in \Q$ then $b^{-1}[(p, q)] \in \mathcal{F}$ hence there
+exists $r < s, r, s \in \Q$ such that $b^{-1}[(r, s)] \cap A = \emptyset$.
+Then $(r, s) \cap b[A]$ and since $(r, s) \subseteq (p, q)$ we obtain that 
+$A$ is nowhere dense. On the other hand, if $A$ is nowhere dense and if
 
-
+%@@@ - dokonczyc to!
     \color{purple}
 		
 \section{Własność $\finbw$ i rozszerzalność do ideałów sumowalnych}
