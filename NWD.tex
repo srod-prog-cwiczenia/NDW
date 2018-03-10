@@ -819,15 +819,31 @@ $\mathcal{F} = \lbrace \lbrace n\in\N\colon b(n) \in (p, q)\rbrace\colon p < q, 
 One can see that $MB(\mathcal{F}) = \mathrm{NWD}$. Indeed, if $A\in MB(\mathcal{F})$
 and $p < q, p, q \in \Q$ then $b^{-1}[(p, q)] \in \mathcal{F}$ hence there
 exists $r < s, r, s \in \Q$ such that $b^{-1}[(r, s)] \cap A = \emptyset$.
-Then $(r, s) \cap b[A]$ and since $(r, s) \subseteq (p, q)$ we obtain that 
-$A$ is nowhere dense. On the other hand, if $b[A]$ is nowhere dense and if
+Then $(r, s) \cap \mathit{cl}(b[A])$ and since $(r, s) \subseteq (p, q)$ we obtain that 
+$\mathit{cl}(b[A])$ is nowhere dense. On the other hand, if $\mathit{cl}(b[A])$ is nowhere dense and if
 $p < q, p, q \in \Q$ then there exists $r < s, r, s \in \Q$
 such that $(r, s) \subseteq (p, q)$ and 
 $(r, s) \cap b[A] = \emptyset$. Then $b^{-1}[(r, s)] \cap A = \emptyset$,
 $b^{-1}[(r, s)] \subseteq b^{-1}[(p, q)]$ and
 $b^{-1}[(r, s)] \in \mathcal{F}$ which finishes the proof.
 
-%@@@ - dokonczyc to!
+Let us notice that it is not clear whether the ideal $\textrm{NULL}$ has the $\mathcal{MBC}$ property.
+
+Suppose that an ideal $\mathcal{J}$ has a topological representation, i.e.
+there exists $D\subseteq 2^{\omega}$ a dense countable set, and $\I$ 
+$\sigma$-ideal on $2^{\omega}$ containing all singletons 
+and a bijection $f\colon \N\to D$ such that 
+$A\in\J \iff \mathit{cl}(f[A])\in\mathcal{I}$. 
+Then we may consider a subideal $\J_c \subseteq \J$ defined by
+$A\in\J_c \iff |\mathit{cl}(f[A])| \leq \aleph_0$.
+Call such an ideal $\J_c$ a \emph{countably topologically representable}.
+
+Problem: Find (an inner) characterization of such kind of ideals.
+
+Problem: Suppose that $f\colon \N\to \Q$ is any bijection.
+Does the ideal $A\in\J_c \iff |\mathit{cl}(f[A])| \leq \aleph_0$
+have the $\mathcal{MBC}$ property?
+
     \color{purple}
 		
 \section{Własność $\finbw$ i rozszerzalność do ideałów sumowalnych}
