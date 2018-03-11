@@ -97,14 +97,17 @@ By $\mathbb{SF}$ let us denote the set of \emph{square-free numbers} (i.e., numb
 $$\SqrFr = \{1,2,3,5,6,7,10,11,\ldots\}.$$
 By \emph{squareful numbers} we mean numbers which are not square-free, i.e., numbers for which at least one prime factor exponent is 2.
 
+Let $[\omega]^\omega$ denote the family of all infinite subsets of $\N$. 
+% ozn. [omega]^omega...? N?
+
  If $X, Y \in \Partitions$ then we say that $Y$ is
 {\it coarser} than $X$ iff
   $\forall_{A \in X} \exists_{B \in Y} (A \subseteq B)$
 and we write $Y \sqsubseteq X$.
 
-% ozn. [omega]^omega...?
 
-% base/basis of/for topology???
+
+% base/basis of/for topology??? FOR
 
 \section*{Three topologies}
 
@@ -115,14 +118,16 @@ For $a,b\in\N$ one can consider three topologies on $\N$:
 \item \emph{Kirch's topology} $\T_K$ with the base $\mathcal{B}_K = \{\{an+b\}\ :\ (a,b)=1,\ b<a,\ a\in\SqrFr\}$.
 \end{itemize}
 
-The topology $\T_F$ was introduced in 1955 by H. Furstenberg in \cite{F}. With its use, he presented an elegant topological proof of the existence of infinitely many prime numbers. In 1959 S. Golomb in \cite{G} presented a similar proof using the $\T_G$ topology defined in 1953 by M. Brown in \cite{B}. In 1969, A. Kirch in \cite{K} defined a topology $\T_K$, weaker than the topology of Golomb. All of these topologies have recently been studied by P. Szczuka, e.g. in \cite{Szczuka1}, \cite{Szczuka2}, \cite{Szczuka3}.
+The topology $\T_F$ was introduced in 1955 by H. Furstenberg in \cite{F}. With its use, he presented an elegant topological proof of the existence of infinitely many prime numbers. In 1959 S. Golomb in \cite{G} presented a similar proof using the topology $\T_G$ defined in 1953 by M. Brown in \cite{B}. In 1969, A. Kirch in \cite{K} defined a topology $\T_K$, weaker than the topology of Golomb. All of these topologies have recently been studied by P. Szczuka, e.g. in \cite{Szczuka1}, \cite{Szczuka2}, \cite{Szczuka3}.
 
-F: \textcolor{gray}{\scriptsize{[normal, metrizable, zero-dimensional, totally disconnected]}}
-G: \textcolor{gray}{\scriptsize{[Hausdorff but not regular, connected, not locally connected]}}
-K: \textcolor{gray}{\scriptsize{[Hausdorff but not regular, connected, locally connected]}}
+%F: \textcolor{gray}{\scriptsize{[normal, metrizable, zero-dimensional, totally disconnected]}}
+%G: \textcolor{gray}{\scriptsize{[Hausdorff but not regular, connected, not locally connected]}}
+%K: \textcolor{gray}{\scriptsize{[Hausdorff but not regular, connected, locally connected]}}
 
-%%%// Furstenberg - na $\Z$, ..., ale my na $\N$ dla ujednolicenia; 
-%%%przy założeniu $b<=a$...
+Actually, Furstenberg's topology has originally been defined on $\Z$, with the base consisting of all doubly infinite arithmetic progressions (from $-\infty$ to $+\infty$). It turned $\Z$ into a metrizable, zero-dimensional and totally disconnected space. In this paper, in order to make our considerations more unified, we trim this topology to $\N$. Note that the main properties are preserved: being a Hausdorff, regular and totally disconnected space is hereditary. $(\N,\T_F)$ also remains second-countable and thus, from the Tychonoff-Urysohn's metrization theorem, we get that the space is metrizable. The requirement that $b\leq a$ guarantees that every basic set is closed, so the space is still zero-dimensional.\\
+The topologies of Golomb and Kirch are both Hausdorff but not regular, and connected -- however, $\T_G$ is not locally connected, as opposed to $\T_K$.
+
+%Tychonoff-Urysohn's metrization theorem states that every Hausdorff second-countable regular space is metrizable
 % has been introduced??
 
 \section*{Three ideals}
@@ -133,14 +138,13 @@ An \emph{ideal} on $\N$ is a family of subsets of $\N$ closed under taking finit
 
 %ideały są \emph{właściwe}, ($\neq \mathcal{P}(\N)$, czyli $\N$ nie należy do ideału), oraz że zawierają wszystkie skończone podzbiory $\N$.
 
-%%%\textcolor{red}{nie w każdej topologii zawierają Fina...!}
 
 Suppose that $b\colon\N\to\Q$ is any fixed bijection.
 Let us recall that by $\mathrm{NDW}$ we denote the ideal of sets
 $A \subset \N$ such that $\mathit{cl}(\lbrace b(n)\colon n \in A\rbrace)$
 is a nowhere dense set.
 
-Obviously, in any topology, the nowhere dense sets form an ideal. Let us then define three ideals on $\N$:
+Obviously, in any (decent\footnote{The topology should have a basis consisting only of infinite sets -- otherwise, the ideal of nowhere dense sets would not contain all finite sets.}) topology, the nowhere dense sets form an ideal. Let us then define three ideals on $\N$:
 \begin{itemize}
 \item \emph{Furstenberg's ideal} $\I_F$ of all nowhere dense sets in $\T_F$;
 \item \emph{Golomb's ideal} $\I_G$ of all nowhere dense sets in $\T_G$;
@@ -153,8 +157,6 @@ Obviously, in any topology, the nowhere dense sets form an ideal. Let us then de
 
 % [AN] pewnie jakies zagajenie by sie tu przydalo...
 %%%splitting property - jak w dowodach przykładów... 
-% [AN] i pewnie trzeba w ogole przeniesc ten rozdzial za rozdzial o MB
-% gdyz tutaj pojecia MB reprezentacji uzywamy!
 
 % IF,G,K in Fsd
 % bazy mają własność "przeliczalnego splittingu"
@@ -164,61 +166,67 @@ Obviously, in any topology, the nowhere dense sets form an ideal. Let us then de
 
 Let us say that a family $\mathcal{F} \subseteq [\omega]^\omega$ has the \emph{splitting property} if and only if for any $F \in \mathcal{F}$ one can find $F_1, F_2 \in \mathcal{F}$ such that $F_1 \cup F_2 \subseteq F$ and $F_1 \cap F_2 = \emptyset$. Notice that if a family $\mathcal{F}$ has the splitting property, then it also has a \emph{countable splitting property}, i.e., there exists an infinite countable family $\mathcal{G} \subseteq \mathcal{F}$ such that $\bigcup \mathcal{G} \subseteq \mathcal{F}$ and the family $\mathcal{G}$ is pairwise disjoint.
 
-\begin{observation}[Crucial observation]
+% proposition?
+
+\begin{observation}
+%[Crucial observation]
 All families: $\mathcal{B}_F$, $\mathcal{B}_G$ and $\mathcal{B}_K$ have the splitting property.
 \end{observation}
 \begin{proof}
-For the case of the Furstenberg's topology it suffices to observe that $\{2an + b\} \subseteq \{an + b\}$, $\{2an + a + b\} \subseteq \{an + b\}$, and $\{2an + b\} \cap \{2an + a + b\} = \emptyset$.
+For the case of the Furstenberg's topology it suffices to observe that for any $\{an + b\}\in\mathcal{B}_F$ we have: $\{2an + b\} \subseteq \{an + b\}$, $\{2an + a + b\} \subseteq \{an + b\}$, and $\{2an + b\} \cap \{2an + a + b\} = \emptyset$. Moreover, we assume that $b\leq a$, so $\{2an + b\}\in\mathcal{B}_F$ as $b\leq a \leq 2a$, and $\{2an + a + b\}\in\mathcal{B}_F$ as $a+b\leq a+a = 2a$.
 
+% czy na pewno nie zostawić rysunków? ładnie to obrazują
+%\begin{center}
+%\begin{picture}(260,180)
+%\put(0,0){\makebox(0,0){$\vdots$}}
+%\put(0,10){\makebox(0,0){$\{16an+b\}$}}
+%\put(100,10){\makebox(0,0){$\{16an+8a+b\}$}}
+%\put(50,50){\makebox(0,0){$\{8an+b\}$}}
+%\put(65,40){\vector(1,-1){20}}
+%\put(35,40){\vector(-1,-1){20}}
+%\put(150,50){\makebox(0,0){$\{8an+4a+b\}$}}
+%\put(100,90){\makebox(0,0){$\{4an+b\}$}}
+%\put(115,80){\vector(1,-1){20}}
+%\put(85,80){\vector(-1,-1){20}}
+%\put(200,90){\makebox(0,0){$\{4an+2a+b\}$}}
+%\put(150,130){\makebox(0,0){$\{2an+b\}$}}
+%\put(165,120){\vector(1,-1){20}}
+%\put(135,120){\vector(-1,-1){20}}
+%\put(250,130){\makebox(0,0){$\{2an+a+b\}$}}
+%\put(200,170){\makebox(0,0){$\{an+b\}$}}
+%\put(215,160){\vector(1,-1){20}}
+%\put(185,160){\vector(-1,-1){20}}
+%\end{picture}
+%\end{center}
+%\vspace{0.5cm}
 
+Now, let us consider the case of the Golomb's topology. For any $\{an + b\}\in\mathcal{B}_G$ we can choose such $p\in\mathbb{P}$ that $p\nmid b$ and $p\nmid a+b$. We have: $\{pan + b\} \subseteq \{an + b\}$, $\{pan + a + b\} \subseteq \{an + b\}$, and $\{pan + b\} \cap \{pan + a + b\} = \emptyset$ (if for some $n_1,n_2\in\N$ there would be $pan_1+b=pan_2+a+b$, then $pa(n_1-n_2)=a$, thus $p(n_1-n_2)=1$ -- a contradiction). Moreover, we assume that $(a,b)=1$, so $\{pan + b\}\in\mathcal{B}_G$ as $(pa,b)=1$, and $\{pan + a + b\}\in\mathcal{B}_G$ as $(a,b)=1 \Rightarrow (a,a+b)=1 \Rightarrow (pa,a+b)=1$.
 
-\begin{center}
-\begin{picture}(260,180)
-\put(0,0){\makebox(0,0){$\vdots$}}
-\put(0,10){\makebox(0,0){$\{16an+b\}$}}
-\put(100,10){\makebox(0,0){$\{16an+8a+b\}$}}
-\put(50,50){\makebox(0,0){$\{8an+b\}$}}
-\put(65,40){\vector(1,-1){20}}
-\put(35,40){\vector(-1,-1){20}}
-\put(150,50){\makebox(0,0){$\{8an+4a+b\}$}}
-\put(100,90){\makebox(0,0){$\{4an+b\}$}}
-\put(115,80){\vector(1,-1){20}}
-\put(85,80){\vector(-1,-1){20}}
-\put(200,90){\makebox(0,0){$\{4an+2a+b\}$}}
-\put(150,130){\makebox(0,0){$\{2an+b\}$}}
-\put(165,120){\vector(1,-1){20}}
-\put(135,120){\vector(-1,-1){20}}
-\put(250,130){\makebox(0,0){$\{2an+a+b\}$}}
-\put(200,170){\makebox(0,0){$\{an+b\}$}}
-\put(215,160){\vector(1,-1){20}}
-\put(185,160){\vector(-1,-1){20}}
-\end{picture}
-\end{center}
-\vspace{0.5cm}
+%A w przypadku bazy dla topologii Golomba czy Kircha?\\
+%Prawdopodobnie też da się przeprowadzić poprzednią konstrukcję "`splittingu"', lecz odpowiednio ją modyfikując.\\
+%Np. dla topologii Golomba (czyli zakładamy, że $(a,b)=1$):\\
+%Dobieramy $p\in Primes$ t.że $p\nmid b$ (+ dodatkowo by $p\nmid a+b$).
+%(rozłączne) Gdyby $pan_1+b=pan_2+a+b$, to $pa(n_1-n_2)=a$, więc $p(n_1-n_2)=1$, sprzeczność.
+%$(a,b)=1 \Rightarrow (pa,b)=1$\\
+%$(a,b)=1 \Rightarrow (a,a+b)=1 \Rightarrow (pa,a+b)=1$\\
+%Stosując rozumowanie do $\{pan+b\}$, otrzymujemy odpowiedni splitting.\\
 
-A w przypadku bazy dla topologii Golomba czy Kircha?\\
-Prawdopodobnie też da się przeprowadzić poprzednią konstrukcję "`splittingu"', lecz odpowiednio ją modyfikując.\\
-Np. dla topologii Golomba (czyli zakładamy, że $(a,b)=1$):\\
-Dobieramy $p\in Primes$ t.że $p\nmid b$ (+ dodatkowo by $p\nmid a+b$).
+%\begin{center}
+%\begin{picture}(110,60)
+%\put(0,0){\makebox(0,0){$\vdots$}}
+%\put(0,10){\makebox(0,0){$\{pan+b\}$}}
+%\put(100,10){\makebox(0,0){$\{pan+a+b\}$}}
+%\put(50,50){\makebox(0,0){$\{an+b\}$}}
+%\put(65,40){\vector(1,-1){20}}
+%\put(35,40){\vector(-1,-1){20}}
+%\end{picture}
+%\end{center}
+%\vspace{0.5cm}
 
-\begin{center}
-\begin{picture}(110,60)
-\put(0,0){\makebox(0,0){$\vdots$}}
-\put(0,10){\makebox(0,0){$\{pan+b\}$}}
-\put(100,10){\makebox(0,0){$\{pan+a+b\}$}}
-\put(50,50){\makebox(0,0){$\{an+b\}$}}
-\put(65,40){\vector(1,-1){20}}
-\put(35,40){\vector(-1,-1){20}}
-\end{picture}
-\end{center}
-\vspace{0.5cm}
+The case of the Kirch's topology is a slight modification of the previous construction. Now we additionally require that $p\nmid a$ (hence, as $a\in \SqrFr$, we also have $pa\in \SqrFr$).
 
-(rozłączne) Gdyby $pan_1+b=pan_2+a+b$, to $pa(n_1-n_2)=a$, więc $p(n_1-n_2)=1$, sprzeczność.
-$(a,b)=1 \Rightarrow (pa,b)=1$\\
-$(a,b)=1 \Rightarrow (a,a+b)=1 \Rightarrow (pa,a+b)=1$\\
-Stosując rozumowanie do $\{pan+b\}$, otrzymujemy odpowiedni splitting.\\
+%Dla topologii Kircha można przeprowadzić identyczne rozumowanie, tylko trzeba oprócz założenia, że $p\nmid b$, $p\nmid a+b$ założyć też jeszcze, że $p\nmid a$ (wówczas skoro $a\in \SqrFr$, to $pa\in \SqrFr$).
 
-Dla topologii Kircha można przeprowadzić identyczne rozumowanie, tylko trzeba oprócz założenia, że $p\nmid b$, $p\nmid a+b$ założyć też jeszcze, że $p\nmid a$ (wówczas skoro $a\in \SqrFr$, to $pa\in \SqrFr$).
 
 %% Ale dokładnie partycji się zrobić nie da??
 \end{proof}
