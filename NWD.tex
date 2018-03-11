@@ -59,6 +59,7 @@
 \newcommand{\Partitions}{(\omega)^{\leq \omega}}
 \newcommand{\InfPart}{(\omega)^{\omega}}
 \newcommand{\FinPart}{(\omega)^{< \omega}}
+\newcommand{\MB}{S^0}  %%% oznaczenie na ideal MB - do ustalenia czy S^0 czy raczej MB.
 
 \title[Ideals of nowhere dense sets in some topologies on integers]{Ideals of nowhere dense sets in some topologies on integers}
 
@@ -439,14 +440,14 @@ Let us call an ideal $\I\subseteq \mathcal{P}(\N)$
 a countable family $\mathcal{F}\subseteq [\omega]^\omega$
 %, $|\mathcal{F}|\leq \aleph_0$  -  zbedne bo juz jest slowko: ''countably''
 such that
-$$\I = MB(\mathcal{F}) = \{X\subseteq\N\ :\ \forall_{F\in\mathcal{F}} \exists_{G\subseteq F, G\in\mathcal{F}} G\cap X=\emptyset\}.$$
+$$\I = \MB(\mathcal{F}) = \{X\subseteq\N\ :\ \forall_{F\in\mathcal{F}} \exists_{G\subseteq F, G\in\mathcal{F}} G\cap X=\emptyset\}.$$
 \end{df}
 %%% Z reguły wymagamy, by $\mathcal{F}\subseteq [\omega]^\omega$  - wstawilem to wprost do definicji MB
-%Jeśli $\mathcal{F}\cap MB(\mathcal{F}) = \emptyset$ (to jest coś \`{a} la "`inner MB representation"')
+%Jeśli $\mathcal{F}\cap \MB(\mathcal{F}) = \emptyset$ (to jest coś \`{a} la "`inner MB representation"')
 %to mówimy że jest to inner representation.\\
-%\textbf{Uwaga:} Chyba zawsze przecież mamy $\mathcal{F}\cap MB(\mathcal{F}) = \emptyset$.\\
+%\textbf{Uwaga:} Chyba zawsze przecież mamy $\mathcal{F}\cap \MB(\mathcal{F}) = \emptyset$.\\
 %Jeśli $\I$ jest MBC, to dla wielu ideałów $\J$ (np. sumowalnych, gęstościowych...) mamy $\J\nsubseteq \I$.\\
-\textbf{Remark:} $\Fin = MB(\mathcal{F})$, where $\mathcal{F}= \{[n, \infty]\cap\N\ :\ n\in\N\}$, 
+\textbf{Remark:} $\Fin = \MB(\mathcal{F})$, where $\mathcal{F}= \{[n, \infty]\cap\N\ :\ n\in\N\}$, 
 hence $\Fin\in MBC$.\\
 		
     \color{teal}
@@ -498,12 +499,12 @@ Let us formulate a little more general lemma
 Every \emph{MBC} ideal is of type $F_{\sigma\delta}$.
 \end{lem}
 \begin{proof}
-Suppose that $|\mathcal{F}|\leq\aleph_0$, $\mathcal{F}\subseteq [\omega]^\omega$ is such that $\I = MB(\mathcal{F})$.
-Then $X\in MB(\mathcal{F}) \equiv X\in \bigcap_{F\in\mathcal{F}} \bigcup_{G\subseteq F, G\in\mathcal{F}} \{x\in 2^\omega\ :\ x\upharpoonright G = 0\upharpoonright G\}$ 
+Suppose that $|\mathcal{F}|\leq\aleph_0$, $\mathcal{F}\subseteq [\omega]^\omega$ is such that $\I = \MB(\mathcal{F})$.
+Then $X\in \MB(\mathcal{F}) \equiv X\in \bigcap_{F\in\mathcal{F}} \bigcup_{G\subseteq F, G\in\mathcal{F}} \{x\in 2^\omega\ :\ x\upharpoonright G = 0\upharpoonright G\}$ 
 and this last set is of type $F_{\sigma\delta}$
-%Skoro $MB(\mathcal{F}) = \{X\subseteq\N\ :\ \forall_{F\in\mathcal{F}}
+%Skoro $\MB(\mathcal{F}) = \{X\subseteq\N\ :\ \forall_{F\in\mathcal{F}}
 %\exists_{G\subseteq F, G\in\mathcal{F}} G\cap X=\emptyset\}$, to 
-%Czyli $MB(\mathcal{F})$ jest ideałem typu $F_{\sigma\delta}$.\\
+%Czyli $\MB(\mathcal{F})$ jest ideałem typu $F_{\sigma\delta}$.\\
 \end{proof}
 \end{proof}
 
@@ -522,7 +523,7 @@ Moreover, assume that $\mathcal{F}$ has the splitting property.
 %%(tzn. $\forall_ {F \in \mathcal{F}} \exists_{F_1, F_2 
 %%\in \mathcal{F}, F_1, F_2 \subseteq F} F_1 \cap F_2 
 %%= \emptyset$). 
-Then the ideal $\I =  MB(\mathcal{F})$ 
+Then the ideal $\I =  \MB(\mathcal{F})$ 
 is not an $F_{\sigma}$.
 \end{thm}
 
@@ -692,7 +693,7 @@ exists a \emph{MBC} ideal $\J$ such that $\I \subseteq \J$.
 \end{thm}
 
 \begin{proof}
-Suppose that $\I = \emph{MB}(\calF)$ for some countable
+Suppose that $\I = \MB(\calF)$ for some countable
 family $\calF \subseteq [\omega]^\omega$.
 Let us define $(X_n) = \calF$. Suppose that $A \in \I$
 and $B \not\in \I$. Then there exists $F \in \calF$
@@ -715,7 +716,7 @@ Let us define
   \cap_{i=1}^k X_{n_i}\colon \cap_{i=1}^k X_{n_i} \not\in \I
 	\}.
 \]	   
-Let us check that $\I \subseteq \emph{MB}(\calF)$.
+Let us check that $\I \subseteq \MB(\calF)$.
 Suppose that $A\in\I$ and
 take any $F\in\calF$, then 
 $F = \cap_{i=1}^k X_{n_i}$ for some $n_i\in\N$.
@@ -816,7 +817,7 @@ Then $f$ is an isomorphism between the ideals $\I$ and $\textrm{NWD}(\Q)$.
 $\mathcal{MBC}$ property. Indeed, let $b\colon \N \to \Q$
 be a fixed bijection. Define
 $\mathcal{F} = \lbrace \lbrace n\in\N\colon b(n) \in (p, q)\rbrace\colon p < q, p, q \in \Q\rbrace$.
-One can see that $MB(\mathcal{F}) = \mathrm{NWD}$. Indeed, if $A\in MB(\mathcal{F})$
+One can see that $\MB(\mathcal{F}) = \mathrm{NWD}$. Indeed, if $A\in \MB(\mathcal{F})$
 and $p < q, p, q \in \Q$ then $b^{-1}[(p, q)] \in \mathcal{F}$ hence there
 exists $r < s, r, s \in \Q$ such that $b^{-1}[(r, s)] \cap A = \emptyset$.
 Then $(r, s) \cap \mathit{cl}(b[A])$ and since $(r, s) \subseteq (p, q)$ we obtain that 
