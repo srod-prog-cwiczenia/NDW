@@ -44,6 +44,7 @@
 \newcommand{\J}{\mathcal J}
 \newcommand{\h}{\mathcal H}
 \newcommand{\T}{\mathcal{T}}
+\newcommand{\B}{\mathcal{B}}
 %\newcommand{\SqrFr}{\textrm{SqrFr}}
 \newcommand{\SqrFr}{\mathbb{SF}}
 \newcommand{\calF}{\mathcal{F}}
@@ -60,6 +61,7 @@
 \newcommand{\InfPart}{(\omega)^{\omega}}
 \newcommand{\FinPart}{(\omega)^{< \omega}}
 \newcommand{\MB}{S^0}  %%% oznaczenie na ideal MB - do ustalenia czy S^0 czy raczej MB.
+\newcommand{\MBC}{\mathcal{MBC}}
 
 \title[Ideals of nowhere dense sets in some topologies on integers]{Ideals of nowhere dense sets in some topologies on integers}
 
@@ -113,9 +115,9 @@ and we write $Y \sqsubseteq X$.
 
 For $a,b\in\N$ one can consider three topologies on $\N$:
 \begin{itemize}
-\item \emph{Furstenberg's topology} $\T_F$ with the base $\mathcal{B}_F = \{\{an+b\}\ :\ b\leq a\}$;
-\item \emph{Golomb's topology} $\T_G$ with the base $\mathcal{B}_G = \{\{an+b\}\ :\ (a,b)=1,\ b<a\}$;
-\item \emph{Kirch's topology} $\T_K$ with the base $\mathcal{B}_K = \{\{an+b\}\ :\ (a,b)=1,\ b<a,\ a\in\SqrFr\}$.
+\item \emph{Furstenberg's topology} $\T_F$ with the base $\B_F = \{\{an+b\}\ :\ b\leq a\}$;
+\item \emph{Golomb's topology} $\T_G$ with the base $\B_G = \{\{an+b\}\ :\ (a,b)=1,\ b<a\}$;
+\item \emph{Kirch's topology} $\T_K$ with the base $\B_K = \{\{an+b\}\ :\ (a,b)=1,\ b<a,\ a\in\SqrFr\}$.
 \end{itemize}
 
 The topology $\T_F$ was introduced in 1955 by H. Furstenberg in \cite{F}. With its use, he presented an elegant topological proof of the existence of infinitely many prime numbers. In 1959 S. Golomb in \cite{G} presented a similar proof using the topology $\T_G$ defined in 1953 by M. Brown in \cite{B}. In 1969, A. Kirch in \cite{K} defined a topology $\T_K$, weaker than the topology of Golomb. All of these topologies have recently been studied by P. Szczuka, e.g. in \cite{Szczuka1}, \cite{Szczuka2}, \cite{Szczuka3}.
@@ -170,37 +172,38 @@ Let us say that a family $\mathcal{F} \subseteq [\omega]^\omega$ has the \emph{s
 
 \begin{observation}
 %[Crucial observation]
-All families: $\mathcal{B}_F$, $\mathcal{B}_G$ and $\mathcal{B}_K$ have the splitting property.
+All families: $\B_F$, $\B_G$ and $\B_K$ have the splitting property.
 \end{observation}
 \begin{proof}
-For the case of the Furstenberg's topology it suffices to observe that for any $\{an + b\}\in\mathcal{B}_F$ we have: $\{2an + b\} \subseteq \{an + b\}$, $\{2an + a + b\} \subseteq \{an + b\}$, and $\{2an + b\} \cap \{2an + a + b\} = \emptyset$. Moreover, we assume that $b\leq a$, so $\{2an + b\}\in\mathcal{B}_F$ as $b\leq a \leq 2a$, and $\{2an + a + b\}\in\mathcal{B}_F$ as $a+b\leq a+a = 2a$.
+For the case of the Furstenberg's topology it suffices to observe that for any $\{an + b\}\in\B_F$ we have: $\{2an + b\} \subseteq \{an + b\}$, $\{2an + a + b\} \subseteq \{an + b\}$, and $\{2an + b\} \cap \{2an + a + b\} = \emptyset$. Moreover, we assume that $b\leq a$, so $\{2an + b\}\in\B_F$ as $b\leq a \leq 2a$, and $\{2an + a + b\}\in\B_F$ as $a+b\leq a+a = 2a$.
 
 % czy na pewno nie zostawić rysunków? ładnie to obrazują
-%\begin{center}
-%\begin{picture}(260,180)
-%\put(0,0){\makebox(0,0){$\vdots$}}
-%\put(0,10){\makebox(0,0){$\{16an+b\}$}}
-%\put(100,10){\makebox(0,0){$\{16an+8a+b\}$}}
-%\put(50,50){\makebox(0,0){$\{8an+b\}$}}
-%\put(65,40){\vector(1,-1){20}}
-%\put(35,40){\vector(-1,-1){20}}
-%\put(150,50){\makebox(0,0){$\{8an+4a+b\}$}}
-%\put(100,90){\makebox(0,0){$\{4an+b\}$}}
-%\put(115,80){\vector(1,-1){20}}
-%\put(85,80){\vector(-1,-1){20}}
-%\put(200,90){\makebox(0,0){$\{4an+2a+b\}$}}
-%\put(150,130){\makebox(0,0){$\{2an+b\}$}}
-%\put(165,120){\vector(1,-1){20}}
-%\put(135,120){\vector(-1,-1){20}}
-%\put(250,130){\makebox(0,0){$\{2an+a+b\}$}}
-%\put(200,170){\makebox(0,0){$\{an+b\}$}}
-%\put(215,160){\vector(1,-1){20}}
-%\put(185,160){\vector(-1,-1){20}}
-%\end{picture}
-%\end{center}
-%\vspace{0.5cm}
 
-Now, let us consider the case of the Golomb's topology. For any $\{an + b\}\in\mathcal{B}_G$ we can choose such $p\in\mathbb{P}$ that $p\nmid b$ and $p\nmid a+b$. We have: $\{pan + b\} \subseteq \{an + b\}$, $\{pan + a + b\} \subseteq \{an + b\}$, and $\{pan + b\} \cap \{pan + a + b\} = \emptyset$ (if for some $n_1,n_2\in\N$ there would be $pan_1+b=pan_2+a+b$, then $pa(n_1-n_2)=a$, thus $p(n_1-n_2)=1$ -- a contradiction). Moreover, we assume that $(a,b)=1$, so $\{pan + b\}\in\mathcal{B}_G$ as $(pa,b)=1$, and $\{pan + a + b\}\in\mathcal{B}_G$ as $(a,b)=1 \Rightarrow (a,a+b)=1 \Rightarrow (pa,a+b)=1$.
+\begin{center}
+\begin{picture}(260,180)
+\put(0,0){\makebox(0,0){$\vdots$}}
+\put(0,10){\makebox(0,0){$\{16an+b\}$}}
+\put(100,10){\makebox(0,0){$\{16an+8a+b\}$}}
+\put(50,50){\makebox(0,0){$\{8an+b\}$}}
+\put(65,40){\vector(1,-1){20}}
+\put(35,40){\vector(-1,-1){20}}
+\put(150,50){\makebox(0,0){$\{8an+4a+b\}$}}
+\put(100,90){\makebox(0,0){$\{4an+b\}$}}
+\put(115,80){\vector(1,-1){20}}
+\put(85,80){\vector(-1,-1){20}}
+\put(200,90){\makebox(0,0){$\{4an+2a+b\}$}}
+\put(150,130){\makebox(0,0){$\{2an+b\}$}}
+\put(165,120){\vector(1,-1){20}}
+\put(135,120){\vector(-1,-1){20}}
+\put(250,130){\makebox(0,0){$\{2an+a+b\}$}}
+\put(200,170){\makebox(0,0){$\{an+b\}$}}
+\put(215,160){\vector(1,-1){20}}
+\put(185,160){\vector(-1,-1){20}}
+\end{picture}
+\end{center}
+\vspace{0.5cm}
+
+Now, let us consider the case of the Golomb's topology. For any $\{an + b\}\in\B_G$ we can choose such $p\in\mathbb{P}$ that $p\nmid b$ and $p\nmid a+b$. We have: $\{pan + b\} \subseteq \{an + b\}$, $\{pan + a + b\} \subseteq \{an + b\}$, and $\{pan + b\} \cap \{pan + a + b\} = \emptyset$ (if for some $n_1,n_2\in\N$ there would be $pan_1+b=pan_2+a+b$, then $pa(n_1-n_2)=a$, thus $p(n_1-n_2)=1$ -- a contradiction). Moreover, we assume that $(a,b)=1$, so $\{pan + b\}\in\B_G$ as $(pa,b)=1$, and $\{pan + a + b\}\in\B_G$ as $(a,b)=1 \Rightarrow (a,a+b)=1 \Rightarrow (pa,a+b)=1$.
 
 %A w przypadku bazy dla topologii Golomba czy Kircha?\\
 %Prawdopodobnie też da się przeprowadzić poprzednią konstrukcję "`splittingu"', lecz odpowiednio ją modyfikując.\\
@@ -211,17 +214,17 @@ Now, let us consider the case of the Golomb's topology. For any $\{an + b\}\in\m
 %$(a,b)=1 \Rightarrow (a,a+b)=1 \Rightarrow (pa,a+b)=1$\\
 %Stosując rozumowanie do $\{pan+b\}$, otrzymujemy odpowiedni splitting.\\
 
-%\begin{center}
-%\begin{picture}(110,60)
-%\put(0,0){\makebox(0,0){$\vdots$}}
-%\put(0,10){\makebox(0,0){$\{pan+b\}$}}
-%\put(100,10){\makebox(0,0){$\{pan+a+b\}$}}
-%\put(50,50){\makebox(0,0){$\{an+b\}$}}
-%\put(65,40){\vector(1,-1){20}}
-%\put(35,40){\vector(-1,-1){20}}
-%\end{picture}
-%\end{center}
-%\vspace{0.5cm}
+\begin{center}
+\begin{picture}(110,60)
+\put(0,0){\makebox(0,0){$\vdots$}}
+\put(0,10){\makebox(0,0){$\{pan+b\}$}}
+\put(100,10){\makebox(0,0){$\{pan+a+b\}$}}
+\put(50,50){\makebox(0,0){$\{an+b\}$}}
+\put(65,40){\vector(1,-1){20}}
+\put(35,40){\vector(-1,-1){20}}
+\end{picture}
+\end{center}
+\vspace{0.5cm}
 
 The case of the Kirch's topology is a slight modification of the previous construction. Now we additionally require that $p\nmid a$ (hence, as $a\in \SqrFr$, we also have $pa\in \SqrFr$).
 
@@ -232,18 +235,18 @@ The case of the Kirch's topology is a slight modification of the previous constr
 \end{proof}
 
 
-%\textbf{\underline{Podsumowanie:}} $\mathcal{B}_F$, $\mathcal{B}_G$ i $\mathcal{B}_K$ mają własność "`splittingu"', czyli:
-%$$\forall_{F\in\mathcal{B}} \exists_{G_1, G_2 \in\mathcal{B}} G_1, G_2 \subseteq F, G_1\cap G_2 =\emptyset.$$ \\
+%\textbf{\underline{Podsumowanie:}} $\B_F$, $\B_G$ i $\B_K$ mają własność "`splittingu"', czyli:
+%$$\forall_{F\in\B} \exists_{G_1, G_2 \in\B} G_1, G_2 \subseteq F, G_1\cap G_2 =\emptyset.$$ \\
 
 %\textbf{\underline{Wniosek:}} Bazy te mają własność "przeliczalnego splittingu", czyli:
-%$$\forall_{F\in\mathcal{B}} \exists_{G_n \in\mathcal{B}} \left[ \forall_n G_n \subseteq F, \forall_{n_1\neq n_2} G_{n_1}\cap G_{n_2}=\emptyset \right].$$ \\
-%\exists_{(G_n)_n \subseteq\mathcal{B}}
+%$$\forall_{F\in\B} \exists_{G_n \in\B} \left[ \forall_n G_n \subseteq F, \forall_{n_1\neq n_2} G_{n_1}\cap G_{n_2}=\emptyset \right].$$ \\
+%\exists_{(G_n)_n \subseteq\B}
 
 \begin{remark} \label{remH}
 The base of any Hausdorff topology $\T$ has the splitting property.
 \end{remark}
 \begin{proof}
-Let $\mathcal{B}$ be the base of the topology $\T$. Take any $B\in\mathcal{B}$ and two different points $x,y\in B$. As $\T$ is Hausdorff, there exist two open sets $V,W\in\T$ such that $x\in V$, $y\in W$, and $V\cap W = \emptyset$. Let $V'=B\cap V$, $W'=B\cap W$. $V'$ and $W'$ are open, so each contains a basic set: $B_{V'}$ and $B_{W'}$, respectively. Now it is clear that $B_{V'}\cup B_{W'}\subseteq B$ and $B_{V'}\cap B_{W'}=\emptyset$.
+Let $\B$ be the base of the topology $\T$. Take any $B\in\B$ and two different points $x,y\in B$. As $\T$ is Hausdorff, there exist two open sets $V,W\in\T$ such that $x\in V$, $y\in W$, and $V\cap W = \emptyset$. Let $V'=B\cap V$, $W'=B\cap W$. $V'$ and $W'$ are open, so each contains a basic set: $B_{V'}$ and $B_{W'}$, respectively. Now it is clear that $B_{V'}\cup B_{W'}\subseteq B$ and $B_{V'}\cap B_{W'}=\emptyset$.
 \end{proof}
 %If the base of a Hausdorff topology $\T$ consists only of infinite sets, then it has the splitting property. - chyba to założenie niepotrzebne?...
 
@@ -265,10 +268,10 @@ The set $A = \{n! \ :\ n\in\N\}$ belongs to $\I_F$, $\I_G$ and $\I_K$.
 
 \begin{proof}
 %[using splitting property...]
-We need to show that for any $\{an+b\} \in \mathcal{B}_F$ there exists $\{cn+d\} \in \mathcal{B}_F$ with $\{cn+d\} \subseteq \{an+b\}$, such that $\{cn+d\}\cap A = \emptyset$. Let us fix $\{an+b\} \in \mathcal{B}_F$. Note that in the set $A$ all but finitely many elements (for $n\geq a$) are divisible by $a$. Consider the two cases:
+We need to show that for any $\{an+b\} \in \B_F$ there exists $\{cn+d\} \in \B_F$ with $\{cn+d\} \subseteq \{an+b\}$, such that $\{cn+d\}\cap A = \emptyset$. Let us fix $\{an+b\} \in \B_F$. Note that in the set $A$ all but finitely many elements (for $n\geq a$) are divisible by $a$. Consider the two cases:
 \begin{itemize}
- \item[(i)] $b\neq a$. Set $s:= \min \{n\ :\ an+b>a!\}$. Take $\{cn+d\} = \{a(s+1)n+as+b\} \subseteq \{an+b\}$. Then, $as+b\leq as+a = a(s+1)$, so $\{cn+d\}\in \mathcal{B}_F$. Moreover, $as+b>a!$ and all elements of $\{cn+d\}$ are not divisible by $a$, so $\{cn+d\}\cap A = \emptyset$.
- \item[(ii)] $b=a$. Then, $\{an+b\} = \{an+a\}$ and we can split it into two disjoint subsets: $\{an+a\} = \{2an+a\}\cup \{2an+2a\}$. In the set $A$ all but finitely many elements (for $n\geq 2a$) are divisible by $2a$, so almost all elements belong to $\{2an+2a\}$. Set $s:= \min \{n\ :\ 2an+a>(2a)!\}$. Take $\{cn+d\} = \{2a(s+1)n+2as+a\} \subseteq \{an+a\}$. Then, $2as+a\leq 2as+2a = 2a(s+1)$, so $\{cn+d\}\in \mathcal{B}_F$. Moreover, $2as+a>(2a)!$ and all elements of $\{cn+d\}$ are not divisible by $2a$, so $\{cn+d\}\cap A = \emptyset$.
+ \item[(i)] $b\neq a$. Set $s:= \min \{n\ :\ an+b>a!\}$. Take $\{cn+d\} = \{a(s+1)n+as+b\} \subseteq \{an+b\}$. Then, $as+b\leq as+a = a(s+1)$, so $\{cn+d\}\in \B_F$. Moreover, $as+b>a!$ and all elements of $\{cn+d\}$ are not divisible by $a$, so $\{cn+d\}\cap A = \emptyset$.
+ \item[(ii)] $b=a$. Then, $\{an+b\} = \{an+a\}$ and we can split it into two disjoint subsets: $\{an+a\} = \{2an+a\}\cup \{2an+2a\}$. In the set $A$ all but finitely many elements (for $n\geq 2a$) are divisible by $2a$, so almost all elements belong to $\{2an+2a\}$. Set $s:= \min \{n\ :\ 2an+a>(2a)!\}$. Take $\{cn+d\} = \{2a(s+1)n+2as+a\} \subseteq \{an+a\}$. Then, $2as+a\leq 2as+2a = 2a(s+1)$, so $\{cn+d\}\in \B_F$. Moreover, $2as+a>(2a)!$ and all elements of $\{cn+d\}$ are not divisible by $2a$, so $\{cn+d\}\cap A = \emptyset$.
 \end{itemize}
 Note that instead we could have used the fact that Furstenberg's topology is Hausdorff. The crucial observation is that all but finitely many elements from the set $A$ are divisible by some constant $a$. Since singleton sets are closed, $\{an+b\}$ without finitely many points is open and disjoint from $A$ for $b<a$, hence it contains a basic set disjoint from $A$. Case $(ii)$ uses the splitting property, which also follows from $\T_F$ being Hausdorff (see: Remark \ref{remH}).\\
 Thus, the proof for $\I_G$ and $\I_K$ (both $\T_G$ and $\T_K$ are also Hausdorff) goes similarly (in basic sets of these topologies we assume that $b<a$, so we only need to consider case $(i)$).
@@ -293,7 +296,7 @@ $\SqrFr\in \I_F$, but $\SqrFr$ is dense in $\T_G$ and $\T_K$ (therefore it does 
 \end{ex}
 
 \begin{proof}
-Firstly, note that the set of squareful numbers is open in $\T_F$ as it is equal to the sum $\bigcup_{p\in\mathbb{P}} \{p^2 n+p^2\}$ of arithmetic progressions belonging to $\mathcal{B}_F$. Thus, the set $\SqrFr$ is a complement of an open set, so it is closed (and hence its closure is equal to itself). It suffices to show that $\SqrFr$ has empty interior.
+Firstly, note that the set of squareful numbers is open in $\T_F$ as it is equal to the sum $\bigcup_{p\in\mathbb{P}} \{p^2 n+p^2\}$ of arithmetic progressions belonging to $\B_F$. Thus, the set $\SqrFr$ is a complement of an open set, so it is closed (and hence its closure is equal to itself). It suffices to show that $\SqrFr$ has empty interior.
 
 Let us observe that in every arithmetic progression one can find a squareful number. Indeed, in an arbitrary arithmetic progression $\{an+b\}$, for fixed $a,b\in\N$, put $n_0 = a^2 +ab+2a+2b+1$. Then,
 $$an_0 +b = a(a^2 +ab+2a+2b+1)+b = a((a+1)(a+b+1)+b)+b = $$
@@ -302,7 +305,7 @@ $$= (a+1)(a(a+1)+b(a+1))= (a+1)^2 (a+b),$$
 %$$an_0 +b = a(a^2 +ab+2a+2b+1)+b = a((a+1)(a+b+1)+b)+b = $$
 %$$= a(a+1)(a+b+1)+(a+1)b = (a+1)(a(a+b+1)+b) = (a+1)(a(a+1)+b(a+1))=$$
 %$$= (a+1)^2 (a+b),$$
-which is always a squareful number, because $a+1  \neq 1$. Hence, no arithmetic progression (and, in particular, no set from $\mathcal{B}_F$) can be contained in $\SqrFr$, which proves that $\SqrFr$ has empty interior and thus it is nowhere dense in $\T_F$.
+which is always a squareful number, because $a+1  \neq 1$. Hence, no arithmetic progression (and, in particular, no set from $\B_F$) can be contained in $\SqrFr$, which proves that $\SqrFr$ has empty interior and thus it is nowhere dense in $\T_F$.
 
 The density of $\SqrFr$ in $\T_G$ and $\T_K$ follows from the fact that $\mathbb{P}\subseteq \SqrFr$ and $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (hence so is every its superset).
 \end{proof}
@@ -312,17 +315,17 @@ The set of even numbers $\{2n+2\}$ is in $\I_G$ and $\I_K$, but it belongs to th
 \end{ex}
 
 \begin{proof}
-We need to show that for any $\{an+b\} \in \mathcal{B}_G$ there exists $\{cn+d\} \in \mathcal{B}_G$ with $\{cn+d\} \subseteq \{an+b\}$, such that $\{cn+d\}\cap \{2n+2\} = \emptyset$. Let us fix $\{an+b\} \in \mathcal{B}_G$ (we assume that $(a,b)=1$ and $b<a$) and consider the two cases:
+We need to show that for any $\{an+b\} \in \B_G$ there exists $\{cn+d\} \in \B_G$ with $\{cn+d\} \subseteq \{an+b\}$, such that $\{cn+d\}\cap \{2n+2\} = \emptyset$. Let us fix $\{an+b\} \in \B_G$ (we assume that $(a,b)=1$ and $b<a$) and consider the two cases:
 \begin{itemize}
- \item[(i)] $2\mid b$. Then, $2 \nmid a$ (otherwise, $a$ and $b$ would not be coprime). Take $\{cn+d\} = \{2an+a+b\}$. As $(a,b)=1$, we know that $(a,a+b)=1$, and as $2 \nmid a$, we have $(2a,a+b)=1$. Thus, $\{2an+a+b\}\in\mathcal{B}_G$ and $\{2an+a+b\}\subseteq\{an+b\}$. Moreover, $\{2an+a+b\}$ consists only of odd numbers, so $\{2an+a+b\}\cap \{2n+2\} = \emptyset$.
- \item[(ii)] $2\nmid b$. Take $\{cn+d\} = \{2an+b\}$. As $2\nmid b$, we have $(2a,b)=1$. Thus, $\{2an+b\}\in\mathcal{B}_G$ and $\{2an+b\}\subseteq\{an+b\}$. Moreover, $\{2an+b\}$ consists only of odd numbers, so $\{2an+b\}\cap \{2n+2\} = \emptyset$.
+ \item[(i)] $2\mid b$. Then, $2 \nmid a$ (otherwise, $a$ and $b$ would not be coprime). Take $\{cn+d\} = \{2an+a+b\}$. As $(a,b)=1$, we know that $(a,a+b)=1$, and as $2 \nmid a$, we have $(2a,a+b)=1$. Thus, $\{2an+a+b\}\in\B_G$ and $\{2an+a+b\}\subseteq\{an+b\}$. Moreover, $\{2an+a+b\}$ consists only of odd numbers, so $\{2an+a+b\}\cap \{2n+2\} = \emptyset$.
+ \item[(ii)] $2\nmid b$. Take $\{cn+d\} = \{2an+b\}$. As $2\nmid b$, we have $(2a,b)=1$. Thus, $\{2an+b\}\in\B_G$ and $\{2an+b\}\subseteq\{an+b\}$. Moreover, $\{2an+b\}$ consists only of odd numbers, so $\{2an+b\}\cap \{2n+2\} = \emptyset$.
 \end{itemize}
 
 The proof for $\I_K$ goes similarly. In item (i) we additionally need to observe that if $2 \nmid a$ and $a$ is square-free, then $2a$ will also be square-free. In item (ii), if $2 \nmid a$, we use the same argument as above, and if $2\mid a$, we take $\{cn+d\} = \{an+b\}$ as it is already disjoint from the set of even numbers \{2n+2\}.
 %Niech $E=\{2n+2\}$. Wybierzmy bazowy dla topologii G $\{an+b\}$, $(a,b)=1$. Rozważmy przypadki:
 %\begin{itemize}
-% \item[I] $b=2k$. Wówczas $2 \nmid a$. Niech $n=2m+1$, więc $an+b=a(2m+1)+b=2am+a+b$. Skoro $(a,b)=1$, to $(a,a+b)=1$, a także skoro $2 \nmid a$, to $(2a,a+b)=1$. Zatem $\{2am+a+b\}\in\mathcal{B}_G$ i $\{2am+a+b\}\subseteq\{an+b\}$, ponadto $\{2am+a+b\}\subseteq Odd$, czyli $\{2am+a+b\}\cap \{2n+2\} = \emptyset$.
-% \item[II] $b\in Odd$. Niech $n=2m$, wówczas $an+b=2am+b$. Skoro $b\in Odd$, to $(2a,b)=1$, czyli $\{2am+b\}\in\mathcal{B}_G$ i $\{2am+b\}\subseteq\{an+b\}$. Co więcej, $2am+b\in Odd$, więc $\{2am+b\}\cap \{2n+2\} = \emptyset$.
+% \item[I] $b=2k$. Wówczas $2 \nmid a$. Niech $n=2m+1$, więc $an+b=a(2m+1)+b=2am+a+b$. Skoro $(a,b)=1$, to $(a,a+b)=1$, a także skoro $2 \nmid a$, to $(2a,a+b)=1$. Zatem $\{2am+a+b\}\in\B_G$ i $\{2am+a+b\}\subseteq\{an+b\}$, ponadto $\{2am+a+b\}\subseteq Odd$, czyli $\{2am+a+b\}\cap \{2n+2\} = \emptyset$.
+% \item[II] $b\in Odd$. Niech $n=2m$, wówczas $an+b=2am+b$. Skoro $b\in Odd$, to $(2a,b)=1$, czyli $\{2am+b\}\in\B_G$ i $\{2am+b\}\subseteq\{an+b\}$. Co więcej, $2am+b\in Odd$, więc $\{2am+b\}\cap \{2n+2\} = \emptyset$.
 %\end{itemize}
 %Identyczny dowód "`pracuje"' w przypadku topologii Kircha, tyle że w I trzeba zauważyć, że skoro $2 \nmid a$ i $a$ jest bezkwadratowa, to $2a$ też będzie bezkwadratowa. W II, jeśli $2\mid a$, to nie musimy nic modyfikować, bo wtedy $\{an+b\}\cap \{2n+2\} = \emptyset$, jeśli zaś $2 \nmid a$, to ponownie jw. $2a$ jest bezkwadratowa.
 \end{proof}
@@ -358,17 +361,17 @@ If $p_1, \ldots, p_k \in \mathbb{P}$, then $\{n\in\N\ :\ p_1\mid n \vee \ldots \
 %    \color{purple}	
 % [AN] OK, taki tekst moze byc, wyjasnia on dlaczego nie ma przykladu Kirch versus Golomb
 %%%Distinguishing the ideals of Golomb and Kirch still remains an open problem.
-The result that the ideals of Golomb and Kirch are not the same will be shown in the next theorem. So far, we only managed to obtain a result suggesting that an example of a set witnessing the lack of inclusion between those ideals cannot be found among the sets from $\mathcal{B}_G \setminus \mathcal{B}_K$:
+The result that the ideals of Golomb and Kirch are not the same will be shown in the next theorem. So far, we only managed to obtain a result suggesting that an example of a set witnessing the lack of inclusion between those ideals cannot be found among the sets from $\B_G \setminus \B_K$:
 
 %    \color{black}
 
 \begin{prop}
-Every set of the form $\{2sn+q\ :\ s \in\SqrFr, 2|s, (s,q)=1, q<s\}$ is in $\mathcal{B}_G$ but not in $\mathcal{B}_K$, but it does not belong to $\I_K$.
+Every set of the form $\{2sn+q\ :\ s \in\SqrFr, 2|s, (s,q)=1, q<s\}$ is in $\B_G$ but not in $\B_K$, but it does not belong to $\I_K$.
 \end{prop}
 
 \begin{proof}
-Let us first observe that $\{2sn+q\}$, as defined above, satisfies: $(2s,q)=1, q<2s$ -- therefore it is in $\mathcal{B}_G$. Moreover, $2s$ is not square-free, so it must not be in $\mathcal{B}_K$.
-Now, we want to show that there exists $\{an+b\}\in \mathcal{B}_K$ such that for every $\{cn+d\}\subseteq \{an+b\}$ with $\{cn+d\}\in \mathcal{B}_K$ we have: $\{2sn+q\}\cap \{cn+d\} \neq \emptyset$. Let $\{an+b\} = \{sn+q\}$ (it belongs to $\mathcal{B}_K$ since $s$ is square-free, $(s,q)=1$ and $q<s$). Take any $\{cn+d\}\subseteq \{sn+q\}$ with $\{cn+d\}\in \mathcal{B}_K$ -- we then know that $c$ is square-free. Suppose that $\{2sn+q\}\cap \{cn+d\} = \emptyset$. As $\{cn+d\}\subseteq \{sn+q\}$ and $\{sn+q\} \setminus \{2sn+q\} = \{2sn+q+s\}$, it means that $\{cn+d\}\subseteq \{2sn+q+s\}$ -- but then $2s$ must divide $c$, which hence cannot be square-free. A contradiction ends the proof.
+Let us first observe that $\{2sn+q\}$, as defined above, satisfies: $(2s,q)=1, q<2s$ -- therefore it is in $\B_G$. Moreover, $2s$ is not square-free, so it must not be in $\B_K$.
+Now, we want to show that there exists $\{an+b\}\in \B_K$ such that for every $\{cn+d\}\subseteq \{an+b\}$ with $\{cn+d\}\in \B_K$ we have: $\{2sn+q\}\cap \{cn+d\} \neq \emptyset$. Let $\{an+b\} = \{sn+q\}$ (it belongs to $\B_K$ since $s$ is square-free, $(s,q)=1$ and $q<s$). Take any $\{cn+d\}\subseteq \{sn+q\}$ with $\{cn+d\}\in \B_K$ -- we then know that $c$ is square-free. Suppose that $\{2sn+q\}\cap \{cn+d\} = \emptyset$. As $\{cn+d\}\subseteq \{sn+q\}$ and $\{sn+q\} \setminus \{2sn+q\} = \{2sn+q+s\}$, it means that $\{cn+d\}\subseteq \{2sn+q+s\}$ -- but then $2s$ must divide $c$, which hence cannot be square-free. A contradiction ends the proof.
 \end{proof}
 % def NWD? pusty przekrój/zawarty w dopełnieniu?/
 % but -> however; must not -> cannot
@@ -377,17 +380,17 @@ Now, we want to show that there exists $\{an+b\}\in \mathcal{B}_K$ such that for
 $\I_K \subseteq \I_G$.
 \end{thm}	   
 \begin{proof}
-We will show that $X \not\in I_G \implies X \not\in I_K$.
+We will show that $X \not\in \I_G \implies X \not\in \I_K$.
 Suppose that $X \not\in \I_G$. Then
-$\exists_{\{an+b\}\in \mathcal{B}_G} \forall_{\{cn+d\} \subseteq \{an+b\} \atop \{cn+d\}\in \mathcal{B}_G} \{cn+d\} \cap X \not= \emptyset$.
+$\exists_{\{an+b\}\in \B_G} \forall_{\{cn+d\} \subseteq \{an+b\} \atop \{cn+d\}\in \B_G} \{cn+d\} \cap X \not= \emptyset$.
 We have to show that 
-$$\exists_{\{a^\prime n+b^\prime\}\in \mathcal{B}_K} \forall_{\{c^\prime n+d^\prime \} \subseteq \{a^\prime n+b^\prime\} \atop \{c^\prime n+d\}
-\in \mathcal{B}_K} \{c^\prime n+d^\prime \} \cap X \not= \emptyset.$$
+$$\exists_{\{a^\prime n+b^\prime\}\in \B_K} \forall_{\{c^\prime n+d^\prime \} \subseteq \{a^\prime n+b^\prime\} \atop \{c^\prime n+d\}
+\in \B_K} \{c^\prime n+d^\prime \} \cap X \not= \emptyset.$$
 Let $a^\prime = \Pi_{p \in \Theta(a)} p$ (i.e. squarefree part of $a$)
-and $b^\prime = b$. Then $\{a^\prime n+b^\prime\} \in \mathcal{B}_K$
+and $b^\prime = b$. Then $\{a^\prime n+b^\prime\} \in \B_K$
 since $a^\prime \in \SqrFr$ and $(a^\prime : b) = 1$.
 Suppose that $\{c^\prime n+d^\prime \} \subseteq \{a^\prime n+b^\prime\}$,
-and $\{c^\prime n+d^\prime\}\in \mathcal{B}_K$. Then $c^\prime \in \SqrFr$, $(c^\prime:d^\prime)=1$
+and $\{c^\prime n+d^\prime\}\in \B_K$. Then $c^\prime \in \SqrFr$, $(c^\prime:d^\prime)=1$
 and $a^\prime | c^\prime$. 
 Observe that $(\frac{a}{a^\prime} : \frac{c^\prime}{a^\prime}) = 1$,
 hence
@@ -402,7 +405,7 @@ since $x \in \{a n+b \}$, $(a : x) = 1$ and since
 $x \in \{c^\prime n+d^\prime \}$, $(c^\prime, x) = 1$,
 hence $(a c^\prime : x) = 1$ and moreover
 $(\frac{a c^\prime}{a^\prime} : x) = 1$.
-Therefore $A \in \mathcal{B}_G$ and of course $A \subseteq \{a n+b \}$.
+Therefore $A \in \B_G$ and of course $A \subseteq \{a n+b \}$.
 From our assumption we know that $A \cap X \not= \emptyset$,
 but $A \subseteq \{c^\prime n+d^\prime \}$, 
 so $\{c^\prime n+d^\prime \} \cap X \not= \emptyset$.
@@ -412,15 +415,15 @@ so $\{c^\prime n+d^\prime \} \cap X \not= \emptyset$.
 $\I_G \not\subseteq \I_K$.
 \end{thm}	   
 \begin{proof}
-Define $\mathcal{C} = \{\{an+b\}\in \mathcal{B}_K\ :\ \{an+b\}\subseteq \{2n+1\}\}$. Let $\{C_k\ :\ k\in\N\}$ be an enumeration of $\mathcal{C}$.
+Define $\mathcal{C} = \{\{an+b\}\in \B_K\ :\ \{an+b\}\subseteq \{2n+1\}\}$. Let $\{C_k\ :\ k\in\N\}$ be an enumeration of $\mathcal{C}$.
 We will construct a set $X \in \I_G \setminus \I_K$. For every $k\in\N$ pick $x_k$ such that:
 \begin{itemize}
 	\item $x_k\in C_k$;
 	\item $x_k\in \{2^k n+1\}$.
 \end{itemize}
 Observe that $C_k \cap \{2^k n+1\}$ is always nonempty (if $C_k = \{a_k n+b_k\}$, then $a_k$ is even and square-free, and $(\frac{a_k}{2},\frac{2^k}{2})=(\frac{a_k}{2},2)=1$, as $\frac{a_k}{2}$ is odd; both $\{a_k n+b_k\}$ and $\{2^k n+1\}$ are subsequences of $\{2n+1\}$, so, by the Chinese remainder theorem, their intersection is nonempty). Let $X = \{x_k\ :\ k\in\N\}$.
-Firstly, note that $X \notin \I_K$. Indeed, a set $\{2n+1\}\in\mathcal{B}_K$ has a property that for every $\{cn+d\}\subseteq \{2n+1\}$ with $\{cn+d\}\in \mathcal{B}_K$ (so $\{cn+d\}=C_k$ for some $k\in\N$) we have: $X\cap \{cn+d\} \neq \emptyset$ (as it contains $x_k$).
-Now, we will prove that $X \in \I_G$. Take any $\{an+b\}\in\mathcal{B}_G$. We want to show that there exists $V\subseteq \{an+b\}$ with $V\in \T_G$ such that $X\cap V = \emptyset$. 
+Firstly, note that $X \notin \I_K$. Indeed, a set $\{2n+1\}\in\B_K$ has a property that for every $\{cn+d\}\subseteq \{2n+1\}$ with $\{cn+d\}\in \B_K$ (so $\{cn+d\}=C_k$ for some $k\in\N$) we have: $X\cap \{cn+d\} \neq \emptyset$ (as it contains $x_k$).
+Now, we will prove that $X \in \I_G$. Take any $\{an+b\}\in\B_G$. We want to show that there exists $V\subseteq \{an+b\}$ with $V\in \T_G$ such that $X\cap V = \emptyset$. 
 Assume that $2\nmid a$. Let $V = (\{an+b\} \cap \{4n+3\})\setminus\{x_1\}$. $V$ is open (as a difference of an open set and a closed set) and nonempty (because $(a,4)=1$). Moreover, for every $k\geq 2$ we have that $x_k\in \{4n+1\}$, which is disjoint from $\{4n+3\}$, and hence $X\cap V = \emptyset$.
 Now, consider the following cases:
 \begin{itemize}
@@ -433,57 +436,66 @@ Generally, for $m\in\N$:
 \end{itemize}
 \end{proof}
 
--------------------------------
+%-------------------------------
 
-
-
-
-\color{black}
 \section{Marczewski-Burstin representations}
 
+Recall that a set $A$ is \emph{nowhere dense in topology $\T$} if:
+$$\Forall_{U\in\T\setminus\{\emptyset\}}\ \Exists_{V\in\T\setminus\{\emptyset\},\ V\subseteq U}\ A\cap V = \emptyset.$$
+The authors of \cite{MB} observed that the scheme defining the family of nowhere dense sets turns out to be interesting also if the family of open sets is substituted by a family of nonempty subsets of an arbitrary set X:
+\begin{df}[\cite{MB}] For an $X\neq\emptyset$ and a given family $\mathcal{F}\subseteq \mathcal{P}(X)\setminus\{\emptyset\}$:
+$$S^0(\mathcal{F}) = \left\{A\subseteq X\ :\ \Forall_{U\in\mathcal{F}}\ \Exists_{V\in\mathcal{F}}\ V\subseteq U\setminus A\right\}$$
+is an ideal, called the \emph{Marczewski ideal}.
+\end{df}
+
+Recently, there has appeared a series of articles, mainly by M. Balcerzak, A. Bartoszewicz and K.~Ciesielski (e.g. \cite{MB}, \cite{MB2}, \cite{MB3}), where the authors study these ideals with respect to different generating families.
+
+Note that in the case when $\mathcal{F}$ consists of all perfect subsets of a given Polish space, $\MB(\mathcal{F})$ is the family of classical Marczewski (s0)-sets (see \cite{Sz}), and, obviously, if for $\mathcal{F}$ we take a family of all nonempty open sets in a given topological space $(X,\T)$, $\MB(\T\setminus\{\emptyset\})$ is the family of all nowhere dense sets in this topology.
+
+If a given ideal $\I$ on a set $X$ can be represented as $\MB(\mathcal{F})$ for some family $\mathcal{F}\subseteq \mathcal{P}(X)\setminus\{\emptyset\}$, we say that it is \emph{Marczewski-Burstin representable} (or, briefly, \emph{MB-representable}) by $\mathcal{F}$.
+
 \begin{df}
-Let us call an ideal $\I\subseteq \mathcal{P}(\N)$ 
-\emph{MB-countably-definable}
-(briefly: \emph{MBC}) if there exists 
-a countable family $\mathcal{F}\subseteq [\omega]^\omega$
+Let us call an ideal $\I\subseteq \mathcal{P}(\N)$  \emph{MB-countably-representable} (briefly: $\MBC$) if there exists a countable family $\mathcal{F}\subseteq [\omega]^\omega$ such that:
 %, $|\mathcal{F}|\leq \aleph_0$  -  zbedne bo juz jest slowko: ''countably''
-such that
-$$\I = \MB(\mathcal{F}) = \{X\subseteq\N\ :\ \forall_{F\in\mathcal{F}} \exists_{G\subseteq F, G\in\mathcal{F}} G\cap X=\emptyset\}.$$
+$$\I = \MB(\mathcal{F}) = \{X\subseteq\N\ :\ \Forall_{F\in\mathcal{F}}\ \Exists_{G\in\mathcal{F}, G\subseteq F}\ G\cap X=\emptyset\}.$$
 \end{df}
 %%% Z reguły wymagamy, by $\mathcal{F}\subseteq [\omega]^\omega$  - wstawilem to wprost do definicji MB
 %Jeśli $\mathcal{F}\cap \MB(\mathcal{F}) = \emptyset$ (to jest coś \`{a} la "`inner MB representation"')
 %to mówimy że jest to inner representation.\\
 %\textbf{Uwaga:} Chyba zawsze przecież mamy $\mathcal{F}\cap \MB(\mathcal{F}) = \emptyset$.\\
 %Jeśli $\I$ jest MBC, to dla wielu ideałów $\J$ (np. sumowalnych, gęstościowych...) mamy $\J\nsubseteq \I$.\\
-\textbf{Remark:} $\Fin = \MB(\mathcal{F})$, where $\mathcal{F}= \{[n, \infty]\cap\N\ :\ n\in\N\}$, 
-hence $\Fin\in MBC$.\\
-		
-    \color{teal}
 
-Przypomnijmy, że zbiór $A$ jest \emph{nigdziegęsty w topologii $\T$}, jeśli:
-$$\Forall_{U\in\T\setminus\{\emptyset\}}\ \Exists_{V\in\T\setminus\{\emptyset\},\ V\subseteq U}\ A\cap V = \emptyset.$$
-Autorzy \cite{MB} zauważyli, że schemat, według którego otrzymuje się rodzinę zbiorów nigdziegęstych z topologii okazuje się być interesujący nawet wtedy, gdy rodzinę zbiorów otwartych zastąpimy dowolną rodziną niepustych podzbiorów dowolnego zbioru X:
+\begin{remark} 
+$\Fin = \MB(\mathcal{F})$, where $\mathcal{F}= \{[n, +\infty]\cap\N\ :\ n\in\N\}$, hence $\Fin\in \MBC$.
+\end{remark}
 
-\begin{df}[\cite{MB}] Dla $X\neq\emptyset$ i rodziny $\mathcal{F}\subseteq \mathcal{P}(X)\setminus\{\emptyset\}$:
-$$S^0(\mathcal{F}) = \left\{A\subseteq X\ :\ \Forall_{U\in\mathcal{F}}\ \Exists_{V\in\mathcal{F}}\ V\subseteq U\setminus A\right\}$$
-jest ideałem, nazywanym \emph{ideałem Marczewskiego}.
-\end{df}
+Notice that all our ideals $\I_F$, $\I_G$ i $\I_K$ have the $\MBC$ property.
 
-W podobny sposób można zdefiniować ciało zbiorów (rodzinę zbiorów zamkniętą na dopełnienia i skończone sumy jej elementów, zawierającą zbiór pusty).
+%  \color{teal}
+%Przypomnijmy, że zbiór $A$ jest \emph{nigdziegęsty w topologii $\T$}, jeśli:
+%$$\Forall_{U\in\T\setminus\{\emptyset\}}\ \Exists_{V\in\T\setminus\{\emptyset\},\ V\subseteq U}\ A\cap V = \emptyset.$$
+%Autorzy \cite{MB} zauważyli, że schemat, według którego otrzymuje się rodzinę zbiorów nigdziegęstych z topologii okazuje się być interesujący nawet wtedy, gdy rodzinę zbiorów otwartych zastąpimy dowolną rodziną niepustych podzbiorów dowolnego zbioru X:
 
-\begin{df}[\cite{MB}] Dla $X\neq\emptyset$ i rodziny $\mathcal{F}\subseteq \mathcal{P}(X)\setminus\{\emptyset\}$:
-$$S(\mathcal{F}) = \left\{A\subseteq X\ :\ \Forall_{U\in\mathcal{F}}\ \Exists_{V\in\mathcal{F}}\ (V\subseteq U\setminus A\ \vee\ V\subseteq U\cap A)\right\}$$
-jest ciałem, nazywanym \emph{ciałem Marczewskiego}.
-\end{df}
+%\begin{df}[\cite{MB}] Dla $X\neq\emptyset$ i rodziny $\mathcal{F}\subseteq \mathcal{P}(X)\setminus\{\emptyset\}$:
+%$$S^0(\mathcal{F}) = \left\{A\subseteq X\ :\ \Forall_{U\in\mathcal{F}}\ \Exists_{V\in\mathcal{F}}\ V\subseteq U\setminus A\right\}$$
+%jest ideałem, nazywanym \emph{ideałem Marczewskiego}.
+%\end{df}
 
-W literaturze często można znaleźć inną terminologię -- autorzy \cite{BET} mówią, że "$\mathcal{F}$~jest bazą dla charakteryzacji typu Marczewskiego-Burstina", a autorzy \cite{MB2} nazywają te ideały i ciała "MB-reprezentowalnymi".  
+%W podobny sposób można zdefiniować ciało zbiorów (rodzinę zbiorów zamkniętą na dopełnienia i skończone sumy jej elementów, zawierającą zbiór pusty).
 
-W przypadku, gdy za $\mathcal{F}$ weźmiemy rodzinę wszystkich zbiorów doskonałych w~danej przestrzeni polskiej, $S^0(\mathcal{F})$ i $S(\mathcal{F})$ stanowią dokładnie rodziny klasycznych zbiorów Marczewskiego $(s)$ i $(s^0)$ (zob. \cite{Sz}). Schemat definiujący te zbiory był używany w bardziej ogólnym kontekście np. w \cite{Mo}, \cite{Pa}, \cite{Re}. Wreszcie, niedawno powstał cykl publikacji autorstwa m.in. M. Balcerzaka, A. Bartoszewicza i~K.~Ciesielskiego (np. \cite{MB}, \cite{MB2}, \cite{MB3}), badających te ideały i ciała pod kątem różnych rodzin je generujących.
+%\begin{df}[\cite{MB}] Dla $X\neq\emptyset$ i rodziny $\mathcal{F}\subseteq \mathcal{P}(X)\setminus\{\emptyset\}$:
+%$$S(\mathcal{F}) = \left\{A\subseteq X\ :\ \Forall_{U\in\mathcal{F}}\ \Exists_{V\in\mathcal{F}}\ (V\subseteq U\setminus A\ \vee\ V\subseteq U\cap A)\right\}$$
+%jest ciałem, nazywanym \emph{ciałem Marczewskiego}.
+%\end{df}
 
-Zauważmy, że jeżeli za $\mathcal{F}$ weźmiemy rodzinę wszystkich niepustych zbiorów otwartych w danej przestrzeni topologicznej $(X,\T)$, $S^0(\T\setminus\{\emptyset\})$ będzie się składać ze zbiorów nigdziegęstych w tej topologii, natomiast $S(\T\setminus\{\emptyset\})$ będzie rodziną zbiorów z nigdziegęstym brzegiem.
+%W literaturze często można znaleźć inną terminologię -- autorzy \cite{BET} mówią, że "$\mathcal{F}$~jest bazą dla charakteryzacji typu Marczewskiego-Burstina", a autorzy \cite{MB2} nazywają te ideały i ciała "MB-reprezentowalnymi".  
+
+%W przypadku, gdy za $\mathcal{F}$ weźmiemy rodzinę wszystkich zbiorów doskonałych w~danej przestrzeni polskiej, $S^0(\mathcal{F})$ i $S(\mathcal{F})$ stanowią dokładnie rodziny klasycznych zbiorów Marczewskiego $(s)$ i $(s^0)$ (zob. \cite{Sz}). Schemat definiujący te zbiory był używany w bardziej ogólnym kontekście np. w \cite{Mo}, \cite{Pa}, \cite{Re}. Wreszcie, niedawno powstał cykl publikacji autorstwa m.in. M. Balcerzaka, A. Bartoszewicza i~K.~Ciesielskiego (np. \cite{MB}, \cite{MB2}, \cite{MB3}), badających te ideały i ciała pod kątem różnych rodzin je generujących.
+
+%Zauważmy, że jeżeli za $\mathcal{F}$ weźmiemy rodzinę wszystkich niepustych zbiorów otwartych w danej przestrzeni topologicznej $(X,\T)$, $S^0(\T\setminus\{\emptyset\})$ będzie się składać ze zbiorów nigdziegęstych w tej topologii, natomiast $S(\T\setminus\{\emptyset\})$ będzie rodziną zbiorów z nigdziegęstym brzegiem.
 \color{black}
 
-Notice that all our ideals $\I_F$, $\I_G$ i $\I_K$ have the $\mathcal{MBC}$ property.
+
 
 % jest więc ideałem Marczewskiego. W ramach przyszłej pracy naukowej planuję spróbować rozszerzyć wyniki otrzymane dla %naszych ideałów na klasę ideałów MB-reprezentowal-nych oraz zbadać ciała Marczewskiego dla opisywanych
 % topologii na $%\N$, związanych z ciągami arytmetycznymi. W szczególności, zamierzam sprawdzić, 
@@ -504,7 +516,7 @@ $\I_F$, $\I_G$ and $\I_K$ are $F_{\sigma\delta}$ but not $F_{\sigma}$ ideals.
 \begin{proof}
 Let us formulate a little more general lemma
 \begin{lem}
-Every \emph{MBC} ideal is of type $F_{\sigma\delta}$.
+Every $\MBC$ ideal is of type $F_{\sigma\delta}$.
 \end{lem}
 \begin{proof}
 Suppose that $|\mathcal{F}|\leq\aleph_0$, $\mathcal{F}\subseteq [\omega]^\omega$ is such that $\I = \MB(\mathcal{F})$.
@@ -653,7 +665,7 @@ If $\mathcal{I}$ on $\N$ has a topological representation, then it can be repres
 \item[(i)] $\mathcal{I}$ is \emph{tall} if any infinite set in $\N$ contains an infinite subset that belongs to $\mathcal{I}$. 
 \item[(ii)] $\mathcal{I}$ is \emph{$\omega$-$+$-diagonalizable} if there is a countable family $\{X_n\ :\ n\in\N\}$ of subsets of $\N$ such that for any $A\in \mathcal{I}$ there is $n\in\N$ with $A\cap X_n=\emptyset$.
 \item[(iii)] $\mathcal{I}$ is \emph{countably separated} if there is a countable family $\{X_n\ :\ n\in\N\}$ of subsets of $\N$ such that for any $A\in \mathcal{I}$ and $B\notin \mathcal{I}$ there is $n\in\N$ with $A\cap X_n=\emptyset$ and $B\cap X_n\notin \mathcal{I}$. % In such a case we say that the family $\{X_n:\ n\in\N\}$ \emph{separates} $\mathcal{I}$.
-\item[(iv)] $\mathcal{I}$ is \emph{weakly selective} if for every partition $(X_n)_{n\in\N}$ of $\N$ such that $X_i\in\I$ for $i\geq 2$ and $\bigcup_{i\geq 2} X_i \notin\I$ there exists a selector of the partition $(X_n)$ which does not belong to $\I$.
+\item[(iv)] $\mathcal{I}$ is \emph{weakly selective} if for every partition $(X_n)_{n\in\N}$ of $\N$ such that $X_i\in\I$ for $i\geq 2$ and $\bigcup_{i\geq 2} X_i \notin\I$ there exists a selector of the partition $(X_n)$, which does not belong to $\I$.
 \end{enumerate}
 \end{df}
 
@@ -665,7 +677,7 @@ Ideals $\I_F$, $\I_G$ and $\I_K$ are $\omega$-$+$-diagonalizable.
 \end{thm}
 
 \begin{proof}
-Let the base $\mathcal{B}_F$ of the Furstenberg's topology be the required countable family $\{X_n\ :\ n\in\N\}$ of subsets of $\N$. Take any $A\in \I_F$. We know that for any $X_m \in \mathcal{B}_F$ there exists $X_k \in \mathcal{B}_F$ with $X_k \subseteq X_m$, such that $A\cap X_k = \emptyset$. Thus, $X_k$ satisfies the condition from the definition of $\omega$-$+$-diagonalizability.\\
+Let the base $\B_F$ of the Furstenberg's topology be the required countable family $\{X_n\ :\ n\in\N\}$ of subsets of $\N$. Take any $A\in \I_F$. We know that for any $X_m \in \B_F$ there exists $X_k \in \B_F$ with $X_k \subseteq X_m$, such that $A\cap X_k = \emptyset$. Thus, $X_k$ satisfies the condition from the definition of $\omega$-$+$-diagonalizability.\\
 The proof goes analogously for $\I_G$ and $\I_K$.
 \end{proof}
 
@@ -675,9 +687,9 @@ Ideals $\I_F$, $\I_G$ and $\I_K$ are countably separated.
 \end{thm}
 
 \begin{proof}
-Let the base $\mathcal{B}_F$ of the Furstenberg's topology be the required countable family $\{X_n\ :\ n\in\N\}$ of subsets of $\N$. Take any $A\in \I_F$ and $B\notin \I_F$. We know that for any $X_{m'} \in \mathcal{B}_F$ there exists $X_{k'} \in \mathcal{B}_F$ with $X_{k'} \subseteq X_{m'}$, such that $A\cap X_{k'} = \emptyset$. Moreover, there exists $X_{m''} \in \mathcal{B}_F$ such that for any $X_{k''} \in \mathcal{B}_F$ with $X_{k''} \subseteq X_{m''}$, we have $B\cap X_{k''} \neq \emptyset$. 
-We need to show that there is $n\in\N$, for which $A\cap X_n=\emptyset$ and $B\cap X_n\notin \I_F$. Note that $B\cap X_n\notin \I_F$ if and only if there exists $X_{m} \in \mathcal{B}_F$ such that for any $X_{k} \in \mathcal{B}_F$ with $X_{k} \subseteq X_{m}$, we have $B\cap X_n\cap X_{k} \neq \emptyset$. 
-Now, take $X_{m''} \in \mathcal{B}_F$. As $A\in\I_F$, there exists $X_{k'} \in \mathcal{B}_F$ with $X_{k'} \subseteq X_{m''}$, such that $A\cap X_{k'} = \emptyset$. Put $X_n = X_{k'}$. It is clear that $A\cap X_n = \emptyset$. Let us check that the second condition is also satisfied. For $X_{m} \in \mathcal{B}_F$ we put $X_n$, and we set any $X_{k} \in \mathcal{B}_F$ with $X_{k} \subseteq X_n$. Then, $B\cap X_n\cap X_{k} = B\cap X_{k}\neq \emptyset$ as $X_k \subseteq X_n = X_{k'} \subseteq X_{m''}$ (and we use the assumption that $B\notin \I_F$).\\
+Let the base $\B_F$ of the Furstenberg's topology be the required countable family $\{X_n\ :\ n\in\N\}$ of subsets of $\N$. Take any $A\in \I_F$ and $B\notin \I_F$. We know that for any $X_{m'} \in \B_F$ there exists $X_{k'} \in \B_F$ with $X_{k'} \subseteq X_{m'}$, such that $A\cap X_{k'} = \emptyset$. Moreover, there exists $X_{m''} \in \B_F$ such that for any $X_{k''} \in \B_F$ with $X_{k''} \subseteq X_{m''}$, we have $B\cap X_{k''} \neq \emptyset$. 
+We need to show that there is $n\in\N$, for which $A\cap X_n=\emptyset$ and $B\cap X_n\notin \I_F$. Note that $B\cap X_n\notin \I_F$ if and only if there exists $X_{m} \in \B_F$ such that for any $X_{k} \in \B_F$ with $X_{k} \subseteq X_{m}$, we have $B\cap X_n\cap X_{k} \neq \emptyset$. 
+Now, take $X_{m''} \in \B_F$. As $A\in\I_F$, there exists $X_{k'} \in \B_F$ with $X_{k'} \subseteq X_{m''}$, such that $A\cap X_{k'} = \emptyset$. Put $X_n = X_{k'}$. It is clear that $A\cap X_n = \emptyset$. Let us check that the second condition is also satisfied. For $X_{m} \in \B_F$ we put $X_n$, and we set any $X_{k} \in \B_F$ with $X_{k} \subseteq X_n$. Then, $B\cap X_n\cap X_{k} = B\cap X_{k}\neq \emptyset$ as $X_k \subseteq X_n = X_{k'} \subseteq X_{m''}$ (and we use the assumption that $B\notin \I_F$).\\
 The proof goes analogously for $\I_G$ and $\I_K$.
 \end{proof}
 
@@ -693,10 +705,10 @@ Let us formulate the following more general theorem:
 \begin{thm}
 Suppose that $\I \subseteq P(\N)$ is an ideal. Then
 \begin{itemize}
-\item If $\I$ is \emph{MBC} then $\I$ is 
+\item If $\I$ is $\MBC$, then $\I$ is 
 countably separated;
 \item If $\I$ is countably separated then there 
-exists a \emph{MBC} ideal $\J$ such that $\I \subseteq \J$.
+exists an MBC ideal $\J$ such that $\I \subseteq \J$.
 \end{itemize}
 \end{thm}
 
@@ -984,11 +996,11 @@ Let us check that $\bigcap_{k\in\N} H^{*}(\mathcal{P}_k)\subseteq\I_F$.
 Choose any set $A\subseteq\N$ such that 
 $$\Forall_{k\in\N}\Exists_{b_k\in\{1,2,\ldots,k\}} A\subseteq^* \{kn+b_k\}\}.$$ 
 We will show that $A$ is nowhere dense in the Furstenberg 
-topology, i.e. we want to show that for every $\{an+b\}\in \mathcal{B}_F$ there exists $\{cn+d\}\subseteq \{an+b\}$ with $\{cn+d\}\in \mathcal{B}_F$ such that $A\cap \{cn+d\} = \emptyset$. Fix $\{an+b\}\in \mathcal{B}_F$ (we then know that $b\leq a$). Then there exists $b_a\in\{1,2,\ldots,a\}$ 
+topology, i.e. we want to show that for every $\{an+b\}\in \B_F$ there exists $\{cn+d\}\subseteq \{an+b\}$ with $\{cn+d\}\in \B_F$ such that $A\cap \{cn+d\} = \emptyset$. Fix $\{an+b\}\in \B_F$ (we then know that $b\leq a$). Then there exists $b_a\in\{1,2,\ldots,a\}$ 
 such that $A\subseteq^* \{an+b_a\}$. Let us consider two cases:
 \begin{itemize}
-	\item[(i)] If $b_a\neq b$ then $\{an+b\} \cap \{an+b_a\} = \emptyset$, so $\{an+b\}\cap A \in\Fin$. Let  $an_{\textrm{max}}+b=\max(\{an+b\}\cap A)$. Then $\{an+an_{\max}+b+a\} \cap A = \emptyset$, but $\{an+an_{\max}+b+a\}\notin \mathcal{B}_F$. Since $an_{\max}+b+a \leq an_{\max}+a+a = (n_{\max}+2)a$, as $\{cn+d\}$ put: $\{cn+d\} = \{(n_{\max}+2)an+an_{\max}+b+a\}\in \mathcal{B}_F$. Then $\{cn+d\}\subseteq \{an+b\}$ and $A\cap \{cn+d\} = \emptyset$.
-	\item[(ii)] If $b_a = b$ then $A\subseteq^* \{an+b\}$. Notice that $\{an+b\}=\{2an+b\}\cup \{2an+b+a\}$ (it follows from the ''splitting property'' of $\mathcal{B}_F$). 
+	\item[(i)] If $b_a\neq b$ then $\{an+b\} \cap \{an+b_a\} = \emptyset$, so $\{an+b\}\cap A \in\Fin$. Let  $an_{\textrm{max}}+b=\max(\{an+b\}\cap A)$. Then $\{an+an_{\max}+b+a\} \cap A = \emptyset$, but $\{an+an_{\max}+b+a\}\notin \B_F$. Since $an_{\max}+b+a \leq an_{\max}+a+a = (n_{\max}+2)a$, as $\{cn+d\}$ put: $\{cn+d\} = \{(n_{\max}+2)an+an_{\max}+b+a\}\in \B_F$. Then $\{cn+d\}\subseteq \{an+b\}$ and $A\cap \{cn+d\} = \emptyset$.
+	\item[(ii)] If $b_a = b$ then $A\subseteq^* \{an+b\}$. Notice that $\{an+b\}=\{2an+b\}\cup \{2an+b+a\}$ (it follows from the ''splitting property'' of $\B_F$). 
 By our assumption $b_{2a}\leq 2a$ such that $A\subseteq^* \{2an+b_{2a}\}$. Hence if $b_{2a} \neq b$, and 
 we do like in the case (i). If however $b_{2a}=b$, then $b_{2a}\neq b+a$ and again we do like in the case (i).
 \end{itemize}
