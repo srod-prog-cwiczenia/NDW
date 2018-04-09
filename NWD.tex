@@ -102,8 +102,7 @@ We investigate the ideals of nowhere dense sets in three topologies on $\N$, rel
 
 Let $\N$ denote the set of positive integers and $\N_0$ -- the set of non-negative integers. For all $a,b\in\N$ the symbol $\{an+b\}$ stands for the infinite arithmetic progression with the initial term $b$ and the difference $a$:
 $$\{an+b\} = \{an+b\ :\ n\in\N_0\} = \{b,\ b+a,\ b+2a,\ ...\}. $$
-We use the symbol $(a,b)$ to denote the greatest common divisor of $a$ and $b$. Moreover, the letter $\mathbb{P}$ symbolizes the set of all prime numbers.
-
+We use the symbol $(a,b)$ to denote the greatest common divisor of $a$ and $b$. Moreover, the letter $\mathbb{P}$ symbolizes the set of all prime numbers and $\Theta(a)$ stands for the set of all prime factors of $a\in\N$.
 By $\mathbb{SF}$ let us denote the set of \emph{square-free numbers} (i.e., numbers not divisible by any square greater than 1):
 %i.e.: $\{n\colon \forall_{k > 1} \neg (k^2 | n)\}$.
 $$\SqrFr = \{1,2,3,5,6,7,10,11,\ldots\}.$$
@@ -145,16 +144,10 @@ The topologies of Golomb and Kirch are both Hausdorff but not regular, and conne
 \section*{Three ideals}
 
 An \emph{ideal} on $\N$ is a family of subsets of $\N$ closed under taking finite unions and subsets of its elements. We assume that an ideal is proper ($\neq \mathcal{P}(\N)$) and contains all finite sets.
-%We say that a set $A$ is \emph{nowhere dense in topology $\T$} if its closure has empty interior, or, equivalently:
-%$$\forall_{U\in\T}\ \exists_{V\in\T,\ V\subseteq U}\ A\cap V = \emptyset.$$
-
 %ideały są \emph{właściwe}, ($\neq \mathcal{P}(\N)$, czyli $\N$ nie należy do ideału), oraz że zawierają wszystkie skończone podzbiory $\N$.
 
-
-Suppose that $b\colon\N\to\Q$ is any fixed bijection.
-Let us recall that by $\mathrm{NDW}$ we denote the ideal of sets
-$A \subset \N$ such that $\mathit{cl}(\lbrace b(n)\colon n \in A\rbrace)$
-is a nowhere dense set.
+%We say that a set $A$ is \emph{nowhere dense in topology $\T$} if its closure has empty interior, or, equivalently:
+%$$\forall_{U\in\T}\ \exists_{V\in\T,\ V\subseteq U}\ A\cap V = \emptyset.$$
 
 Obviously, in any (decent\footnote{The topology should have a basis consisting only of infinite sets -- otherwise, the ideal of nowhere dense sets would not contain all finite sets.}) topology, the nowhere dense sets form an ideal. Let us then define three ideals on $\N$:
 \begin{itemize}
@@ -179,7 +172,6 @@ Obviously, in any (decent\footnote{The topology should have a basis consisting o
 Let us say that a family $\mathcal{F} \subseteq [\omega]^\omega$ has the \emph{splitting property} if and only if for any $F \in \mathcal{F}$ one can find $F_1, F_2 \in \mathcal{F}$ such that $F_1 \cup F_2 \subseteq F$ and $F_1 \cap F_2 = \emptyset$. Notice that if a family $\mathcal{F}$ has the splitting property, then it also has a \emph{countable splitting property}, i.e., there exists an infinite countable family $\mathcal{G} \subseteq \mathcal{F}$ such that $\bigcup \mathcal{G} \subseteq \mathcal{F}$ and the family $\mathcal{G}$ is pairwise disjoint.
 
 % proposition?
-
 \begin{observation}
 %[Crucial observation]
 All families: $\B_F$, $\B_G$ and $\B_K$ have the splitting property.
@@ -213,7 +205,7 @@ For the case of the Furstenberg's topology it suffices to observe that for any $
 \end{center}
 \vspace{0.5cm}
 
-Now, let us consider the case of the Golomb's topology. For any $\{an + b\}\in\B_G$ we can choose such $p\in\mathbb{P}$ that $p\nmid b$ and $p\nmid a+b$. We have: $\{pan + b\} \subseteq \{an + b\}$, $\{pan + a + b\} \subseteq \{an + b\}$, and $\{pan + b\} \cap \{pan + a + b\} = \emptyset$ (if for some $n_1,n_2\in\N$ there would be $pan_1+b=pan_2+a+b$, then $pa(n_1-n_2)=a$, thus $p(n_1-n_2)=1$ -- a contradiction). Moreover, we assume that $(a,b)=1$, so $\{pan + b\}\in\B_G$ as $(pa,b)=1$, and $\{pan + a + b\}\in\B_G$ as $(a,b)=1 \Rightarrow (a,a+b)=1 \Rightarrow (pa,a+b)=1$.
+Now, let us consider the case of the Golomb's topology. For any $\{an + b\}\in\B_G$ we can choose such $p\in\mathbb{P}$ that $p\nmid b$ and $p\nmid a+b$. We have: $\{pan + b\} \subseteq \{an + b\}$, $\{pan + a + b\} \subseteq \{an + b\}$, and $\{pan + b\} \cap \{pan + a + b\} = \emptyset$ (if for some $n_1,n_2\in\N$ there would be $pan_1+b=pan_2+a+b$, then $pa(n_1-n_2)=a$, thus $p(n_1-n_2)=1$ -- a contradiction). Moreover, we assume that $(a,b)=1$, so $\{pan + b\}\in\B_G$ as $(pa,b)=1$, and $\{pan + a + b\}\in\B_G$ as $(a,b)=1 \implies (a,a+b)=1 \implies (pa,a+b)=1$.
 
 %A w przypadku bazy dla topologii Golomba czy Kircha?\\
 %Prawdopodobnie też da się przeprowadzić poprzednią konstrukcję "`splittingu"', lecz odpowiednio ją modyfikując.\\
@@ -289,13 +281,11 @@ Thus, the proof for $\I_G$ and $\I_K$ (both $\T_G$ and $\T_K$ are also Hausdorff
 
 %Poniższe proste przykłady pokazują, że ideał Furstenberga znacząco różni się od ideałów Golomba i Kircha.
 %[AN] przetlumaczone na to ponizej, nie wiadomo czy skladnie?
-We will construct examples which 
-distinguish these ideals and prove some
-inclusions among some of these ideals, namely
+%We will construct examples which distinguish these ideals and prove some inclusions among some of these ideals, namely
 %%%show that all these ideals are different, namely
 %examples shows that in some way the Furstenberg's ideal significantly differs from the other ideals (namely: from the Golomb's and the Kirch's ideal.)
 
-
+The following simple examples show that in some way the Furstenberg's ideal significantly differs from the other ideals (namely: from the Golomb's and the Kirch's ideal.)
 
 \begin{ex}[\cite{Szczuka4}] 
 $\mathbb{P}\in \I_F$, but $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (therefore it does not belong to $\I_G$ nor $\I_K$).
@@ -363,17 +353,17 @@ For any $p\in\mathbb{P}$, $\{pn+p\}\in \I_G \cap \I_K \setminus \I_F$.
 If $p_1, \ldots, p_k \in \mathbb{P}$, then $\{n\in\N\ :\ p_1\mid n \vee \ldots \vee p_k\mid n\}\in \I_G \cap \I_K \setminus \I_F$.
 \end{cor}
 
+Now, let us investigate a relation between the ideals of Golomb and Kirch.
 %\begin{problem}
 %Rozróżnić $\I_G$ od $\I_K$.
 %\end{problem}
 %Problemem pozostaje rozróżnienie ideałów Golomba i Kircha. Do tej pory udało się nam uzyskać jedynie częściowy wynik, który sugeruje, że kontrprzykładów na zawieranie tych ideałów należy szukać wśród zbiorów bardziej "skomplikowanych" niż zbiory bazowe: 
-
 %    \color{purple}	
 % [AN] OK, taki tekst moze byc, wyjasnia on dlaczego nie ma przykladu Kirch versus Golomb
-%%%Distinguishing the ideals of Golomb and Kirch still remains an open problem.
-The result that the ideals of Golomb and Kirch are not the same will be shown in the next theorem. So far, we only managed to obtain a result suggesting that an example of a set witnessing the lack of inclusion between those ideals cannot be found among the sets from $\B_G \setminus \B_K$:
-
+%%%Distinguishing the ideals of Golomb and Kirch still remains an open problem. So far, we only managed to obtain 
 %    \color{black}
+
+While searching for an example distinguishing these ideals, at first we have obtained a partial result, suggesting that an example of a set witnessing the lack of inclusion between those ideals cannot be found among the sets from $\B_G \setminus \B_K$:
 
 \begin{prop}
 Every set of the form $\{2sn+q\ :\ s \in\SqrFr, 2|s, (s,q)=1, q<s\}$ is in $\B_G$ but not in $\B_K$, but it does not belong to $\I_K$.
@@ -386,39 +376,48 @@ Now, we want to show that there exists $\{an+b\}\in \B_K$ such that for every $\
 % def NWD? pusty przekrój/zawarty w dopełnieniu?/
 % but -> however; must not -> cannot
 
+Eventually, we managed to prove an inclusion between the ideals of Golomb and Kirch -- however, they are not the same. These results will be shown in the next two theorems. In their proofs we will use a technical lemma:
+ 
+\begin{lem} \label{lemCRT}
+Assume that $a,b,a_1,b_1,a_2,b_2 \in\N$. If $\{a_1 n+b_1\}\subseteq \{an+b\}$, $\{a_2 n+b_2\}\subseteq \{an+b\}$ and $(\frac{a_1}{a},\frac{a_2}{a})=1$, then the intersection $\{a_1 n+b_1\}\cap\{a_2 n+b_2\}$ is nonempty (and hence it is an arithmetic progression). 
+\end{lem}
+%(see: Lemma \ref{lemCRT})
+\begin{proof}
+Let $f : \N\to \{an+b\}$ be a bijection such that $f(n) = an+b$. Then: 
+$$f^{-1}[\{a_1 n+b_1\}] = \{\frac{a_1}{a} n+\frac{b_1-b}{a}\},$$
+$$f^{-1}[\{a_2 n+b_2\}] = \{\frac{a_2}{a} n+\frac{b_2-b}{a}\},$$ 
+and since $(\frac{a_1}{a},\frac{a_2}{a})=1$, the Chinese remainder theorem guarantees that their intersection is nonempty. Thus,
+%$\{\frac{a_1}{a} n+b_1\}\cap\{\frac{a_2}{a} n+b_2\}\neq\emptyset$.
+$$f^{-1}[\{a_1 n+b_1\}\cap\{a_2 n+b_2\}] = f^{-1}[\{a_1 n+b_1\}]\cap f^{-1}[\{a_2 n+b_2\}]\neq\emptyset,$$
+and hence
+$$\{a_1 n+b_1\}\cap\{a_2 n+b_2\} = f[f^{-1}[\{a_1 n+b_1\}\cap\{a_2 n+b_2\}]] \neq\emptyset.$$
+\end{proof}
+
+
 \begin{thm}
 $\I_K \subseteq \I_G$.
-\end{thm}	   
+\end{thm}
+
 \begin{proof}
-We will show that $X \not\in \I_G \implies X \not\in \I_K$.
-Suppose that $X \not\in \I_G$. Then
-$\exists_{\{an+b\}\in \B_G} \forall_{\{cn+d\} \subseteq \{an+b\} \atop \{cn+d\}\in \B_G} \{cn+d\} \cap X \not= \emptyset$.
-We have to show that 
-$$\exists_{\{a^\prime n+b^\prime\}\in \B_K} \forall_{\{c^\prime n+d^\prime \} \subseteq \{a^\prime n+b^\prime\} \atop \{c^\prime n+d\}
-\in \B_K} \{c^\prime n+d^\prime \} \cap X \not= \emptyset.$$
-Let $a^\prime = \Pi_{p \in \Theta(a)} p$ (i.e. squarefree part of $a$)
-and $b^\prime = b$. Then $\{a^\prime n+b^\prime\} \in \B_K$
-since $a^\prime \in \SqrFr$ and $(a^\prime : b) = 1$.
-Suppose that $\{c^\prime n+d^\prime \} \subseteq \{a^\prime n+b^\prime\}$,
-and $\{c^\prime n+d^\prime\}\in \B_K$. Then $c^\prime \in \SqrFr$, $(c^\prime:d^\prime)=1$
-and $a^\prime | c^\prime$. 
-Observe that $(\frac{a}{a^\prime} : \frac{c^\prime}{a^\prime}) = 1$,
-hence
-$\{\frac{a}{a^\prime} n + b\} \cap \{\frac{c^\prime}{a^\prime} n + d^\prime \} \not= \emptyset$
-(by the Chinese remainder theorem).
-Define $A = \{a n+b \} \cap \{c^\prime n+d^\prime \}$, it is easy to 
-conclude that $A \not= \emptyset$ hence $A$ is an arithmetic progression.
-Moreover, $A = \{\frac{a c^\prime}{a^\prime} n + x\}$
-for some $x \in A$.
-Notice that $(\frac{a c^\prime}{a^\prime} : x) = 1$. Indeed, 
-since $x \in \{a n+b \}$, $(a : x) = 1$ and since
-$x \in \{c^\prime n+d^\prime \}$, $(c^\prime, x) = 1$,
-hence $(a c^\prime : x) = 1$ and moreover
-$(\frac{a c^\prime}{a^\prime} : x) = 1$.
-Therefore $A \in \B_G$ and of course $A \subseteq \{a n+b \}$.
-From our assumption we know that $A \cap X \not= \emptyset$,
-but $A \subseteq \{c^\prime n+d^\prime \}$, 
-so $\{c^\prime n+d^\prime \} \cap X \not= \emptyset$.
+We will show that $X \not\in \I_G \implies X \not\in \I_K$.\\
+Suppose that $X \not\in \I_G$. Then there exists $\{an+b\}\in \B_G$ such that for every $\{cn+d\}\subseteq \{an+b\}$ with $\{cn+d\}\in \T_G$ we have: $X\cap \{cn+d\} \neq \emptyset$.
+% $\exists_{\{an+b\}\in \B_G} \forall_{\{cn+d\} \subseteq \{an+b\} \atop \{cn+d\}\in \B_G} \{cn+d\} \cap X \not= \emptyset$.
+We need to show that there exists $\{a'n+b'\}\in \B_K$ such that for every $\{c'n+d'\}\subseteq \{a'n+b'\}$ with $\{c'n+d'\}\in \B_K$ we have: $X\cap \{c'n+d'\} \neq \emptyset$.
+% $$\exists_{\{a^\prime n+b^\prime\}\in \B_K} \forall_{\{c^\prime n+d^\prime \} \subseteq \{a^\prime n+b^\prime\} \atop \{c^\prime n+d\} \in \B_K} \{c^\prime n+d^\prime \} \cap X \not= \emptyset.$$
+Let $a' = \prod_{p \in \Theta(a)} p$ (i.e., the "square-free part" of $a$) and $b' = b \mod a'$. Then $\{a'n+b'\} \in \B_K$ since $a' \in \SqrFr$, $(a',b') = 1$ (as $(a,b) = 1$) and $b'<a'$.
+%Then $\{a' n+b'\} \in \B_K$ since $a' \in \SqrFr$ and $(a' : b) = 1$.
+%Suppose that $\{c'n+d'\} \subseteq \{a'n+b'\}$, and $\{c'n+d'\}\in \B_K$. Then $c' \in \SqrFr$, $(c':d')=1$ and $a' | c'$.
+Take any $\{c'n+d'\} \subseteq \{a'n+b'\}$ with $\{c'n+d'\}\in \B_K$ (then $c' \in \SqrFr$, $(c',d')=1$, $d'<c'$ and $a'\mid c'$).
+%Observe that $(\frac{a}{a'} : \frac{c'}{a'}) = 1$, hence $\{\frac{a}{a'} n + b\} \cap \{\frac{c'}{a'} n + d' \} \not= \emptyset$ (by the Chinese remainder theorem).  $\Theta(\frac{a}{a'})\cap \Theta(\frac{c'}{a'})=\emptyset$
+Note that $\{an+b\}\subseteq \{a'n+b'\}$, $\{c'n+d'\}\subseteq \{a'n+b'\}$, and observe that $(\frac{a}{a'}, \frac{c'}{a'}) = 1$ -- the only prime factors of $\frac{a}{a'}$ are those that have already appeared in the factorization of $a'$, whereas all prime factors of $\frac{c'}{a'}$ must be different from the prime factors of $a'$ since $c'$ is square-free. 
+%Hence, $A:= \{an+b\}\cap\{c'n+d'\} \neq \emptyset$ (by Lemma \ref{lemCRT}). Moreover, it is an arithmetic progression: $A = \{\frac{ac'}{a'} n + x\}$ for some $x \in A$.
+%Notice that $(\frac{ac'}{a'}, x) = 1$. Indeed, since $x\in\{an+b\}$ and $(a,b)=1$, we have that $(a,x)=1$; similarly, since $x\in\{c'n+d'\}$ and $(c',d')=1$, $(c',x) = 1$ -- hence $(ac',x)=1$ and therefore $(\frac{ac'}{a'},x)=1$. 
+%% Now, define $A' = \{\frac{ac'}{a'} n + x'\}$, where $x'=x \mod \frac{ac'}{a'}$. Then $A' \in \B_G$ since $(\frac{ac'}{a'},x')=1$ and $x'<\frac{ac'}{a'}$. 
+Hence, $A:= \{an+b\}\cap\{c'n+d'\} \neq \emptyset$ (by Lemma \ref{lemCRT}). Moreover, $A$ is an arithmetic progression, it belongs to $\T_G$ (as the intersection of two open sets in Golomb's topology), and, obviously, $A \subseteq \{an+b\}$. From the assumption we know that $A\cap X \neq \emptyset$. Since we also have that $A \subseteq \{c'n+d'\}$, it is clear that $\{c'n+d'\}\cap X \neq \emptyset$.
+%Define $A = \{an+b \} \cap \{c'n+d' \}$, it is easy to conclude that $A \neq \emptyset$ hence $A$ is an arithmetic progression. Moreover, $A = \{\frac{a c'}{a'} n + x\}$ for some $x \in A$.
+%Notice that $(\frac{a c'}{a'} : x) = 1$. Indeed, since $x \in \{an+b \}$, $(a : x) = 1$ and since $x \in \{c'n+d' \}$, $(c', x) = 1$, hence $(a c' : x) = 1$ and moreover $(\frac{a c'}{a'} : x) = 1$.
+%Therefore $A \in \B_G$ and of course $A \subseteq \{a n+b \}$.
+%From our assumption we know that $A \cap X \neq \emptyset$, but $A \subseteq \{c'n+d' \}$, so $\{c'n+d' \} \cap X \neq \emptyset$.
 \end{proof}
 
 \begin{thm}
@@ -431,7 +430,9 @@ We will construct a set $X \in \I_G \setminus \I_K$. For every $k\in\N$ pick $x_
 	\item $x_k\in C_k$;
 	\item $x_k\in \{2^k n+1\}$.
 \end{itemize}
-Observe that $C_k \cap \{2^k n+1\}$ is always nonempty (if $C_k = \{a_k n+b_k\}$, then $a_k$ is even and square-free, and $(\frac{a_k}{2},\frac{2^k}{2})=(\frac{a_k}{2},2)=1$, as $\frac{a_k}{2}$ is odd; both $\{a_k n+b_k\}$ and $\{2^k n+1\}$ are subsequences of $\{2n+1\}$, so, by the Chinese remainder theorem, their intersection is nonempty). Let $X = \{x_k\ :\ k\in\N\}$.
+Observe that $C_k \cap \{2^k n+1\}$ is always nonempty (if $C_k = \{a_k n+b_k\}$, then $a_k$ is even and square-free, and $(\frac{a_k}{2},\frac{2^k}{2})=(\frac{a_k}{2},2)=1$, as $\frac{a_k}{2}$ is odd; both $\{a_k n+b_k\}$ and $\{2^k n+1\}$ are subsequences of $\{2n+1\}$, so, by 
+%the Chinese remainder theorem
+Lemma \ref{lemCRT}, their intersection is nonempty). Let $X = \{x_k\ :\ k\in\N\}$.
 Firstly, note that $X \notin \I_K$. Indeed, a set $\{2n+1\}\in\B_K$ has a property that for every $\{cn+d\}\subseteq \{2n+1\}$ with $\{cn+d\}\in \B_K$ (so $\{cn+d\}=C_k$ for some $k\in\N$) we have: $X\cap \{cn+d\} \neq \emptyset$ (as it contains $x_k$).
 Now, we will prove that $X \in \I_G$. Take any $\{an+b\}\in\B_G$. We want to show that there exists $V\subseteq \{an+b\}$ with $V\in \T_G$ such that $X\cap V = \emptyset$. 
 Assume that $2\nmid a$. Let $V = (\{an+b\} \cap \{4n+3\})\setminus\{x_1\}$. $V$ is open (as a difference of an open set and a closed set) and nonempty (because $(a,4)=1$). Moreover, for every $k\geq 2$ we have that $x_k\in \{4n+1\}$, which is disjoint from $\{4n+3\}$, and hence $X\cap V = \emptyset$.
@@ -460,7 +461,7 @@ is an ideal, called the \emph{Marczewski ideal}.
 
 Recently, there has appeared a series of articles, mainly by M. Balcerzak, A. Bartoszewicz and K.~Ciesielski (e.g. \cite{MB}, \cite{MB2}, \cite{MB3}), where the authors study these ideals with respect to different generating families.
 
-Note that in the case when $\mathcal{F}$ consists of all perfect subsets of a given Polish space, $\MB(\mathcal{F})$ is the family of classical Marczewski (s0)-sets (see \cite{Sz}), and, obviously, if for $\mathcal{F}$ we take a family of all nonempty open sets in a given topological space $(X,\T)$, $\MB(\T\setminus\{\emptyset\})$ is the family of all nowhere dense sets in this topology.
+Note that in the case when $\mathcal{F}$ consists of all perfect subsets of a given Polish space, $\MB(\mathcal{F})$ is the family of classical Marczewski $(s^0)$-sets (see \cite{Sz}), and, obviously, if for $\mathcal{F}$ we take a family of all nonempty open sets in a given topological space $(X,\T)$, then $\MB(\T\setminus\{\emptyset\})$ is the family of all nowhere dense sets in this topology.
 
 If a given ideal $\I$ on a set $X$ can be represented as $\MB(\mathcal{F})$ for some family $\mathcal{F}\subseteq \mathcal{P}(X)\setminus\{\emptyset\}$, we say that it is \emph{Marczewski-Burstin representable} (or, briefly, \emph{MB-representable}) by $\mathcal{F}$.
 
@@ -476,10 +477,10 @@ $$\I = \MB(\mathcal{F}) = \{X\subseteq\N\ :\ \Forall_{F\in\mathcal{F}}\ \Exists_
 %Jeśli $\I$ jest MBC, to dla wielu ideałów $\J$ (np. sumowalnych, gęstościowych...) mamy $\J\nsubseteq \I$.\\
 
 \begin{remark} 
-$\Fin = \MB(\mathcal{F})$, where $\mathcal{F}= \{[n, +\infty]\cap\N\ :\ n\in\N\}$, hence $\Fin\in \MBC$.
+$\Fin = \MB(\mathcal{F})$, where $\mathcal{F}= \{[n, +\infty]\cap\N\ :\ n\in\N\}$ -- hence, $\Fin\in \MBC$.
 \end{remark}
 
-Notice that all our ideals $\I_F$, $\I_G$ i $\I_K$ have the $\MBC$ property.
+Notice that all our ideals: $\I_F$, $\I_G$ and $\I_K$ have the $\MBC$ property.
 
 %  \color{teal}
 %Przypomnijmy, że zbiór $A$ jest \emph{nigdziegęsty w topologii $\T$}, jeśli:
@@ -505,8 +506,6 @@ Notice that all our ideals $\I_F$, $\I_G$ i $\I_K$ have the $\MBC$ property.
 %Zauważmy, że jeżeli za $\mathcal{F}$ weźmiemy rodzinę wszystkich niepustych zbiorów otwartych w danej przestrzeni topologicznej $(X,\T)$, $S^0(\T\setminus\{\emptyset\})$ będzie się składać ze zbiorów nigdziegęstych w tej topologii, natomiast $S(\T\setminus\{\emptyset\})$ będzie rodziną zbiorów z nigdziegęstym brzegiem.
 \color{black}
 
-
-
 % jest więc ideałem Marczewskiego. W ramach przyszłej pracy naukowej planuję spróbować rozszerzyć wyniki otrzymane dla %naszych ideałów na klasę ideałów MB-reprezentowal-nych oraz zbadać ciała Marczewskiego dla opisywanych
 % topologii na $%\N$, związanych z ciągami arytmetycznymi. W szczególności, zamierzam sprawdzić, 
 %czy wszystkie ideały Marczewskiego są %reprezentowane topologicznie, co pozwoliłoby połączyć te~dwa nurty badań.
@@ -519,76 +518,67 @@ Notice that all our ideals $\I_F$, $\I_G$ i $\I_K$ have the $\MBC$ property.
 %
 %
 
+
+
+==================================
+
+
 \begin{thm}
 $\I_F$, $\I_G$ and $\I_K$ are $F_{\sigma\delta}$ but not $F_{\sigma}$ ideals.
 \end{thm}
 
-\begin{proof}
-Let us formulate a little more general lemma
+In fact, let us formulate slightly more general results:
 \begin{lem}
 Every $\MBC$ ideal is of type $F_{\sigma\delta}$.
 \end{lem}
 \begin{proof}
-Suppose that $|\mathcal{F}|\leq\aleph_0$, $\mathcal{F}\subseteq [\omega]^\omega$ is such that $\I = \MB(\mathcal{F})$.
-Then $X\in \MB(\mathcal{F}) \equiv X\in \bigcap_{F\in\mathcal{F}} \bigcup_{G\subseteq F, G\in\mathcal{F}} \{x\in 2^\omega\ :\ x\upharpoonright G = 0\upharpoonright G\}$ 
-and this last set is of type $F_{\sigma\delta}$
+Suppose that there exists a countable family $\mathcal{F}\subseteq [\omega]^\omega$ such that $\I = \MB(\mathcal{F})$. Then,
+$$X\in \MB(\mathcal{F})\ \Longleftrightarrow\ X\in \bigcap_{F\in\mathcal{F}} \bigcup_{G\in\mathcal{F}, G\subseteq F} \{x\in 2^\omega\ :\ x\upharpoonright G = 0\upharpoonright G\},$$
+and this set is of type $F_{\sigma\delta}$.
+%Suppose that $|\mathcal{F}|\leq\aleph_0$, $\mathcal{F}\subseteq [\omega]^\omega$ is such that $\I = \MB(\mathcal{F})$.
+%Then $X\in \MB(\mathcal{F}) \equiv X\in \bigcap_{F\in\mathcal{F}} \bigcup_{G\subseteq F, G\in\mathcal{F}} \{x\in 2^\omega\ :\ x\upharpoonright G = 0\upharpoonright G\}$ and this last set is of type $F_{\sigma\delta}$
 %Skoro $\MB(\mathcal{F}) = \{X\subseteq\N\ :\ \forall_{F\in\mathcal{F}}
 %\exists_{G\subseteq F, G\in\mathcal{F}} G\cap X=\emptyset\}$, to 
 %Czyli $\MB(\mathcal{F})$ jest ideałem typu $F_{\sigma\delta}$.\\
 \end{proof}
-\end{proof}
 
-\begin{thm}
-[Sprawdzić, czy są tu poczynione wszystkie niezbędne założenia do otrzymania tezy]:\\
-Suppose that $\mathcal{F}\subseteq [\omega]^\omega$,
-$|\mathcal{F}|\leq\aleph_0$. 
-Assume also that
-$\forall_{F_1, F_2 \in \mathcal{F}} \exists_{G \in \mathcal{F}} G \subseteq F_1 \cap F_2$.
-%%% \color{purple}
-%%%Pewnie trzeba założyć, że $\forall_{F_1, F_2 \in \mathcal{F}} (F_1 \cap F_2 \neq \emptyset \Rightarrow\exists_{G \subseteq F_1 \cap F_2})
-%%%$ (a la baza), w przypadku topologii F, G, K to jest spełnione, więcej, $F_1 \cap F_2$ jest sumą pewnej podrodziny $\mathcal{F_0} 
-%%%%\subseteq \mathcal{F}$. 
-%%% \color{black}
-Moreover, assume that $\mathcal{F}$ has the splitting property. 
-%%(tzn. $\forall_ {F \in \mathcal{F}} \exists_{F_1, F_2 
-%%\in \mathcal{F}, F_1, F_2 \subseteq F} F_1 \cap F_2 
-%%= \emptyset$). 
-Then the ideal $\I =  \MB(\mathcal{F})$ 
-is not an $F_{\sigma}$.
+
+
+
+
+\begin{thm} \label{thmFsigma}
+Let $\mathcal{F}\subseteq [\omega]^\omega$ be a countable family. Suppose that 
+$\Forall_{F_1, F_2\in\mathcal{F}}\ \Exists_{G\in\mathcal{F}}\ G\subseteq F_1\cap F_2$.
+Moreover, assume that $\mathcal{F}$ has the splitting property (i.e., $\Forall_{F\in\mathcal{F}}\ \Exists_{F_1,F_2\in\mathcal{F}, F_1 \cup F_2 \subseteq F}\ F_1 \cap F_2 = \emptyset$). 
+Then the ideal $\I=\MB(\mathcal{F})$ is not of type $F_{\sigma}$.
+% %[Sprawdzić, czy są tu poczynione wszystkie niezbędne założenia do otrzymania tezy]:\\
+% Suppose that $\mathcal{F}\subseteq [\omega]^\omega$, $|\mathcal{F}|\leq\aleph_0$. 
+% Assume also that
+% $\Forall_{F_1, F_2\in\mathcal{F}}\ \Exists_{G\in\mathcal{F}}\ G\subseteq F_1\cap F_2$.
+% %$\forall_{F_1, F_2 \in \mathcal{F}} \exists_{G \in \mathcal{F}} G \subseteq F_1 \cap F_2$.
+% %%% \color{purple}
+% %%%Pewnie trzeba założyć, że $\forall_{F_1, F_2 \in \mathcal{F}} (F_1 \cap F_2 \neq \emptyset \Rightarrow\exists_{G \subseteq F_1 \cap F_2})$ (a la baza), w przypadku topologii F, G, K to jest spełnione, więcej, $F_1 \cap F_2$ jest sumą pewnej podrodziny $\mathcal{F_0} \subseteq \mathcal{F}$. 
+% %%% \color{black}
+% Moreover, assume that $\mathcal{F}$ has the splitting property. 
+% %%(tzn. $\forall_ {F \in \mathcal{F}} \exists_{F_1, F_2 \in \mathcal{F}, F_1, F_2 \subseteq F} F_1 \cap F_2 = \emptyset$). 
+% Then the ideal $\I=\MB(\mathcal{F})$ is not of type $F_{\sigma}$.
 \end{thm}
 
-%Z pracy K. Mazura {\cite[Lemat~1.2]{Mazur}} wiadomo, że $\I$ jest ideałem $F_\sigma$ wtedy i tylko wtedy, gdy $\I= \fin(\phi)=\{A\subseteq \N: \phi(A)<\infty  \}$ dla pewnej półciągłej z dołu podmiary $\phi$.
-%Mazur K.: {F_\sigma}-ideals and {\omega_1\omega_1^*}-gaps in the Boolean algebras {\mathcal{P}(\omega)/\mathcal{I}}. Fund. Math. 138, 103–111
+To prove the previous theorem we need the following result, which may be also interesting in itself. 
 
-\begin{proof}
-By the characterization of $F_\sigma$ ideals from \cite{Maz} there exists a lsc submeasure 
-$\phi \colon \mathcal{P}(\omega) \to [0, \infty]$, i.e. a function such that
-\begin{itemize}
-%%% hmm, a co z tym warunkiem ponizej? W surveyu "Ideal convergence" Filipow/Natkaniec
-%%% tego warunku tam nie ma - rozumiem ze chodzi o unikniecie sytuacji ze singleton nie
-%%% nalezy do idealu, czyz sie nie myle?
-%%%\item $\phi(\{n\})<\infty$,
-\item $\phi(\omega)>0$,
-\item $\phi(A\cup B) \leq \phi(A) + \phi(B)$,
-\item $A\subseteq B \Rightarrow\phi(A)\subseteq \phi(B)$,
-\item \label{continuity-condition} $\lim_{n\to\infty} \phi(n \cap A) = \phi(A)$.
-\end{itemize}
-which has the property that 
-$\I= \Fin(\phi)=\{A\subseteq \N: \phi(A)<\infty\}$
-To prove the previous theorem we need 
-the following result, which may be also interesting in itself. 
-\end{proof}
-
-\begin{thm}
-Let $\mathcal{F}\subseteq [\omega]^\omega$ be a countable family. Assume moreover that 
-%%%$\forall_{n\in\N}\forall_{F_1, F_2 \in \mathcal{F}, n \in F_1 \cap F_2  } 
-%%%\exists_{G \in \mathcal{F}}
-%%%n \in G \subseteq F_1 \cap F_2$.
-%%% wyglada na to ze przynajmniej tutaj bedzie potrzebne jednak slabsze zalozenie:
-$\forall_{F_1, F_2 \in \mathcal{F}} \exists_{G \in \mathcal{F}} G \subseteq F_1 \cap F_2$.
-%% powyzszy wzor ,,wystaje'' poza margines - nie mam wszakze pojecia jak ukrocic jego narowy
+\begin{thm} \label{thmtall}
+Let $\mathcal{F}\subseteq [\omega]^\omega$ be a countable family. Suppose that 
+$\Forall_{F_1, F_2\in\mathcal{F}}\ \Exists_{G\in\mathcal{F}}\ G\subseteq F_1\cap F_2$.
 Assume also that $\mathcal{F}$ has the splitting property. 
-Then $S^0(\mathcal{F})$ is tall.
+Then the ideal $\I=\MB(\mathcal{F})$ is tall.
+% Let $\mathcal{F}\subseteq [\omega]^\omega$ be a countable family. Assume moreover that 
+% %%%$\forall_{n\in\N}\forall_{F_1, F_2 \in \mathcal{F}, n \in F_1 \cap F_2  } \exists_{G \in \mathcal{F}} n \in G \subseteq F_1 \cap F_2$.
+% %%% wyglada na to ze przynajmniej tutaj bedzie potrzebne jednak slabsze zalozenie:
+% $\Forall_{F_1, F_2\in\mathcal{F}}\ \Exists_{G\in\mathcal{F}}\ G\subseteq F_1\cap F_2$.
+% %$\forall_{F_1, F_2 \in \mathcal{F}} \exists_{G \in \mathcal{F}} G \subseteq F_1 \cap F_2$.
+% %% powyzszy wzor ,,wystaje'' poza margines - nie mam wszakze pojecia jak ukrocic jego narowy
+% Assume also that $\mathcal{F}$ has the splitting property. 
+% Then the ideal $\I=\MB(\mathcal{F})$ is tall.
 \end{thm}
 
 \begin{proof}
@@ -629,15 +619,33 @@ $\calK_{(F_i)}\subseteq S^0(\mathcal{F})$.\\
 %znajdujemy $H^*\in\mathcal{F}$, $H^*%\subseteq H$ takie, że $H^* \cap A=\emptyset$, co kończy dowód.
 \end{proof}
 
+%Z pracy K. Mazura {\cite[Lemat~1.2]{Mazur}} wiadomo, że $\I$ jest ideałem $F_\sigma$ wtedy i tylko wtedy, gdy $\I= \fin(\phi)=\{A\subseteq \N: \phi(A)<\infty  \}$ dla pewnej półciągłej z dołu podmiary $\phi$.
+%Mazur K.: {F_\sigma}-ideals and {\omega_1\omega_1^*}-gaps in the Boolean algebras {\mathcal{P}(\omega)/\mathcal{I}}. Fund. Math. 138, 103–111
+
+\begin{proof} (of Thm \ref{thmFsigma})
+By the characterization of $F_\sigma$ ideals from \cite{Maz}, there exists a lsc submeasure 
+$\phi \colon \mathcal{P}(\omega) \to [0, \infty]$, i.e. a function such that
+\begin{itemize}
+%%% hmm, a co z tym warunkiem ponizej? W surveyu "Ideal convergence" Filipow/Natkaniec
+%%% tego warunku tam nie ma - rozumiem ze chodzi o unikniecie sytuacji ze singleton nie
+%%% nalezy do idealu, czyz sie nie myle?
+%%%\item $\phi(\{n\})<\infty$,
+\item $\phi(\omega)>0$,
+\item $\phi(A\cup B) \leq \phi(A) + \phi(B)$,
+\item $A\subseteq B \implies\phi(A)\subseteq \phi(B)$,
+\item \label{continuity-condition} $\lim_{n\to\infty} \phi(n \cap A) = \phi(A)$.
+\end{itemize}
+which has the property that 
+$\I= \Fin(\phi)=\{A\subseteq \N: \phi(A)<\infty\}$
+
 %%%Wracamy do rozumowania o ideale $F_\sigma$:
-\begin{proof} (cont. proof)
+ (cont. proof)
 Suppose that there exists a lsc submeasure $\phi$ such that
-$$S^0(\mathcal{F}) = \Fin(\phi)$$.
+$$\MB(\mathcal{F}) = \Fin(\phi)$$.
 Fix a family $\{F_i\}_{i\in\omega}$, $F_i\in\mathcal{F}$, $\forall_{i\neq j} F_i\neq F_j$. 
 Thus $\phi(F_i)=\infty$. For each $i\in\omega$ let us choose 
 (by the condition \ref{continuity-condition}) 
-%czyli zalezenie ze $\lim_{n\to\infty} 
-%\phi(n \cap A) = \mu(A)$) 
+%czyli zalezenie ze $\lim_{n\to\infty} \phi(n \cap A) = \mu(A)$) 
 a sequence of finite sets 
 $A_i\subseteq F_i$ such that $\phi(A_i)>i$. Define: $A=\bigcup_{i\in\omega} A_i$. From the previous 
 result it follows that $A\in S^0(\mathcal{F})$. 
@@ -717,7 +725,7 @@ Suppose that $\I \subseteq P(\N)$ is an ideal. Then
 \begin{itemize}
 \item If $\I$ is $\MBC$, then $\I$ is 
 countably separated;
-\item If $\I$ is countably separated then there 
+\item If $\I$ is countably separated, then there 
 exists an MBC ideal $\J$ such that $\I \subseteq \J$.
 \end{itemize}
 \end{thm}
@@ -842,6 +850,13 @@ $$\textrm{NWD}(\Q)=\left\{A\subseteq\mathbb{Q}\cap [0,1]\ :\ A \textrm{ is nowhe
 Clearly, $\N$ with Furstenberg's topology is homeomorphic to $\Q$ (with the natural topology), due to a 1920 theorem of Sierpi\'nski, which characterizes the rationals as the unique countable metrizable space without isolated points. Obviously, $\Q$ is homeomorphic to $\Q\cap (0,1)$. Therefore, $\I_F$ is isomorphic to the ideal $\I = \left\{A\subseteq\Q\cap (0,1)\ :\ A \textrm{ is nowhere dense}\right\}$. It is not hard to observe that $\I$ is isomorphic to $\textrm{NWD}(\Q)$. Set any infinite $A\in\I$ and define a function $f : \Q\cap (0,1) \to \Q\cap [0,1]$ such that $f\upharpoonright A$ is an arbitrary bijection between $A$ and $A\cup\{0,1\}$, and $f\upharpoonright A^C$ is an identity map on $A^C$.
 Then $f$ is an isomorphism between the ideals $\I$ and $\textrm{NWD}(\Q)$.
 \end{proof}
+
+-----------
+Suppose that $b\colon\N\to\Q$ is any fixed bijection.
+Let us recall that by $\mathrm{NDW}$ we denote the ideal of sets
+$A \subset \N$ such that $\mathit{cl}(\lbrace b(n)\colon n \in A\rbrace)$
+is a nowhere dense set.
+--------------
 
 \textbf{Remark:} Notice that one can easy see that the ideal $\textrm{NWD}(\Q)$ has the 
 $\mathcal{MBC}$ property. Indeed, let $b\colon \N \to \Q$
