@@ -43,7 +43,7 @@
 \newcommand{\INULL}{\I_\mathrm{NULL}}			  
 \newcommand{\cl}{\mathrm{cl}}
 \newcommand{\interior}{\mathrm{int}}
-
+\newcommand{\arithseq}[2]{\{#1n + #2\}}
 
 \title[Ideals of nowhere dense sets in some topologies on positive integers]{Ideals of nowhere dense sets in some topologies on positive integers}
 
@@ -64,8 +64,8 @@ We investigate the ideals of nowhere dense sets in three topologies on $\N$ (nam
 
 \section{Introduction}
 
-Let $\N$ denote the set of positive integers and $\N_0$ -- the set of non-negative integers. For all $a,b\in\N$ the symbol $\{an+b\}$ stands for the infinite arithmetic progression with the initial term $b$ and the difference $a$:
-$$\{an+b\} = \{an+b :\ n\in\N_0\} = \{b,\ b+a,\ b+2a,\ \ldots\}. $$
+Let $\N$ denote the set of positive integers and $\N_0$ -- the set of non-negative integers. Following \cite{K} for all $a,b\in\N$ the symbol $\arithseq{a}{b}$ stands for the infinite arithmetic progression with the initial term $b$ and the difference $a$:
+$$\arithseq{a}{b} = \{an+b :\ n\in\N_0\} = \{b,\ b+a,\ b+2a,\ \ldots\}. $$
 We use the symbol $(a,b)$ to denote the greatest common divisor of $a$ and $b$. 
 The letter $\mathbb{P}$ symbolizes the set of all prime numbers and $\Theta(a)$ stands for the set of all prime factors of $a\in\N$.
 By $\mathbb{SF}$ let us denote the set of \emph{square-free numbers} (i.e., numbers not divisible by any square greater than 1):
@@ -84,16 +84,16 @@ For other basic notions concerning set theory and topology see, e.g., \cite{Kech
 One can consider three topologies on $\N$:
 \begin{itemize}
 \item \emph{Furstenberg's topology} $\T_F$ \\
-			with the base $\B_F = \{\{an+b\} :\ b\leq a\}$,
+			with the base $\B_F = \{\arithseq{a}{b} :\ b\leq a\}$,
 \item \emph{Golomb's topology} $\T_G$ \\
-			with the base $\B_G = \{\{an+b\} :\ (a,b)=1,\ b<a\}$,
+			with the base $\B_G = \{\arithseq{a}{b} :\ (a,b)=1,\ b<a\}$,
 \item \emph{Kirch's topology} $\T_K$ \\
-			with the base $\B_K = \{\{an+b\} :\ (a,b)=1,\ b<a,\ a\in\SqrFr\}$.
+			with the base $\B_K = \{\arithseq{a}{b} :\ (a,b)=1,\ b<a,\ a\in\SqrFr\}$.
 \end{itemize}
 
 The topology $\T_F$ was introduced in 1955 by H. Furstenberg in \cite{F}. With its use he presented an elegant topological proof of the existence of infinitely many prime numbers. In 1959, S. Golomb in \cite{G} presented a similar proof using the topology $\T_G$ defined in 1953 by M. Brown in \cite{B}. In 1969, A. Kirch in \cite{K} defined the topology $\T_K$, weaker than the topology of Golomb. All of these topologies have recently been studied by P. Szczuka, e.g., in \cite{Szczuka1}, \cite{Szczuka2}, \cite{Szczuka3}.
 
-Actually, the Furstenberg's topology was originally defined on $\Z$, with the base consisting of all doubly infinite arithmetic progressions (from $-\infty$ to $+\infty$). It turned $\Z$ into a metrizable, zero-dimensional, and totally disconnected space. In this paper, in order to make our considerations more unified, we trim this topology to $\N$. Note that the main properties are preserved: being a Hausdorff, regular, and totally disconnected space is hereditary. $(\N,\T_F)$ also remains second-countable and thus, from the Tychonoff-Urysohn's metrization theorem, we get that the space is metrizable. The requirement that $b\leq a$ guarantees that every basic set is closed, so the space is still zero-dimensional.
+Actually, the Furstenberg's topology was originally defined on $\Z$, with the base consisting of all doubly infinite arithmetic progressions (from $-\infty$ to $+\infty$). It turned $\Z$ into a metrizable, zero-dimensional, and totally disconnected space. In this paper, in order to make our considerations more unified, we trim this topology to $\N$. Note that the main properties are preserved: being a Hausdorff, regular, and totally disconnected space is hereditary. $(\N,\T_F)$ also remains second-countable and thus, from the Tychonoff-Urysohn metrization theorem, we get that the space is metrizable. The requirement that $b\leq a$ guarantees that every basic set is closed, so the space is still zero-dimensional.
 
 The topologies of Golomb and Kirch both are Hausdorff but not regular, and connected -- however, $\T_G$ is not locally connected, as opposed to $\T_K$.
 
@@ -114,55 +114,58 @@ Obviously, in any (decent\footnote{\ The topology should have a base consisting 
 
 Let us say that a family $\mathcal{F} \subseteq \InfSubs$ has the \emph{splitting property} if for any $F \in \mathcal{F}$ one can find $F_1, F_2 \in \mathcal{F}$ such that $F_1 \cup F_2 \subseteq F$ and $F_1 \cap F_2 = \emptyset$. Notice that if a family $\mathcal{F}$ has the splitting property, then it also has the \emph{countable splitting property}, i.e., for any $F \in \mathcal{F}$ there exists an infinite countable family $\mathcal{G} \subseteq \mathcal{F}$ such that $\bigcup{\mathcal{G}} \subseteq F$ and the family $\mathcal{G}$ is pairwise disjoint.
 
-\begin{prop}
-The families $\B_F$, $\B_G$, and $\B_K$ have the splitting property.
-\end{prop}
-
-\begin{proof}
-For the case of the Furstenberg's topology it suffices to observe that for any $\{an + b\}\in\B_F$ we have: $\{2an + b\} \subseteq \{an + b\}$, $\{2an + a + b\} \subseteq \{an + b\}$, and $\{2an + b\} \cap \{2an + a + b\} = \emptyset$. Moreover, we assume that $b\leq a$, so $\{2an + b\}\in\B_F$ as $b\leq a \leq 2a$, and $\{2an + a + b\}\in\B_F$ as $a+b\leq a+a = 2a$.
-
-\begin{center}
-\begin{picture}(260,180)
-\put(0,0){\makebox(0,0){$\vdots$}}
-\put(0,10){\makebox(0,0){$\{16an+b\}$}}
-\put(100,10){\makebox(0,0){$\{16an+8a+b\}$}}
-\put(50,50){\makebox(0,0){$\{8an+b\}$}}
-\put(65,40){\vector(1,-1){20}}
-\put(35,40){\vector(-1,-1){20}}
-\put(150,50){\makebox(0,0){$\{8an+4a+b\}$}}
-\put(100,90){\makebox(0,0){$\{4an+b\}$}}
-\put(115,80){\vector(1,-1){20}}
-\put(85,80){\vector(-1,-1){20}}
-\put(200,90){\makebox(0,0){$\{4an+2a+b\}$}}
-\put(150,130){\makebox(0,0){$\{2an+b\}$}}
-\put(165,120){\vector(1,-1){20}}
-\put(135,120){\vector(-1,-1){20}}
-\put(250,130){\makebox(0,0){$\{2an+a+b\}$}}
-\put(200,170){\makebox(0,0){$\{an+b\}$}}
-\put(215,160){\vector(1,-1){20}}
-\put(185,160){\vector(-1,-1){20}}
-\end{picture}
-\end{center}
-\vspace{0.5cm}
-
-Observe also that the family $\{\{2^k an + 2^{k-1} a + b\} :\ k\in\N\}$ witnesses the countable splitting property.
-
-Now, let us consider the case of the Golomb's topology. For any $\{an + b\}\in\B_G$ we can choose such $p\in\mathbb{P}$ that $p\nmid b$ and $p\nmid a+b$. We have: $\{pan + b\} \subseteq \{an + b\}$, $\{pan + a + b\} \subseteq \{an + b\}$, and $\{pan + b\} \cap \{pan + a + b\} = \emptyset$ (if for some $n_1,n_2\in\N$ there would be $pan_1+b=pan_2+a+b$, then $pa(n_1-n_2)=a$, thus $p(n_1-n_2)=1$ -- a contradiction). Moreover, $\{pan + b\}\in\B_G$ as $(a,b)=1 \implies (pa,b)=1$, and $\{pan + a + b\}\in\B_G$ as $(a,b)=1 \implies (a,a+b)=1 \implies (pa,a+b)=1$.
-
-\begin{center}
-\begin{picture}(110,60)
-\put(0,0){\makebox(0,0){$\vdots$}}
-\put(0,10){\makebox(0,0){$\{pan+b\}$}}
-\put(100,10){\makebox(0,0){$\{pan+a+b\}$}}
-\put(50,50){\makebox(0,0){$\{an+b\}$}}
-\put(65,40){\vector(1,-1){20}}
-\put(35,40){\vector(-1,-1){20}}
-\end{picture}
-\end{center}
-\vspace{0.5cm}
-
-The case of the Kirch's topology is a slight modification of the previous construction. Now we additionally require that $p\nmid a$ (hence, as $a\in \SqrFr$, we also have $pa\in \SqrFr$).
-\end{proof}
+%%%%@@@ z uwagi na sugestie Recenzenta na razie (poki co) biore to
+%%% w komentarz, alisci jednak nalezy to przeanalizowac czy jednak mozna
+%%% to w jakos sposob wplesc w tresc pracy zadoscuczyniajac jednoczesnie Recenzentowi
+%\begin{prop}
+%The families $\B_F$, $\B_G$, and $\B_K$ have the splitting property.
+%\end{prop}
+%
+%\begin{proof}
+%For the case of the Furstenberg's topology it suffices to observe that for any $\arithseq{a}{b}\in\B_F$ we have: $\arithseq{2a}{b} \subseteq \arithseq{a}{b}$, $\arithseq{2an}{a + b} \subseteq \arithseq{a}{b}$, and $\arithseq{2a}{b} \cap \arithseq{2a}{a + b} = \emptyset$. Moreover, we assume that $b\leq a$, so $\arithseq{2a}{b}\in\B_F$ as $b\leq a \leq 2a$, and $\{2an + a + b\}\in\B_F$ as $a+b\leq a+a = 2a$.
+%
+%\begin{center}
+%\begin{picture}(260,180)
+%\put(0,0){\makebox(0,0){$\vdots$}}
+%\put(0,10){\makebox(0,0){$\{16an+b\}$}}
+%\put(100,10){\makebox(0,0){$\{16an+8a+b\}$}}
+%\put(50,50){\makebox(0,0){$\{8an+b\}$}}
+%\put(65,40){\vector(1,-1){20}}
+%\put(35,40){\vector(-1,-1){20}}
+%\put(150,50){\makebox(0,0){$\{8an+4a+b\}$}}
+%\put(100,90){\makebox(0,0){$\{4an+b\}$}}
+%\put(115,80){\vector(1,-1){20}}
+%\put(85,80){\vector(-1,-1){20}}
+%\put(200,90){\makebox(0,0){$\{4an+2a+b\}$}}
+%\put(150,130){\makebox(0,0){$\{2an+b\}$}}
+%\put(165,120){\vector(1,-1){20}}
+%\put(135,120){\vector(-1,-1){20}}
+%\put(250,130){\makebox(0,0){$\{2an+a+b\}$}}
+%\put(200,170){\makebox(0,0){$\{an+b\}$}}
+%\put(215,160){\vector(1,-1){20}}
+%\put(185,160){\vector(-1,-1){20}}
+%\end{picture}
+%\end{center}
+%\vspace{0.5cm}
+%
+%Observe also that the family $\{\{2^k an + 2^{k-1} a + b\} :\ k\in\N\}$ witnesses the countable splitting property.
+%
+%Now, let us consider the case of the Golomb's topology. For any $\{an + b\}\in\B_G$ we can choose such $p\in\mathbb{P}$ that $p\nmid b$ and $p\nmid a+b$. We have: $\{pan + b\} \subseteq \{an + b\}$, $\{pan + a + b\} \subseteq \{an + b\}$, and $\{pan + b\} \cap \{pan + a + b\} = \emptyset$ (if for some $n_1,n_2\in\N$ there would be $pan_1+b=pan_2+a+b$, then $pa(n_1-n_2)=a$, thus $p(n_1-n_2)=1$ -- a contradiction). Moreover, $\{pan + b\}\in\B_G$ as $(a,b)=1 \implies (pa,b)=1$, and $\{pan + a + b\}\in\B_G$ as $(a,b)=1 \implies (a,a+b)=1 \implies (pa,a+b)=1$.
+%
+%\begin{center}
+%\begin{picture}(110,60)
+%\put(0,0){\makebox(0,0){$\vdots$}}
+%\put(0,10){\makebox(0,0){$\{pan+b\}$}}
+%\put(100,10){\makebox(0,0){$\{pan+a+b\}$}}
+%\put(50,50){\makebox(0,0){$\{an+b\}$}}
+%\put(65,40){\vector(1,-1){20}}
+%\put(35,40){\vector(-1,-1){20}}
+%\end{picture}
+%\end{center}
+%\vspace{0.5cm}
+%
+%The case of the Kirch's topology is a slight modification of the previous construction. Now we additionally require that $p\nmid a$ (hence, as $a\in \SqrFr$, we also have $pa\in \SqrFr$).
+%\end{proof}
 
 \begin{prop} \label{remH}
 The base for any Hausdorff topology $\T$ without isolated points has the splitting property.
@@ -172,6 +175,11 @@ The base for any Hausdorff topology $\T$ without isolated points has the splitti
 Let $\B$ be the base for the topology $\T$. Take any $B\in\B$ and two different points $x,y\in B$. As $\T$ is Hausdorff, there exist two open sets $V,W\in\T$ such that $x\in V$, $y\in W$, and $V\cap W = \emptyset$. Let $V':=B\cap V$, $W':=B\cap W$. $V'$ and $W'$ are open, so each of them contains a basic set: $B_{V'}$ and $B_{W'}$, respectively. Now, it is clear that $B_{V'}\cup B_{W'}\subseteq B$ and $B_{V'}\cap B_{W'}=\emptyset$.
 \end{proof}
 
+As an immediate consequence we obtain
+
+\begin{cor}
+The families $\B_F$, $\B_G$, and $\B_K$ have the splitting property.
+\end{cor}
 
 \section{Properties of the three ideals}\label{examples}
 
@@ -182,10 +190,10 @@ The set $A = \{n! :\ n\in\N\}$ belongs to $\I_F$, $\I_G$, and $\I_K$.
 \end{ex}
 
 \begin{proof}
-We need to show that for any $\{an+b\} \in \B_F$ there exists $\{cn+d\} \in \B_F$ with $\{cn+d\} \subseteq \{an+b\}$, such that $\{cn+d\}\cap A = \emptyset$. Let us fix $\{an+b\} \in \B_F$. Note that in the set $A$ all but finitely many elements (for $n\geq a$) are divisible by $a$. Consider the two cases:
+We need to show that for any $\arithseq{a}{b} \in \B_F$ there exists $\arithseq{c}{d} \in \B_F$ with $\arithseq{c}{d} \subseteq \arithseq{a}{b}$, such that $\arithseq{c}{d}\cap A = \emptyset$. Let us fix $\arithseq{a}{b} \in \B_F$. Note that in the set $A$ all but finitely many elements (for $n\geq a$) are divisible by $a$. Consider the two cases:
 \begin{itemize}
- \item[(i)] $b\neq a$. Set $s:= \min \{n :\ an+b>a!\}$. Take $\{cn+d\} := \{a(s+1)n+as+b\} \subseteq \{an+b\}$. Since $as+b\leq as+a = a(s+1)$, we know that $\{cn+d\}\in \B_F$. Moreover, $as+b>a!$ and all elements of $\{cn+d\}$ are not divisible by $a$, so $\{cn+d\}\cap A = \emptyset$.
- \item[(ii)] $b=a$. Then $\{an+b\} = \{an+a\}$, and we can "split" it into two disjoint subsets: $\{an+a\} = \{2an+a\}\cup \{2an+2a\}$. In the set $A$ all but finitely many elements (for $n\geq 2a$) are divisible by $2a$, so almost all elements belong to $\{2an+2a\}$. Set $s:= \min \{n :\ 2an+a>(2a)!\}$. Take $\{cn+d\} := \{2a(s+1)n+2as+a\} \subseteq \{an+a\}$. Since $2as+a\leq 2as+2a = 2a(s+1)$, we know that $\{cn+d\}\in \B_F$. Moreover, $2as+a>(2a)!$ and all elements of $\{cn+d\}$ are not divisible by $2a$, so $\{cn+d\}\cap A = \emptyset$.
+ \item[(i)] $b\neq a$. Set $s:= \min \{n :\ an+b>a!\}$. Take $\arithseq{c}{d} := \arithseq{a(s+1)}{as+b}\subseteq \arithseq{a}{b}$. Since $as+b\leq as+a = a(s+1)$, we know that $\arithseq{c}{d}\in \B_F$. Moreover, $as+b>a!$ and all elements of $\arithseq{c}{d}$ are not divisible by $a$, so $\arithseq{c}{d}\cap A = \emptyset$.
+ \item[(ii)] $b=a$. Then $\arithseq{a}{b} = \arithseq{a}{a}$, and we can "split" it into two disjoint subsets: $\{an+a\} = \{2an+a\}\cup \{2an+2a\}$. In the set $A$ all but finitely many elements (for $n\geq 2a$) are divisible by $2a$, so almost all elements belong to $\{2an+2a\}$. Set $s:= \min \{n :\ 2an+a>(2a)!\}$. Take $\{cn+d\} := \{2a(s+1)n+2as+a\} \subseteq \{an+a\}$. Since $2as+a\leq 2as+2a = 2a(s+1)$, we know that $\{cn+d\}\in \B_F$. Moreover, $2as+a>(2a)!$ and all elements of $\{cn+d\}$ are not divisible by $2a$, so $\{cn+d\}\cap A = \emptyset$.
 \end{itemize}
 
 Note that instead we could have used the fact that the Furstenberg's topology is Hausdorff. The crucial observation is that all but finitely many elements from the set $A$ are divisible by some constant $a$. Since all singleton sets are closed, $\{an+b\}$ without finitely many points is open and disjoint from $A$ for $b<a$ (case (i)), hence it contains a basic set disjoint from $A$. Case (ii) uses the splitting property, which also follows from $\T_F$ being Hausdorff (see Proposition \ref{remH}).
@@ -208,8 +216,10 @@ Firstly, note that the set of squareful numbers is open in $\T_F$ as it is equal
 Let us observe that in every arithmetic progression one can find a squareful number. Indeed, for an arbitrary arithmetic progression $\{an+b\}$ (with $a,b\in\N$) put $n_0 := a^2 +ab+2a+2b+1$. 
 Then,
 $$an_0 +b = a(a^2 +ab+2a+2b+1)+b = a((a+1)(a+b+1)+b)+b = $$
-$$= a(a+1)(a+b+1)+(a+1)b = (a+1)(a(a+b+1)+b) =$$
-$$= (a+1)(a(a+1)+b(a+1))= (a+1)^2 (a+b),$$
+%%%@@@ ponizsze dwie linijki wyliczenia zamaskowane ze wzgledu na sugestie Recenzenta
+%%%$$= a(a+1)(a+b+1)+(a+1)b = (a+1)(a(a+b+1)+b) =$$
+%%%$$= (a+1)(a(a+1)+b(a+1))=$$
+$$ (a+1)^2 (a+b),$$
 which is always a squareful number, because $a+1  \neq 1$. Hence, no arithmetic progression (and, in particular, no set from $\B_F$) can be contained in $\SqrFr$, which proves that $\SqrFr$ has empty interior, and thus it is nowhere dense in $\T_F$.
 
 The density of $\SqrFr$ in $\T_G$ and $\T_K$ follows from the fact that $\mathbb{P}\subseteq \SqrFr$ and $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (hence so is every its superset).
