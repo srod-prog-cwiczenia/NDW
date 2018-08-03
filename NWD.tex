@@ -193,10 +193,10 @@ The set $A = \{n! :\ n\in\N\}$ belongs to $\I_F$, $\I_G$, and $\I_K$.
 We need to show that for any $\arithseq{a}{b} \in \B_F$ there exists $\arithseq{c}{d} \in \B_F$ with $\arithseq{c}{d} \subseteq \arithseq{a}{b}$, such that $\arithseq{c}{d}\cap A = \emptyset$. Let us fix $\arithseq{a}{b} \in \B_F$. Note that in the set $A$ all but finitely many elements (for $n\geq a$) are divisible by $a$. Consider the two cases:
 \begin{itemize}
  \item[(i)] $b\neq a$. Set $s:= \min \{n :\ an+b>a!\}$. Take $\arithseq{c}{d} := \arithseq{a(s+1)}{as+b}\subseteq \arithseq{a}{b}$. Since $as+b\leq as+a = a(s+1)$, we know that $\arithseq{c}{d}\in \B_F$. Moreover, $as+b>a!$ and all elements of $\arithseq{c}{d}$ are not divisible by $a$, so $\arithseq{c}{d}\cap A = \emptyset$.
- \item[(ii)] $b=a$. Then $\arithseq{a}{b} = \arithseq{a}{a}$, and we can "split" it into two disjoint subsets: $\{an+a\} = \{2an+a\}\cup \{2an+2a\}$. In the set $A$ all but finitely many elements (for $n\geq 2a$) are divisible by $2a$, so almost all elements belong to $\{2an+2a\}$. Set $s:= \min \{n :\ 2an+a>(2a)!\}$. Take $\{cn+d\} := \{2a(s+1)n+2as+a\} \subseteq \{an+a\}$. Since $2as+a\leq 2as+2a = 2a(s+1)$, we know that $\{cn+d\}\in \B_F$. Moreover, $2as+a>(2a)!$ and all elements of $\{cn+d\}$ are not divisible by $2a$, so $\{cn+d\}\cap A = \emptyset$.
+ \item[(ii)] $b=a$. Then $\arithseq{a}{b} = \arithseq{a}{a}$, and we can "split" it into two disjoint subsets: $\arithseq{a}{a} = \arithseq{2a}{a}\cup \arithseq{2a}{2a}$. In the set $A$ all but finitely many elements (for $n\geq 2a$) are divisible by $2a$, so almost all elements belong to $\arithseq{2a}{2a}$. Set $s:= \min \{n :\ 2an+a>(2a)!\}$. Take $\arithseq{c}{d} := \arithseq{2a(s+1)}{2as+a}\subseteq \arithseq{a}{a}$. Since $2as+a\leq 2as+2a = 2a(s+1)$, we know that $\arithseq{c}{d}\in \B_F$. Moreover, $2as+a>(2a)!$ and all elements of $\arithseq{c}{d}$ are not divisible by $2a$, so $\arithseq{c}{d}\cap A = \emptyset$.
 \end{itemize}
 
-Note that instead we could have used the fact that the Furstenberg's topology is Hausdorff. The crucial observation is that all but finitely many elements from the set $A$ are divisible by some constant $a$. Since all singleton sets are closed, $\{an+b\}$ without finitely many points is open and disjoint from $A$ for $b<a$ (case (i)), hence it contains a basic set disjoint from $A$. Case (ii) uses the splitting property, which also follows from $\T_F$ being Hausdorff (see Proposition \ref{remH}).
+Note that instead we could have used the fact that the Furstenberg's topology is Hausdorff. The crucial observation is that all but finitely many elements from the set $A$ are divisible by some constant $a$. Since all singleton sets are closed, $\arithseq{a}{b}$ without finitely many points is open and disjoint from $A$ for $b<a$ (case (i)), hence it contains a basic set disjoint from $A$. Case (ii) uses the splitting property, which also follows from $\T_F$ being Hausdorff (see Proposition \ref{remH}).
 
 Thus, the proof for $\I_G$ and $\I_K$ (both $\T_G$ and $\T_K$ are also Hausdorff) goes similarly (in basic sets of these topologies we assume that $b<a$, so we only need to consider case (i)).
 \end{proof}
@@ -213,7 +213,7 @@ $\SqrFr\in \I_F$, but $\SqrFr$ is dense in $\T_G$ and $\T_K$ (therefore it does 
 
 \begin{proof}
 Firstly, note that the set of squareful numbers is open in $\T_F$ as it is equal to the sum $\bigcup_{p\in\mathbb{P}}{\{p^2 n+p^2\}}$ of arithmetic progressions belonging to $\B_F$. Thus, the set $\SqrFr$ is closed as a complement of an open set (and hence it is equal to its closure). It suffices to show that $\SqrFr$ has empty interior.\\
-Let us observe that in every arithmetic progression one can find a squareful number. Indeed, for an arbitrary arithmetic progression $\{an+b\}$ (with $a,b\in\N$) put $n_0 := a^2 +ab+2a+2b+1$. 
+Let us observe that in every arithmetic progression one can find a squareful number. Indeed, for an arbitrary arithmetic progression $\arithseq{a}{b}$ (with $a,b\in\N$) put $n_0 := a^2 +ab+2a+2b+1$. 
 Then,
 $$an_0 +b = a(a^2 +ab+2a+2b+1)+b = a((a+1)(a+b+1)+b)+b = $$
 %%%@@@ ponizsze dwie linijki wyliczenia zamaskowane ze wzgledu na sugestie Recenzenta
@@ -222,7 +222,7 @@ $$an_0 +b = a(a^2 +ab+2a+2b+1)+b = a((a+1)(a+b+1)+b)+b = $$
 $$ (a+1)^2 (a+b),$$
 which is always a squareful number, because $a+1  \neq 1$. Hence, no arithmetic progression (and, in particular, no set from $\B_F$) can be contained in $\SqrFr$, which proves that $\SqrFr$ has empty interior, and thus it is nowhere dense in $\T_F$.
 
-The density of $\SqrFr$ in $\T_G$ and $\T_K$ follows from the fact that $\mathbb{P}\subseteq \SqrFr$ and $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (hence so is every its superset).
+The density of $\SqrFr$ in $\T_G$ and $\T_K$ follows from the fact that $\mathbb{P}\subseteq \SqrFr$ and $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (hence so is every superset of $\mathbb{P}$).
 \end{proof}
 
 \begin{ex} \label{even}
@@ -230,19 +230,19 @@ The set of even numbers $\{2n+2\}$ is in $\I_G$ and $\I_K$, but it belongs to th
 \end{ex}
 
 \begin{proof}
-We need to show that for any $\{an+b\} \in \B_G$ there exists $\{cn+d\} \in \B_G$ with $\{cn+d\} \subseteq \{an+b\}$, such that $\{cn+d\}\cap \{2n+2\} = \emptyset$. Let us fix $\{an+b\} \in \B_G$ (we assume that $(a,b)=1$ and $b<a$) and consider the two cases:
+We need to show that for any $\arithseq{a}{b} \in \B_G$ there exists $\arithseq{c}{d} \in \B_G$ with $\arithseq{c}{d} \subseteq \arithseq{a}{b}$, such that $\arithseq{c}{d} \cap \arithseq{2}{2} = \emptyset$. Let us fix $\arithseq{a}{b} \in \B_G$ (we assume that $(a,b)=1$ and $b<a$) and consider the two cases:
 \begin{itemize}
- \item[(i)] $2\mid b$. Then $2 \nmid a$ (otherwise, $a$ and $b$ would not be coprime). Take $\{cn+d\} := \{2an+a+b\}$. As $(a,b)=1$, we know that $(a,a+b)=1$, and as $2 \nmid a$, we have $(2a,a+b)=1$. Thus, $\{2an+a+b\}\in\B_G$ and $\{2an+a+b\}\subseteq\{an+b\}$. Moreover, $\{2an+a+b\}$ consists only of odd numbers, so $\{2an+a+b\}\cap \{2n+2\} = \emptyset$.
- \item[(ii)] $2\nmid b$. Take $\{cn+d\} := \{2an+b\}$. As $2\nmid b$, we have $(2a,b)=1$. Thus, $\{2an+b\}\in\B_G$ and $\{2an+b\}\subseteq\{an+b\}$. Moreover, $\{2an+b\}$ consists only of odd numbers, so $\{2an+b\}\cap \{2n+2\} = \emptyset$.
+ \item[(i)] $2\mid b$. Then $2 \nmid a$ (otherwise, $a$ and $b$ would not be coprime). Take $\arithseq{c}{d} := \arithseq{2a}{a+b}$. As $(a,b)=1$, we know that $(a,a+b)=1$, and as $2 \nmid a$, we have $(2a,a+b)=1$. Thus, $\arithseq{2a}{a+b}\in\B_G$ and $\arithseq{2a}{a+b}\subseteq\arithseq{a}{b}$. Moreover, $\arithseq{2a}{a+b}$ consists only of odd numbers, so $\arithseq{2a}{a+b}\cap \arithseq{2}{2} = \emptyset$.
+ \item[(ii)] $2\nmid b$. Take $\arithseq{c}{d} := \arithseq{2a}{b}$. As $2\nmid b$, we have $(2a,b)=1$. Thus, $\arithseq{2a}{b}\in\B_G$ and $\arithseq{2a}{b}\subseteq\arithseq{a}{b}$. Moreover, $\arithseq{2a}{b}$ consists only of odd numbers, so $\arithseq{2a}{b}\cap \arithseq{2}{2} = \emptyset$.
 \end{itemize}
 
-The proof for $\I_K$ goes similarly. In item (i) we additionally need to observe that if $2 \nmid a$ and $a$ is square-free, then $2a$ will also be square-free. In item (ii), if $2 \nmid a$, we use the same argument as above, and if $2\mid a$, we take $\{cn+d\} := \{an+b\}$ as it is already disjoint from the set of even numbers $\{2n+2\}$.
+The proof for $\I_K$ goes similarly. In item (i) we additionally need to observe that if $2 \nmid a$ and $a$ is square-free, then $2a$ will also be square-free. In item (ii), if $2 \nmid a$, we use the same argument as above, and if $2\mid a$, we take $\arithseq{c}{d} := \arithseq{a}{b}$ as it is already disjoint from the set of even numbers $\arithseq{2}{2}$.
 \end{proof}
 
 The proof of the previous result can easily be generalized for sets of multiples of any prime number, as follows:
 
 \begin{ex} 
-For any $p\in\mathbb{P}$ we have $\{pn+p\}\in \I_G \cap \I_K \setminus \I_F$.
+For any $p\in\mathbb{P}$ we have $\arithseq{p}{p}\in \I_G \cap \I_K \setminus \I_F$.
 \end{ex}
 
 \begin{cor}
@@ -254,22 +254,22 @@ Now, let us investigate a relation between the ideals of Golomb and Kirch.
 While searching for an example distinguishing these ideals, at first we have obtained a partial result, suggesting that an example of a set witnessing the lack of inclusion between them cannot be found among the sets from $\B_G \setminus \B_K$:
 
 \begin{prop}
-Every set of the form $\{2sn+q\}$, where $s \in\SqrFr$, $2\mid s$, $(s,q)=1$, and $q<s$, is in $\B_G$ but not in $\B_K$, but it does not belong to $\I_K$.
+Every set of the form $\arithseq{2s}{q}$, where $s \in\SqrFr$, $2\mid s$, $(s,q)=1$, and $q<s$, is in $\B_G$ but not in $\B_K$, but it does not belong to $\I_K$.
 \end{prop}
 
 \begin{proof}
-Let us first observe that $\{2sn+q\}$, as defined above, satisfies $(2s,q)=1$ and $q<2s$ -- therefore it is in $\B_G$. Moreover, $2s$ is not square-free, so it cannot be in $\B_K$.
-Now, we want to show that there exists $\{an+b\}\in \B_K$ such that for every $\{cn+d\}\subseteq \{an+b\}$ with $\{cn+d\}\in \B_K$ we have $\{cn+d\}\cap \{2sn+q\} \neq \emptyset$. Let $\{an+b\} := \{sn+q\}$ (it belongs to $\B_K$ since $s\in\SqrFr$, $(s,q)=1$, and $q<s$). Take any $\{cn+d\}\subseteq \{sn+q\}$ with $\{cn+d\}\in \B_K$ -- we then know that $c\in\SqrFr$. Suppose that $\{cn+d\}\cap \{2sn+q\} = \emptyset$. As $\{cn+d\}\subseteq \{sn+q\}$ and $\{sn+q\} \setminus \{2sn+q\} = \{2sn+q+s\}$, it means that $\{cn+d\}\subseteq \{2sn+q+s\}$ -- but then $2s$ must divide $c$, which hence cannot be square-free. A contradiction ends the proof.
+Let us first observe that $\arithseq{2s}{q}$, as defined above, satisfies $(2s,q)=1$ and $q<2s$ -- therefore it is in $\B_G$. Moreover, $2s$ is not square-free, so it cannot be in $\B_K$.
+Now, we want to show that there exists $\arithseq{a}{b}\in \B_K$ such that for every $\arithseq{c}{d}\subseteq \arithseq{a}{b}$ with $\arithseq{c}{d}\in \B_K$ we have $\arithseq{c}{d}\cap \arithseq{2s}{q} \neq \emptyset$. Let $\arithseq{a}{b} := \arithseq{s}{q}$ (it belongs to $\B_K$ since $s\in\SqrFr$, $(s,q)=1$, and $q<s$). Take any $\arithseq{c}{d}\subseteq \arithseq{s}{q}$ with $\arithseq{c}{d}\in \B_K$ -- we then know that $c\in\SqrFr$. Suppose that $\arithseq{c}{d}\cap \arithseq{2s}{q} = \emptyset$. As $\arithseq{c}{d}\subseteq \arithseq{s}{q}$ and $\arithseq{s}{q} \setminus \arithseq{2s}{q} = \arithseq{2s}{q+s}$, it means that $\arithseq{c}{d}\subseteq \arithseq{2s}{q+s}$ -- but then $2s$ must divide $c$, which hence cannot be square-free. A contradiction ends the proof.
 \end{proof}
 
 Eventually, we managed to prove an inclusion between the ideals of Golomb and Kirch -- however, it turns out that they are not the same. These results will be shown in the next two theorems. In their proofs we will use a technical lemma:
  
 \begin{lem} \label{lemCRT}
-Assume that $a,b,a_1,b_1,a_2,b_2 \in\N$. If $\{a_1 n+b_1\}\subseteq \{an+b\}$, $\{a_2 n+b_2\}\subseteq \{an+b\}$, and $\left(\frac{a_1}{a},\frac{a_2}{a}\right)=1$, then the intersection $\{a_1 n+b_1\}\cap\{a_2 n+b_2\}$ is nonempty (and hence it is an arithmetic progression). 
+Assume that $a,b,a_1,b_1,a_2,b_2 \in\N$. If $\{a_1 n+b_1\}\subseteq \arithseq{a}{b}$, $\arithseq{a_2}{b_2}\subseteq \arithseq{a}{b}$, and $\left(\frac{a_1}{a},\frac{a_2}{a}\right)=1$, then the intersection $\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2}$ is nonempty (and hence it is an arithmetic progression). 
 \end{lem}
 
 \begin{proof}
-Let $f\colon\N\to \{an+b\}$ be a bijection such that $f(n) = an+b$. Then: 
+Let $f\colon\N\to \arithseq{a}{b}$ be a bijection such that $f(n) = an+b$. Then: 
 $$f^{-1}[\{a_1 n+b_1\}] = \left\{\frac{a_1}{a} n+\frac{b_1-b}{a}\right\},\ \ \ f^{-1}[\{a_2 n+b_2\}] = \left\{\frac{a_2}{a} n+\frac{b_2-b}{a}\right\},$$
 and since $\left(\frac{a_1}{a},\frac{a_2}{a}\right)=1$, the Chinese remainder theorem guarantees that their intersection is nonempty. Thus,
 $$f^{-1}[\{a_1 n+b_1\}\cap\{a_2 n+b_2\}] = f^{-1}[\{a_1 n+b_1\}]\cap f^{-1}[\{a_2 n+b_2\}]\neq\emptyset,$$
@@ -283,12 +283,12 @@ $\I_K \subseteq \I_G$.
 
 \begin{proof}
 We will show that $X \not\in \I_G \implies X \not\in \I_K$.\\
-Suppose that $X \not\in \I_G$. Then there exists $\{an+b\}\in \B_G$ such that for every $\{cn+d\}\subseteq \{an+b\}$ with $\{cn+d\}\in \T_G\setminus\{\emptyset\}$ we have $X\cap \{cn+d\} \neq \emptyset$.
-We need to show that there exists $\{a'n+b'\}\in \B_K$ such that for every $\{c'n+d'\}\subseteq \{a'n+b'\}$ with $\{c'n+d'\}\in \B_K$ we have $X\cap \{c'n+d'\} \neq \emptyset$.
-Let $a' := \prod_{p\in\Theta(a)}{p}$ (i.e., the "square-free part" of $a$) and $b' := b \mod a'$. Then, $\{a'n+b'\} \in \B_K$ since $a' \in \SqrFr$, $(a',b') = 1$ (as $(a,b) = 1$), and $b'<a'$.
-Take any $\{c'n+d'\} \subseteq \{a'n+b'\}$ with $\{c'n+d'\}\in \B_K$ (then $c' \in \SqrFr$, $(c',d')=1$, $d'<c'$, and $a'\mid c'$).
-Note that $\{an+b\}\subseteq \{a'n+b'\}$, $\{c'n+d'\}\subseteq \{a'n+b'\}$, and observe that $\left(\frac{a}{a'}, \frac{c'}{a'}\right) = 1$ -- the only prime factors of $\frac{a}{a'}$ are those that have already appeared in the factorization of $a'$, whereas all prime factors of $\frac{c'}{a'}$ must be different from the prime factors of $a'$ since $c'$ is square-free. 
-Hence, $A:= \{an+b\}\cap\{c'n+d'\} \neq \emptyset$ (by Lemma \ref{lemCRT}). Moreover, $A$ is an arithmetic progression, it belongs to $\T_G$ (as an intersection of two open sets in the Golomb's topology), and, obviously, $A \subseteq \{an+b\}$. From the assumption we know that $X\cap A \neq \emptyset$. Since we also have that $A \subseteq \{c'n+d'\}$, it is clear that $X\cap \{c'n+d'\} \neq \emptyset$.
+Suppose that $X \not\in \I_G$. Then there exists $\arithseq{a}{b}\in \B_G$ such that for every $\arithseq{c}{d}\subseteq \arithseq{a}{b}$ with $\arithseq{c}{d}\in \T_G\setminus\{\emptyset\}$ we have $X\cap \arithseq{c}{d} \neq \emptyset$.
+We need to show that there exists $\arithseq{a'}{b'}\in \B_K$ such that for every $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$ with $\arithseq{c'}{d'}\in \B_K$ we have $X\cap \arithseq{c'}{d'} \neq \emptyset$.
+Let $a' := \prod_{p\in\Theta(a)}{p}$ (i.e., the "square-free part" of $a$) and $b' := b \mod a'$. Then, $\arithseq{a'}{b'} \in \B_K$ since $a' \in \SqrFr$, $(a',b') = 1$ (as $(a,b) = 1$), and $b'<a'$.
+Take any $\arithseq{c'}{d'} \subseteq \arithseq{a'}{b'}$ with $\arithseq{c'}{d'}\in \B_K$ (then $c' \in \SqrFr$, $(c',d')=1$, $d'<c'$, and $a'\mid c'$).
+Note that $\arithseq{a}{b}\subseteq \arithseq{a'}{b'}$, $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$, and observe that $\left(\frac{a}{a'}, \frac{c'}{a'}\right) = 1$ -- the only prime factors of $\frac{a}{a'}$ are those that have already appeared in the factorization of $a'$, whereas all prime factors of $\frac{c'}{a'}$ must be different from the prime factors of $a'$ since $c'$ is square-free. 
+Hence, $A:= \arithseq{a}{b}\cap\arithseq{c'}{d'} \neq \emptyset$ (by Lemma \ref{lemCRT}). Moreover, $A$ is an arithmetic progression, it belongs to $\T_G$ (as an intersection of two open sets in the Golomb's topology), and, obviously, $A \subseteq \arithseq{a}{b}$. From the assumption we know that $X\cap A \neq \emptyset$. Since we also have that $A \subseteq \arithseq{c'}{d'}$, it is clear that $X\cap \arithseq{c'}{d'} \neq \emptyset$.
 \end{proof}
 
 \begin{thm}
@@ -296,13 +296,13 @@ $\I_G \not\subseteq \I_K$.
 \end{thm}
 
 \begin{proof}
-Define $\mathcal{C} := \{\{an+b\}\in \B_K :\ \{an+b\}\subseteq \{2n+1\}\}$. Let $\{C_k :\ k\in\N\}$ be an enumeration of $\mathcal{C}$.
+Define $\mathcal{C} := \{\arithseq{a}{b}\in \B_K :\ \arithseq{a}{b}\subseteq \arithseq{2}{1}\}$. Let $\{C_k :\ k\in\N\}$ be an enumeration of $\mathcal{C}$.
 We will construct a set $X \in \I_G \setminus \I_K$. For every $k\in\N$ pick $x_k$ such that:
 \begin{itemize}
 	\item $x_k\in C_k$,
-	\item $x_k\in \{2^k n+1\}$.
+	\item $x_k\in \arithseq{2^k}{1}$.
 \end{itemize}
-Observe that such construction is possible since $C_k \cap \{2^k n+1\}$ is always nonempty (if $C_k = \{a_k n+b_k\}$, then $a_k$ is even and square-free, and $\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ as $\frac{a_k}{2}$ is odd; both $\{a_k n+b_k\}$ and $\{2^k n+1\}$ are subsequences of $\{2n+1\}$, so, by Lemma \ref{lemCRT}, their intersection is nonempty). Let $X := \{x_k :\ k\in\N\}$.
+Observe that such construction is possible since $C_k \cap \arithseq{2^k}{1}$ is always nonempty (if $C_k = \arithseq{a_k}{b_k}$, then $a_k$ is even and square-free, and $\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ as $\frac{a_k}{2}$ is odd; both $\arithseq{a_k}{b_k}$ and $\{2^k n+1\}$ are subsequences of $\arithseq{2}{1}$, so, by Lemma \ref{lemCRT}, their intersection is nonempty). Let $X := \{x_k :\ k\in\N\}$.
 Firstly, note that $X \notin \I_K$. Indeed, the set $\{2n+1\}\in\B_K$ has a property that for every $\{cn+d\}\subseteq \{2n+1\}$ with $\{cn+d\}\in \B_K$ (so $\{cn+d\}=C_{k_0}$ for some $k_0\in\N$) we have $X\cap \{cn+d\} \neq \emptyset$ (as it contains $x_{k_0}$).
 Now, we will prove that $X \in \I_G$. Take any $\{an+b\}\in\B_G$. We want to show that there exists $V\subseteq \{an+b\}$ with $V\in \T_G\setminus\{\emptyset\}$, such that $X\cap V = \emptyset$. \\
 Assume that $2\nmid a$. Let $V := (\{an+b\} \cap \{4n+3\})\setminus\{x_1\}$. $V$ is open in $\T_G$ (as a difference of an open set and a closed set) and nonempty (because $(a,4)=1$). Moreover, for every $k\geq 2$ we have that $x_k\in \{4n+1\}$, which is disjoint from $\{4n+3\}$, and hence $X\cap V = \emptyset$.
