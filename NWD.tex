@@ -43,7 +43,9 @@
 \newcommand{\INULL}{\I_\mathrm{NULL}}			  
 \newcommand{\cl}{\mathrm{cl}}
 \newcommand{\interior}{\mathrm{int}}
-\newcommand{\arithseq}[2]{\{#1n + #2\}}
+%%%@@@ stara wersja oznaczenia, a ponizej nowa:
+%%%\newcommand{\arithseq}[2]{\{#1n + #2\}}
+\newcommand{\arithseq}[2]{\langle#2, #1\rangle}
 
 \title[Ideals of nowhere dense sets in some topologies on positive integers]{Ideals of nowhere dense sets in some topologies on positive integers}
 
@@ -168,11 +170,11 @@ Let us say that a family $\mathcal{F} \subseteq \InfSubs$ has the \emph{splittin
 %\end{proof}
 
 \begin{prop} \label{remH}
-The base for any Hausdorff topology $\T$ without isolated points has the splitting property.
+Any base for any Hausdorff topology $\T$ without isolated points has the splitting property.
 \end{prop}
 
 \begin{proof}
-Let $\B$ be the base for the topology $\T$. Take any $B\in\B$ and two different points $x,y\in B$. As $\T$ is Hausdorff, there exist two open sets $V,W\in\T$ such that $x\in V$, $y\in W$, and $V\cap W = \emptyset$. Let $V':=B\cap V$, $W':=B\cap W$. $V'$ and $W'$ are open, so each of them contains a basic set: $B_{V'}$ and $B_{W'}$, respectively. Now, it is clear that $B_{V'}\cup B_{W'}\subseteq B$ and $B_{V'}\cap B_{W'}=\emptyset$.
+Let $\B$ be a base for the topology $\T$. Take any $B\in\B$ and two different points $x,y\in B$. As $\T$ is Hausdorff, there exist two open sets $V,W\in\T$ such that $x\in V$, $y\in W$, and $V\cap W = \emptyset$. Let $V':=B\cap V$, $W':=B\cap W$. $V'$ and $W'$ are open, so each of them contains a basic set: $B_{V'}$ and $B_{W'}$, respectively. Now, it is clear that $B_{V'}\cup B_{W'}\subseteq B$ and $B_{V'}\cap B_{W'}=\emptyset$.
 \end{proof}
 
 As an immediate consequence we obtain
@@ -225,8 +227,24 @@ which is always a squareful number, because $a+1  \neq 1$. Hence, no arithmetic 
 The density of $\SqrFr$ in $\T_G$ and $\T_K$ follows from the fact that $\mathbb{P}\subseteq \SqrFr$ and $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (hence so is every superset of $\mathbb{P}$).
 \end{proof}
 
+%%%%%%@@@ przeniesione nad Example 2.4 (czyli ten example ponizej)- poczatek fragmentu
+\begin{thm}
+$\I_K \subseteq \I_G$.
+\end{thm}
+
+\begin{proof}
+We will show that $X \not\in \I_G \implies X \not\in \I_K$.\\
+Suppose that $X \not\in \I_G$. Then there exists $\arithseq{a}{b}\in \B_G$ such that for every $\arithseq{c}{d}\subseteq \arithseq{a}{b}$ with $\arithseq{c}{d}\in \T_G\setminus\{\emptyset\}$ we have $X\cap \arithseq{c}{d} \neq \emptyset$.
+We need to show that there exists $\arithseq{a'}{b'}\in \B_K$ such that for every $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$ with $\arithseq{c'}{d'}\in \B_K$ we have $X\cap \arithseq{c'}{d'} \neq \emptyset$.
+Let $a' := \prod_{p\in\Theta(a)}{p}$ (i.e., the "square-free part" of $a$) and $b' := b \mod a'$. Then, $\arithseq{a'}{b'} \in \B_K$ since $a' \in \SqrFr$, $(a',b') = 1$ (as $(a,b) = 1$), and $b'<a'$.
+Take any $\arithseq{c'}{d'} \subseteq \arithseq{a'}{b'}$ with $\arithseq{c'}{d'}\in \B_K$ (then $c' \in \SqrFr$, $(c',d')=1$, $d'<c'$, and $a'\mid c'$).
+Note that $\arithseq{a}{b}\subseteq \arithseq{a'}{b'}$, $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$, and observe that $\left(\frac{a}{a'}, \frac{c'}{a'}\right) = 1$ -- the only prime factors of $\frac{a}{a'}$ are those that have already appeared in the factorization of $a'$, whereas all prime factors of $\frac{c'}{a'}$ must be different from the prime factors of $a'$ since $c'$ is square-free. 
+Hence, $A:= \arithseq{a}{b}\cap\arithseq{c'}{d'} \neq \emptyset$ (by Lemma \ref{lemCRT}). Moreover, $A$ is an arithmetic progression, it belongs to $\T_G$ (as an intersection of two open sets in the Golomb's topology), and, obviously, $A \subseteq \arithseq{a}{b}$. From the assumption we know that $X\cap A \neq \emptyset$. Since we also have that $A \subseteq \arithseq{c'}{d'}$, it is clear that $X\cap \arithseq{c'}{d'} \neq \emptyset$.
+\end{proof}
+%%%%%%@@@ przeniesione nad Example 2.4 (czyli ten example ponizej)- koniec fragmentu
+
 \begin{ex} \label{even}
-The set of even numbers $\{2n+2\}$ is in $\I_G$ and $\I_K$, but it belongs to the base for $\T_F$ (therefore $\{2n+2\}\notin \I_F$).
+The set of even numbers $\arithseq{2}{2}$ is in $\I_K$ hence in $\I_G$, but it belongs to the base for $\T_F$ (therefore $\arithseq{2}{2}\notin \I_F$).
 \end{ex}
 
 \begin{proof}
@@ -272,23 +290,9 @@ Assume that $a,b,a_1,b_1,a_2,b_2 \in\N$. If $\{a_1 n+b_1\}\subseteq \arithseq{a}
 Let $f\colon\N\to \arithseq{a}{b}$ be a bijection such that $f(n) = an+b$. Then: 
 $$f^{-1}[\{a_1 n+b_1\}] = \left\{\frac{a_1}{a} n+\frac{b_1-b}{a}\right\},\ \ \ f^{-1}[\{a_2 n+b_2\}] = \left\{\frac{a_2}{a} n+\frac{b_2-b}{a}\right\},$$
 and since $\left(\frac{a_1}{a},\frac{a_2}{a}\right)=1$, the Chinese remainder theorem guarantees that their intersection is nonempty. Thus,
-$$f^{-1}[\{a_1 n+b_1\}\cap\{a_2 n+b_2\}] = f^{-1}[\{a_1 n+b_1\}]\cap f^{-1}[\{a_2 n+b_2\}]\neq\emptyset,$$
+$$f^{-1}[\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2}] = f^{-1}[\arithseq{a_1}{b_1}]\cap f^{-1}[\arithseq{a_2}{b_2}]\neq\emptyset,$$
 and hence
-$$\{a_1 n+b_1\}\cap\{a_2 n+b_2\} = f[f^{-1}[\{a_1 n+b_1\}\cap\{a_2 n+b_2\}]] \neq\emptyset.$$
-\end{proof}
-
-\begin{thm}
-$\I_K \subseteq \I_G$.
-\end{thm}
-
-\begin{proof}
-We will show that $X \not\in \I_G \implies X \not\in \I_K$.\\
-Suppose that $X \not\in \I_G$. Then there exists $\arithseq{a}{b}\in \B_G$ such that for every $\arithseq{c}{d}\subseteq \arithseq{a}{b}$ with $\arithseq{c}{d}\in \T_G\setminus\{\emptyset\}$ we have $X\cap \arithseq{c}{d} \neq \emptyset$.
-We need to show that there exists $\arithseq{a'}{b'}\in \B_K$ such that for every $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$ with $\arithseq{c'}{d'}\in \B_K$ we have $X\cap \arithseq{c'}{d'} \neq \emptyset$.
-Let $a' := \prod_{p\in\Theta(a)}{p}$ (i.e., the "square-free part" of $a$) and $b' := b \mod a'$. Then, $\arithseq{a'}{b'} \in \B_K$ since $a' \in \SqrFr$, $(a',b') = 1$ (as $(a,b) = 1$), and $b'<a'$.
-Take any $\arithseq{c'}{d'} \subseteq \arithseq{a'}{b'}$ with $\arithseq{c'}{d'}\in \B_K$ (then $c' \in \SqrFr$, $(c',d')=1$, $d'<c'$, and $a'\mid c'$).
-Note that $\arithseq{a}{b}\subseteq \arithseq{a'}{b'}$, $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$, and observe that $\left(\frac{a}{a'}, \frac{c'}{a'}\right) = 1$ -- the only prime factors of $\frac{a}{a'}$ are those that have already appeared in the factorization of $a'$, whereas all prime factors of $\frac{c'}{a'}$ must be different from the prime factors of $a'$ since $c'$ is square-free. 
-Hence, $A:= \arithseq{a}{b}\cap\arithseq{c'}{d'} \neq \emptyset$ (by Lemma \ref{lemCRT}). Moreover, $A$ is an arithmetic progression, it belongs to $\T_G$ (as an intersection of two open sets in the Golomb's topology), and, obviously, $A \subseteq \arithseq{a}{b}$. From the assumption we know that $X\cap A \neq \emptyset$. Since we also have that $A \subseteq \arithseq{c'}{d'}$, it is clear that $X\cap \arithseq{c'}{d'} \neq \emptyset$.
+$$\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2} = f[f^{-1}[\{a_1 n+b_1\}\cap\{a_2 n+b_2\}]] \neq\emptyset.$$
 \end{proof}
 
 \begin{thm}
@@ -303,17 +307,17 @@ We will construct a set $X \in \I_G \setminus \I_K$. For every $k\in\N$ pick $x_
 	\item $x_k\in \arithseq{2^k}{1}$.
 \end{itemize}
 Observe that such construction is possible since $C_k \cap \arithseq{2^k}{1}$ is always nonempty (if $C_k = \arithseq{a_k}{b_k}$, then $a_k$ is even and square-free, and $\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ as $\frac{a_k}{2}$ is odd; both $\arithseq{a_k}{b_k}$ and $\{2^k n+1\}$ are subsequences of $\arithseq{2}{1}$, so, by Lemma \ref{lemCRT}, their intersection is nonempty). Let $X := \{x_k :\ k\in\N\}$.
-Firstly, note that $X \notin \I_K$. Indeed, the set $\{2n+1\}\in\B_K$ has a property that for every $\{cn+d\}\subseteq \{2n+1\}$ with $\{cn+d\}\in \B_K$ (so $\{cn+d\}=C_{k_0}$ for some $k_0\in\N$) we have $X\cap \{cn+d\} \neq \emptyset$ (as it contains $x_{k_0}$).
-Now, we will prove that $X \in \I_G$. Take any $\{an+b\}\in\B_G$. We want to show that there exists $V\subseteq \{an+b\}$ with $V\in \T_G\setminus\{\emptyset\}$, such that $X\cap V = \emptyset$. \\
-Assume that $2\nmid a$. Let $V := (\{an+b\} \cap \{4n+3\})\setminus\{x_1\}$. $V$ is open in $\T_G$ (as a difference of an open set and a closed set) and nonempty (because $(a,4)=1$). Moreover, for every $k\geq 2$ we have that $x_k\in \{4n+1\}$, which is disjoint from $\{4n+3\}$, and hence $X\cap V = \emptyset$.
+Firstly, note that $X \notin \I_K$. Indeed, the set $\arithseq{2}{1}\in\B_K$ has a property that for every $\arithseq{c}{d}\subseteq \arithseq{2}{1}$ with $\arithseq{c}{d}\in \B_K$ (so $\arithseq{c}{d}=C_{k_0}$ for some $k_0\in\N$) we have $X\cap \arithseq{c}{d} \neq \emptyset$ (as it contains $x_{k_0}$).
+Now, we will prove that $X \in \I_G$. Take any $\arithseq{a}{b}\in\B_G$. We want to show that there exists $V\subseteq \arithseq{a}{b}$ with $V\in \T_G\setminus\{\emptyset\}$, such that $X\cap V = \emptyset$. \\
+Assume that $2\nmid a$. Let $V := (\arithseq{a}{b} \cap \arithseq{4}{3})\setminus\{x_1\}$. $V$ is open in $\T_G$ (as a difference of an open set and a closed set) and nonempty (because $(a,4)=1$). Moreover, for every $k\geq 2$ we have that $x_k\in \arithseq{4}{1}$, which is disjoint from $\arithseq{4}{3}$, and hence $X\cap V = \emptyset$.
 Now, consider the following cases:
 \begin{itemize}
- \item $2\mid a$ and $4\nmid a$. Observe that then $2 \nmid b$ (otherwise, $a$ and $b$ would not be coprime), so $\{an+b\}\subseteq \{2n+1\}$. Again, let $V := (\{an+b\} \cap \{4n+3\})\setminus\{x_1\}$. $V$ is open in $\T_G$ and nonempty (because $\left(\frac{a}{2},\frac{4}{2}\right)=\left(\frac{a}{2},2\right)=1$ as $\frac{a}{2}$ is odd, and both $\{an+b\}$ and $\{4n+3\}$ are subsequences of $\{2n+1\}$). Moreover, as above, $X\cap V = \emptyset$.
+ \item $2\mid a$ and $4\nmid a$. Observe that then $2 \nmid b$ (otherwise, $a$ and $b$ would not be coprime), so $\\arithseq{a}{b}\subseteq \{2n+1\}$. Again, let $V := (\{an+b\} \cap \{4n+3\})\setminus\{x_1\}$. $V$ is open in $\T_G$ and nonempty (because $\left(\frac{a}{2},\frac{4}{2}\right)=\left(\frac{a}{2},2\right)=1$ as $\frac{a}{2}$ is odd, and both $\{an+b\}$ and $\{4n+3\}$ are subsequences of $\{2n+1\}$). Moreover, as above, $X\cap V = \emptyset$.
  \item $4\mid a$ and $8\nmid a$. Then, as in the previous case, $\{an+b\}\subseteq \{2n+1\}$. Now, either $b\equiv 1\ (\modulo 4)$ or $b\equiv 3\ (\modulo 4)$. Thus, either $\{an+b\}\subseteq \{4n+1\}$ or $\{an+b\}\subseteq \{4n+3\}$. In the first case, let $V := (\{an+b\} \cap \{8n+5\})\setminus\{x_1, x_2\}$. $V$ is open in $\T_G$ and nonempty (because $\left(\frac{a}{4},\frac{8}{4}\right)=\left(\frac{a}{4},2\right)=1$ as $\frac{a}{4}$ is odd, and both $\{an+b\}$ and $\{8n+5\}$ are subsequences of $\{4n+1\}$). Moreover, for every $k\geq 3$ we have that $x_k\in \{8n+1\}$, which is disjoint from $\{8n+5\}$, and hence $X\cap V = \emptyset$. In the second case, take $V := \{an+b\} \setminus\{x_1\}$. $V$ is open in $\T_G$ and nonempty. Moreover, for every $k\geq 2$ we have that $x_k\in \{4n+1\}$, which is disjoint from $\{4n+3\}$, and hence $X\cap V = \emptyset$.
 \end{itemize}
 Generally, for $m\in\N$:
 \begin{itemize}
- \item $2^m\mid a$ and $2^{m+1}\nmid a$. Observe that then $2 \nmid b$ (otherwise, $a$ and $b$ would not be coprime), so $\{an+b\}\subseteq \{2n+1\}$. Now, either $b\equiv 1\ (\modulo 2^m)$ or $b \not\equiv 1\ (\modulo 2^m)$. In the first case, let $V := (\{an+b\} \cap \{2^{m+1}n+2^m+1\})\setminus\{x_1, x_2,\ldots, x_m\}$. $V$ is open in $\T_G$ and nonempty (because $\left(\frac{a}{2^m},\frac{2^{m+1}}{2^m}\right)=\left(\frac{a}{2^m},2\right)=1$ as $\frac{a}{2^m}$ is odd, and both $\{an+b\}$ and $\{2^{m+1}n+2^m+1\}$ are subsequences of $\{2^m n+1\}$). Moreover, for every $k\geq m+1$ we have that $x_k\in \{2^{m+1}n+1\}$, which is disjoint from $\{2^{m+1}n+2^m+1\}$, and hence $X\cap V = \emptyset$. In the second case, take $V := \{an+b\} \setminus\{x_1, x_2,\ldots, x_{m-1}\}$. $V$ is open in $\T_G$ and nonempty. Moreover, for every $k\geq m$ we have that $x_k\in \{2^m n+1\}$, which is disjoint from $\{2^m n+b\}$, and hence $X\cap V = \emptyset$.
+ \item $2^m\mid a$ and $2^{m+1}\nmid a$. Observe that then $2 \nmid b$ (otherwise, $a$ and $b$ would not be coprime), so $\arithseq{a}{b}\subseteq \arithseq{2}{1}$. Now, either $b\equiv 1\ (\modulo 2^m)$ or $b \not\equiv 1\ (\modulo 2^m)$. In the first case, let $V := (\arithseq{a}{b} \cap \{2^{m+1}n+2^m+1\})\setminus\{x_1, x_2,\ldots, x_m\}$. $V$ is open in $\T_G$ and nonempty (because $\left(\frac{a}{2^m},\frac{2^{m+1}}{2^m}\right)=\left(\frac{a}{2^m},2\right)=1$ as $\frac{a}{2^m}$ is odd, and both $\arithseq{a}{b}$ and $\arithseq{2^{m+1}}{2^m+1}$ are subsequences of $\{2^m n+1\}$). Moreover, for every $k\geq m+1$ we have that $x_k\in \{2^{m+1}n+1\}$, which is disjoint from $\{2^{m+1}n+2^m+1\}$, and hence $X\cap V = \emptyset$. In the second case, take $V := \{an+b\} \setminus\{x_1, x_2,\ldots, x_{m-1}\}$. $V$ is open in $\T_G$ and nonempty. Moreover, for every $k\geq m$ we have that $x_k\in \arithseq{2^m}{1}$, which is disjoint from $\arithseq{2^m}{b}$, and hence $X\cap V = \emptyset$.
 \end{itemize}
 \end{proof}
 
