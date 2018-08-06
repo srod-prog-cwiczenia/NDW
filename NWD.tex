@@ -104,7 +104,9 @@ The topologies of Golomb and Kirch both are Hausdorff but not regular, and conne
 
 An \emph{ideal} on $\N$ is a family of subsets of $\N$, closed under taking finite unions and subsets of its elements. We assume that an ideal is proper ($\neq \mathcal{P}(\N)$) and contains all finite sets. By $\Fin$ we denote the ideal of all finite subsets of $\N$.
 
-Obviously, in any (decent\footnote{\ The topology should have a base consisting only of infinite sets -- otherwise, the ideal of nowhere dense sets would not contain all finite sets.}) topology, the nowhere dense sets form an ideal. Let us then define three ideals on $\N$:
+%%%@@@ podmienilem na razie tylko slowo "decent" na "non-trivial"
+Obviously, in any (non-trivial\footnote{\ The topology should have a base consisting only of 
+infinite sets -- otherwise, the ideal of nowhere dense sets would not contain all finite sets.}) topology, the nowhere dense sets form an ideal. Let us then define three ideals on $\N$:
 \begin{itemize}
 \item \emph{Furstenberg's ideal} $\I_F$ of all nowhere dense sets in $\T_F$,
 \item \emph{Golomb's ideal} $\I_G$ of all nowhere dense sets in $\T_G$,
@@ -191,16 +193,27 @@ At first, we present an example showing that the ideals of Furstenberg, Golomb, 
 The set $A = \{n! :\ n\in\N\}$ belongs to $\I_F$, $\I_G$, and $\I_K$.
 \end{ex}
 
+%\begin{proof}
+%We need to show that for any $\arithseq{a}{b} \in \B_F$ there exists $\arithseq{c}{d} \in \B_F$ with $\arithseq{c}{d} \subseteq \arithseq{a}{b}$, such that $\arithseq{c}{d}\cap A = \emptyset$. Let us fix $\arithseq{a}{b} \in \B_F$. Note that in the set $A$ all but finitely many elements (for $n\geq a$) are divisible by $a$. Consider the two cases:
+%\begin{itemize}
+% \item[(i)] $b\neq a$. Set $s:= \min \{n :\ an+b>a!\}$. Take $\arithseq{c}{d} := \arithseq{a(s+1)}{as+b}\subseteq \arithseq{a}{b}$. Since $as+b\leq as+a = a(s+1)$, we know that $\arithseq{c}{d}\in \B_F$. Moreover, $as+b>a!$ and all elements of $\arithseq{c}{d}$ are not divisible by $a$, so $\arithseq{c}{d}\cap A = \emptyset$.
+% \item[(ii)] $b=a$. Then $\arithseq{a}{b} = \arithseq{a}{a}$, and we can "split" it into two disjoint subsets: $\arithseq{a}{a} = \arithseq{2a}{a}\cup \arithseq{2a}{2a}$. In the set $A$ all but finitely many elements (for $n\geq 2a$) are divisible by $2a$, so almost all elements belong to $\arithseq{2a}{2a}$. Set $s:= \min \{n :\ 2an+a>(2a)!\}$. Take $\arithseq{c}{d} := \arithseq{2a(s+1)}{2as+a}\subseteq \arithseq{a}{a}$. Since $2as+a\leq 2as+2a = 2a(s+1)$, we know that $\arithseq{c}{d}\in \B_F$. Moreover, $2as+a>(2a)!$ and all elements of $\arithseq{c}{d}$ are not divisible by $2a$, so $\arithseq{c}{d}\cap A = \emptyset$.
+%\end{itemize}
+%
+%Note that instead we could have used the fact that the Furstenberg's topology is Hausdorff. The crucial observation is that all but finitely many elements from the set $A$ are divisible by some constant $a$. Since all singleton sets are closed, $\arithseq{a}{b}$ without finitely many points is open and disjoint from $A$ for $b<a$ (case (i)), hence it contains a basic set disjoint from $A$. Case (ii) uses the splitting property, which also follows from $\T_F$ being Hausdorff (see Proposition \ref{remH}).
+%
+%Thus, the proof for $\I_G$ and $\I_K$ (both $\T_G$ and $\T_K$ are also Hausdorff) goes similarly (in basic sets of these topologies we assume that $b<a$, so we only need to consider case (i)).
+%\end{proof}
+%%%@@@ alternatywny, znacznie uproszczony dowod zaproponowany przez Recenzenta,
+%%%@@@ poprzedni powedrowal na razie w komentarz
 \begin{proof}
-We need to show that for any $\arithseq{a}{b} \in \B_F$ there exists $\arithseq{c}{d} \in \B_F$ with $\arithseq{c}{d} \subseteq \arithseq{a}{b}$, such that $\arithseq{c}{d}\cap A = \emptyset$. Let us fix $\arithseq{a}{b} \in \B_F$. Note that in the set $A$ all but finitely many elements (for $n\geq a$) are divisible by $a$. Consider the two cases:
-\begin{itemize}
- \item[(i)] $b\neq a$. Set $s:= \min \{n :\ an+b>a!\}$. Take $\arithseq{c}{d} := \arithseq{a(s+1)}{as+b}\subseteq \arithseq{a}{b}$. Since $as+b\leq as+a = a(s+1)$, we know that $\arithseq{c}{d}\in \B_F$. Moreover, $as+b>a!$ and all elements of $\arithseq{c}{d}$ are not divisible by $a$, so $\arithseq{c}{d}\cap A = \emptyset$.
- \item[(ii)] $b=a$. Then $\arithseq{a}{b} = \arithseq{a}{a}$, and we can "split" it into two disjoint subsets: $\arithseq{a}{a} = \arithseq{2a}{a}\cup \arithseq{2a}{2a}$. In the set $A$ all but finitely many elements (for $n\geq 2a$) are divisible by $2a$, so almost all elements belong to $\arithseq{2a}{2a}$. Set $s:= \min \{n :\ 2an+a>(2a)!\}$. Take $\arithseq{c}{d} := \arithseq{2a(s+1)}{2as+a}\subseteq \arithseq{a}{a}$. Since $2as+a\leq 2as+2a = 2a(s+1)$, we know that $\arithseq{c}{d}\in \B_F$. Moreover, $2as+a>(2a)!$ and all elements of $\arithseq{c}{d}$ are not divisible by $2a$, so $\arithseq{c}{d}\cap A = \emptyset$.
-\end{itemize}
-
-Note that instead we could have used the fact that the Furstenberg's topology is Hausdorff. The crucial observation is that all but finitely many elements from the set $A$ are divisible by some constant $a$. Since all singleton sets are closed, $\arithseq{a}{b}$ without finitely many points is open and disjoint from $A$ for $b<a$ (case (i)), hence it contains a basic set disjoint from $A$. Case (ii) uses the splitting property, which also follows from $\T_F$ being Hausdorff (see Proposition \ref{remH}).
-
-Thus, the proof for $\I_G$ and $\I_K$ (both $\T_G$ and $\T_K$ are also Hausdorff) goes similarly (in basic sets of these topologies we assume that $b<a$, so we only need to consider case (i)).
+We show that $A$ is closed with respect to $\T_K$, and thus
+is closed with respect to each of the three topologies. To see this, suppose
+that $x$ is an accumulation point of $A$ with respect to $\T_K$. 
+Pick $p\in\mathbb{P}$ with $p > x$. Then $\arithseq{p}{x}$ is a 
+neighborhood of $x$ which hits $A$ in only finitely many points.
+  Next note that the interior of $A$ is empty with respect to each 
+topology because $A$ contains no three term arithmetic progression.
 \end{proof}
 
 The following simple examples show that in some way the Furstenberg's ideal significantly differs from the other two ideals (namely, the Golomb's and the Kirch's ideal).
@@ -260,17 +273,20 @@ The proof for $\I_K$ goes similarly. In item (i) we additionally need to observe
 The proof of the previous result can easily be generalized for sets of multiples of any prime number, as follows:
 
 \begin{ex} 
-For any $p\in\mathbb{P}$ we have $\arithseq{p}{p}\in \I_G \cap \I_K \setminus \I_F$.
+For any $p\in\mathbb{P}$ we have $\arithseq{p}{p}\in \I_K \setminus \I_F$.
 \end{ex}
 
 \begin{cor}
-If $p_1, \ldots, p_k \in \mathbb{P}$, then $\{n\in\N :\ p_1\mid n\ \vee \ldots \vee\ p_k\mid n\}\in \I_G \cap \I_K \setminus \I_F$.
+If $p_1, \ldots, p_k \in \mathbb{P}$, then $\{n\in\N :\ p_1\mid n\ \vee \ldots \vee\ p_k\mid n\}\in \I_K \setminus \I_F$.
 \end{cor}
 
 Now, let us investigate a relation between the ideals of Golomb and Kirch.
 
 While searching for an example distinguishing these ideals, at first we have obtained a partial result, suggesting that an example of a set witnessing the lack of inclusion between them cannot be found among the sets from $\B_G \setminus \B_K$:
 
+%%%@@@ Recenzent napisal tak: "There doesn't seem to be any motive for including Proposition
+%%% 2.7 (czyli to ponizej). Pytanie: Czy usuwamy czy tez wymyslamy jakis "motive"
+%%% dla uzasadnienia racji bytu tego fragmentu?
 \begin{prop}
 Every set of the form $\arithseq{2s}{q}$, where $s \in\SqrFr$, $2\mid s$, $(s,q)=1$, and $q<s$, is in $\B_G$ but not in $\B_K$, but it does not belong to $\I_K$.
 \end{prop}
@@ -283,7 +299,7 @@ Now, we want to show that there exists $\arithseq{a}{b}\in \B_K$ such that for e
 Eventually, we managed to prove an inclusion between the ideals of Golomb and Kirch -- however, it turns out that they are not the same. These results will be shown in the next two theorems. In their proofs we will use a technical lemma:
  
 \begin{lem} \label{lemCRT}
-Assume that $a,b,a_1,b_1,a_2,b_2 \in\N$. If $\{a_1 n+b_1\}\subseteq \arithseq{a}{b}$, $\arithseq{a_2}{b_2}\subseteq \arithseq{a}{b}$, and $\left(\frac{a_1}{a},\frac{a_2}{a}\right)=1$, then the intersection $\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2}$ is nonempty (and hence it is an arithmetic progression). 
+Assume that $a,b,a_1,b_1,a_2,b_2 \in\N$. If $\arithseq{a_1}{b_1}\subseteq \arithseq{a}{b}$, $\arithseq{a_2}{b_2}\subseteq \arithseq{a}{b}$, and $\left(\frac{a_1}{a},\frac{a_2}{a}\right)=1$, then the intersection $\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2}$ is nonempty (and hence it is an arithmetic progression). 
 \end{lem}
 
 \begin{proof}
@@ -296,29 +312,68 @@ $$\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2} = f[f^{-1}[\{a_1 n+b_1\}\cap\{a_2 n
 \end{proof}
 
 \begin{thm}
-$\I_G \not\subseteq \I_K$.
+%%%$\I_G \not\subseteq \I_K$.
+%%%@@@ zamieniam wedle sugestii Recenzenta na:
+$(\I_G\cap \I_F) \not\subseteq \I_K$.
 \end{thm}
 
 \begin{proof}
 Define $\mathcal{C} := \{\arithseq{a}{b}\in \B_K :\ \arithseq{a}{b}\subseteq \arithseq{2}{1}\}$. Let $\{C_k :\ k\in\N\}$ be an enumeration of $\mathcal{C}$.
-We will construct a set $X \in \I_G \setminus \I_K$. For every $k\in\N$ pick $x_k$ such that:
+%%%We will construct a set $X \in \I_G \setminus \I_K$. 
+%%%@@@ zamieniam wedle sugestii Recenzenta na:
+We will construct a set $X \in (\I_G\cap \I_F) \setminus \I_K$. 
+For every $k\in\N$ pick $x_k$ such that:
 \begin{itemize}
 	\item $x_k\in C_k$,
 	\item $x_k\in \arithseq{2^k}{1}$.
 \end{itemize}
 Observe that such construction is possible since $C_k \cap \arithseq{2^k}{1}$ is always nonempty (if $C_k = \arithseq{a_k}{b_k}$, then $a_k$ is even and square-free, and $\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ as $\frac{a_k}{2}$ is odd; both $\arithseq{a_k}{b_k}$ and $\{2^k n+1\}$ are subsequences of $\arithseq{2}{1}$, so, by Lemma \ref{lemCRT}, their intersection is nonempty). Let $X := \{x_k :\ k\in\N\}$.
 Firstly, note that $X \notin \I_K$. Indeed, the set $\arithseq{2}{1}\in\B_K$ has a property that for every $\arithseq{c}{d}\subseteq \arithseq{2}{1}$ with $\arithseq{c}{d}\in \B_K$ (so $\arithseq{c}{d}=C_{k_0}$ for some $k_0\in\N$) we have $X\cap \arithseq{c}{d} \neq \emptyset$ (as it contains $x_{k_0}$).
-Now, we will prove that $X \in \I_G$. Take any $\arithseq{a}{b}\in\B_G$. We want to show that there exists $V\subseteq \arithseq{a}{b}$ with $V\in \T_G\setminus\{\emptyset\}$, such that $X\cap V = \emptyset$. \\
-Assume that $2\nmid a$. Let $V := (\arithseq{a}{b} \cap \arithseq{4}{3})\setminus\{x_1\}$. $V$ is open in $\T_G$ (as a difference of an open set and a closed set) and nonempty (because $(a,4)=1$). Moreover, for every $k\geq 2$ we have that $x_k\in \arithseq{4}{1}$, which is disjoint from $\arithseq{4}{3}$, and hence $X\cap V = \emptyset$.
-Now, consider the following cases:
-\begin{itemize}
- \item $2\mid a$ and $4\nmid a$. Observe that then $2 \nmid b$ (otherwise, $a$ and $b$ would not be coprime), so $\\arithseq{a}{b}\subseteq \{2n+1\}$. Again, let $V := (\{an+b\} \cap \{4n+3\})\setminus\{x_1\}$. $V$ is open in $\T_G$ and nonempty (because $\left(\frac{a}{2},\frac{4}{2}\right)=\left(\frac{a}{2},2\right)=1$ as $\frac{a}{2}$ is odd, and both $\{an+b\}$ and $\{4n+3\}$ are subsequences of $\{2n+1\}$). Moreover, as above, $X\cap V = \emptyset$.
- \item $4\mid a$ and $8\nmid a$. Then, as in the previous case, $\{an+b\}\subseteq \{2n+1\}$. Now, either $b\equiv 1\ (\modulo 4)$ or $b\equiv 3\ (\modulo 4)$. Thus, either $\{an+b\}\subseteq \{4n+1\}$ or $\{an+b\}\subseteq \{4n+3\}$. In the first case, let $V := (\{an+b\} \cap \{8n+5\})\setminus\{x_1, x_2\}$. $V$ is open in $\T_G$ and nonempty (because $\left(\frac{a}{4},\frac{8}{4}\right)=\left(\frac{a}{4},2\right)=1$ as $\frac{a}{4}$ is odd, and both $\{an+b\}$ and $\{8n+5\}$ are subsequences of $\{4n+1\}$). Moreover, for every $k\geq 3$ we have that $x_k\in \{8n+1\}$, which is disjoint from $\{8n+5\}$, and hence $X\cap V = \emptyset$. In the second case, take $V := \{an+b\} \setminus\{x_1\}$. $V$ is open in $\T_G$ and nonempty. Moreover, for every $k\geq 2$ we have that $x_k\in \{4n+1\}$, which is disjoint from $\{4n+3\}$, and hence $X\cap V = \emptyset$.
-\end{itemize}
-Generally, for $m\in\N$:
-\begin{itemize}
- \item $2^m\mid a$ and $2^{m+1}\nmid a$. Observe that then $2 \nmid b$ (otherwise, $a$ and $b$ would not be coprime), so $\arithseq{a}{b}\subseteq \arithseq{2}{1}$. Now, either $b\equiv 1\ (\modulo 2^m)$ or $b \not\equiv 1\ (\modulo 2^m)$. In the first case, let $V := (\arithseq{a}{b} \cap \{2^{m+1}n+2^m+1\})\setminus\{x_1, x_2,\ldots, x_m\}$. $V$ is open in $\T_G$ and nonempty (because $\left(\frac{a}{2^m},\frac{2^{m+1}}{2^m}\right)=\left(\frac{a}{2^m},2\right)=1$ as $\frac{a}{2^m}$ is odd, and both $\arithseq{a}{b}$ and $\arithseq{2^{m+1}}{2^m+1}$ are subsequences of $\{2^m n+1\}$). Moreover, for every $k\geq m+1$ we have that $x_k\in \{2^{m+1}n+1\}$, which is disjoint from $\{2^{m+1}n+2^m+1\}$, and hence $X\cap V = \emptyset$. In the second case, take $V := \{an+b\} \setminus\{x_1, x_2,\ldots, x_{m-1}\}$. $V$ is open in $\T_G$ and nonempty. Moreover, for every $k\geq m$ we have that $x_k\in \arithseq{2^m}{1}$, which is disjoint from $\arithseq{2^m}{b}$, and hence $X\cap V = \emptyset$.
-\end{itemize}
+%%%@@@ teraz nastepuje rozumowanie zasugerowane przez Recenzenta,
+%%%@@@ TODO: nalezy koniecznie przesledzic poprawosc rozumowania,
+%%% i jesli bedzie OK, to trzeba bedzie zapewne usunac stare rozumowanie ponizej
+%%% konca wkopiowanego tekstu:
+  Take any $\arithseq{a}{b} \in \B_F$. We will show that there exists
+nonempty $V \subseteq \arithseq{a}{b}$ with $X\cap V = \emptyset$ such
+that $V\in \T_F$ and, if $\arithseq{a}{b}\in \B_G$, then $V\in\T_G$.
+
+  Assume first that $2\not | a$. Let 
+$V = (\arithseq{a}{b} \cap \arithseq{4}{3}) \setminus \{x_1\}$. 
+Then $V \not= \emptyset$ because $(a,4) = 1$ so 
+$V\in \T_F$ and, if $\arithseq{a}{b}\in \B_G$, then $V\in \T_G$.
+If $k > 1$, then $x_k \in \arithseq{4}{1}$ so $V\cap X = \emptyset$.
+  
+  Now assume that $2|a$ and pick the largest $m\in \N$
+such that $2^m|a$. If $b$ is even then $\arithseq{a}{b}\cap X = \emptyset$
+and we may let $V = \arithseq{a}{b}$. Thus we may assume
+that $b$ is odd. If $b\not\equiv 1 (\mod 2^m)$, let
+$V = \arithseq{a}{b}\setminus \{x_1,\ldots, x_{m-1}\}$.
+Then $\arithseq{a}{b}\cap \arithseq{2^m}{1} = \emptyset$ so $V\cap X = \emptyset$.
+
+  Thus we may assume that $b\equiv 1 (\mod 2^m)$. Let 
+\[
+V = (\arithseq{a}{b} \cap \arithseq{2^{m+1}}{1 + 2^m}) \setminus \{x_1,\ldots, x_{m-1}\}.
+\]
+Then $V \not= \emptyset$ because $(\frac{a}{2^m} : \frac{2^{m+1}}{2^m}) = 1$
+and $\arithseq{a}{b}$ and $\arithseq{2^{m+1}}{1 + 2^m}$
+are contained in $\arithseq{2^m}{1}$. 
+If $k > m$, then $x_k \in \arithseq{2^m}{1}$ so 
+$V\cap X = \emptyset$ and, if $\arithseq{a}{b} \in \B_G$, then
+$V \in \T_G$.
+
+%%% koniec wkopiowanego tekstu, zatem prawdopodobnie mozna ponizszy
+%%% nasz fragment usunac?
+%Now, we will prove that $X \in \I_G$. Take any $\arithseq{a}{b}\in\B_G$. We want to show that there exists $V\subseteq \arithseq{a}{b}$ with $V\in \T_G\setminus\{\emptyset\}$, such that $X\cap V = \emptyset$. \\
+%Assume that $2\nmid a$. Let $V := (\arithseq{a}{b} \cap \arithseq{4}{3})\setminus\{x_1\}$. $V$ is open in $\T_G$ (as a difference of an open set and a closed set) and nonempty (because $(a,4)=1$). Moreover, for every $k\geq 2$ we have that $x_k\in \arithseq{4}{1}$, which is disjoint from $\arithseq{4}{3}$, and hence $X\cap V = \emptyset$.
+%Now, consider the following cases:
+%\begin{itemize}
+% \item $2\mid a$ and $4\nmid a$. Observe that then $2 \nmid b$ (otherwise, $a$ and $b$ would not be coprime), so $\arithseq{a}{b}\subseteq \arithseq{2}{1}$. Again, let $V := (\arithseq{a}{b} \cap \arithseq{4}{3})\setminus\{x_1\}$. $V$ is open in $\T_G$ and nonempty (because $\left(\frac{a}{2},\frac{4}{2}\right)=\left(\frac{a}{2},2\right)=1$ as $\frac{a}{2}$ is odd, and both $\{an+b\}$ and $\arithseq{4}{3}$ are subsequences of $\arithseq{2}{1}$). Moreover, as above, $X\cap V = \emptyset$.
+% \item $4\mid a$ and $8\nmid a$. Then, as in the previous case, $\arithseq{a}{b}\subseteq \arithseq{2}{1}$. Now, either $b\equiv 1\ (\modulo 4)$ or $b\equiv 3\ (\modulo 4)$. Thus, either $\arithseq{a}{b}\subseteq \arithseq{4}{1}$ or $\arithseq{a}{b}\subseteq \arithseq{4}{3}$. In the first case, let $V := (\{an+b\} \cap \{8n+5\})\setminus\{x_1, x_2\}$. $V$ is open in $\T_G$ and nonempty (because $\left(\frac{a}{4},\frac{8}{4}\right)=\left(\frac{a}{4},2\right)=1$ as $\frac{a}{4}$ is odd, and both $\{an+b\}$ and $\{8n+5\}$ are subsequences of $\{4n+1\}$). Moreover, for every $k\geq 3$ we have that $x_k\in \{8n+1\}$, which is disjoint from $\{8n+5\}$, and hence $X\cap V = \emptyset$. In the second case, take $V := \{an+b\} \setminus\{x_1\}$. $V$ is open in $\T_G$ and nonempty. Moreover, for every $k\geq 2$ we have that $x_k\in \{4n+1\}$, which is disjoint from $\{4n+3\}$, and hence $X\cap V = \emptyset$.
+%\end{itemize}
+%Generally, for $m\in\N$:
+%\begin{itemize}
+% \item $2^m\mid a$ and $2^{m+1}\nmid a$. Observe that then $2 \nmid b$ (otherwise, $a$ and $b$ would not be coprime), so $\arithseq{a}{b}\subseteq \arithseq{2}{1}$. Now, either $b\equiv 1\ (\modulo 2^m)$ or $b \not\equiv 1\ (\modulo 2^m)$. In the first case, let $V := (\arithseq{a}{b} \cap \{2^{m+1}n+2^m+1\})\setminus\{x_1, x_2,\ldots, x_m\}$. $V$ is open in $\T_G$ and nonempty (because $\left(\frac{a}{2^m},\frac{2^{m+1}}{2^m}\right)=\left(\frac{a}{2^m},2\right)=1$ as $\frac{a}{2^m}$ is odd, and both $\arithseq{a}{b}$ and $\arithseq{2^{m+1}}{2^m+1}$ are subsequences of $\{2^m n+1\}$). Moreover, for every $k\geq m+1$ we have that $x_k\in \{2^{m+1}n+1\}$, which is disjoint from $\{2^{m+1}n+2^m+1\}$, and hence $X\cap V = \emptyset$. In the second case, take $V := \{an+b\} \setminus\{x_1, x_2,\ldots, x_{m-1}\}$. $V$ is open in $\T_G$ and nonempty. Moreover, for every $k\geq m$ we have that $x_k\in \arithseq{2^m}{1}$, which is disjoint from $\arithseq{2^m}{b}$, and hence $X\cap V = \emptyset$.
+%\end{itemize}
 \end{proof}
 
 
