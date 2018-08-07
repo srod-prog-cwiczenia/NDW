@@ -222,6 +222,10 @@ The following simple examples show that in some way the Furstenberg's ideal sign
 $\mathbb{P}\in \I_F$, but $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (therefore it does not belong to $\I_G$ nor $\I_K$).
 \end{ex}
 
+%%%@@@a moze "the density of" albo "the fact that P is dense"
+%%% lub cos w takowym stylu? Anyway, na razie zostawiamy tak:
+Notice that the latter fact is an immediate consequence of Dirichlet's Theorem.
+
 \begin{ex} 
 $\SqrFr\in \I_F$, but $\SqrFr$ is dense in $\T_G$ and $\T_K$ (therefore it does not belong to $\I_G$ nor $\I_K$).
 \end{ex}
@@ -433,7 +437,8 @@ Then the ideal $\I=\MB(\mathcal{F})$ is tall.
 
 \begin{proof}
 Let $A \subseteq\N$ be any infinite set. 
-Without loss of generality, we can assume that $A\notin \MB(\mathcal{F})$. Then there exists a set $F\in\mathcal{F}$ such that for every $G\in\mathcal{F}$ with $G\subseteq F$ we have $A\cap G \neq\emptyset$. By the splitting property, find a family $\{F_i\}_{i\in\N} \subseteq\mathcal{F}$ such that:
+The case that $A\in \MB(\mathcal{F})$ is trivial, 
+so we assume that $A\notin \MB(\mathcal{F})$. Then there exists a set $F\in\mathcal{F}$ such that for every $G\in\mathcal{F}$ with $G\subseteq F$ we have $A\cap G \neq\emptyset$. By the splitting property, find a family $\{F_i\}_{i\in\N} \subseteq\mathcal{F}$ such that:
 \begin{itemize}
 \item $\forall_{i}\ F_i \subseteq F$,
 \item $\forall_{i\neq j}\ F_i\cap F_j =\emptyset$.
@@ -460,6 +465,12 @@ Take any $A\subseteq\N$ fulfilling the above conditions, and fix $F\in\mathcal{F
 The ideals $\I_F$, $\I_G$, and $\I_K$ are tall.
 \end{cor}
 
+%%%@@@ ta definicja dodana przez sugestie Recenzenta, oczywiscie do wygladzenia,
+%%%@@@ choc pewnie moze takowa pozostac?
+Recall that an ideal $\I$ on $\N$ is $F_{\sigma\delta}$ if
+$\I \subseteq P(\N) \simeq 2^\omega$
+is an $F_{\sigma\delta}$ in the usual product topology
+of $2^\omega$.
 
 Now, we will show that $\I_F$, $\I_G$, and $\I_K$ are $F_{\sigma\delta}$ but not $F_{\sigma}$ ideals.
 
@@ -593,8 +604,10 @@ Notice that our ideals fulfill all of the above conditions, and we have shown th
 
 
 So far, only two examples of ideals with topological representations have been studied, namely:
-$$\NWD(\Q):=\left\{A\subseteq\mathbb{Q}\cap [0,1] :\ \cl(A) \textrm{ is meager}\right\},$$
-$$\NULL(\Q):=\left\{A\subseteq\mathbb{Q}\cap [0,1] :\ \cl(A) \textrm{ is of Lebesgue measure zero}\right\},$$
+%%%@@@ wedlug sugestii Recenzenta dodalismy cl_\R ale moze taki zabieg
+%%%@@@ trzeba i wykonac nizej ? Bowiem i tam sa tez definicje w podobnym stylu...
+$$\NWD(\Q):=\left\{A\subseteq\mathbb{Q}\cap [0,1] :\ \cl(A) \textrm{ is nowhere dense}\right\},$$
+$$\NULL(\Q):=\left\{A\subseteq\mathbb{Q}\cap [0,1] :\ \cl_\R(A) \textrm{ is of Lebesgue measure zero}\right\},$$
 which are the ideals represented on $[0,1]$ by the $\sigma$-ideals of meager sets and sets of Lebesgue measure zero, respectively. In \cite{FS}, I. Farah and S. Solecki proved that $\NWD(\Q)$ and $\NULL(\Q)$ are non-isomorphic.
 
 \begin{prop}
@@ -707,25 +720,25 @@ The ideals $\I_F$, $\I_G$, and $\I_K$ do not have the $\finbw$ property.
 
 \begin{proof}
 Let the sequence $(\mathcal{P}_k)_{k\in\N}$ of finite partitions of $\N$ be defined as follows:
-$$\mathcal{P}_1 := \{\{n+1\}\}$$
-$$\mathcal{P}_2 := \{\{2n+1\}, \{2n+2\}\}$$
-$$\mathcal{P}_3 := \{\{3n+1\}, \{3n+2\}, \{3n+3\}\}$$
+$$\mathcal{P}_1 := \{\arithseq{n}{1}\}$$
+$$\mathcal{P}_2 := \{\arithseq{2}{1}, \arithseq{2}{2}\}$$
+$$\mathcal{P}_3 := \{\arithseq{3}{1}, \arithseq{3}{2}, \arithseq{3}{3}\}$$
 $$\vdots$$
-$$\mathcal{P}_k := \{\{kn+1\}, \{kn+2\}, \ldots, \{kn+k\}\}$$
+$$\mathcal{P}_k := \{\arithseq{k}{1}, \arithseq{k}{2}, \ldots, \arithseq{k}{k}\}$$
 $$\vdots$$
 
 Then, for every $k\in\N$, 
-$$H^{*}(\mathcal{P}_k)= \{A\subseteq\N :\ \exists_{b_k\in\{1,2,\ldots,k\}}\ A\subseteq^* \{kn+b_k\}\}.$$
+$$H^{*}(\mathcal{P}_k)= \{A\subseteq\N :\ \exists_{b_k\in\{1,2,\ldots,k\}}\ A\subseteq^* \arithseq{k}{b_k}\}.$$
 Thus,
-$$\bigcap_{k\in\N}{H^{*}(\mathcal{P}_k)}= \{A\subseteq\N :\ \forall_{k\in\N}\ \exists_{b_k\in\{1,2,\ldots,k\}}\ A\subseteq^* \{kn+b_k\}\}.$$
+$$\bigcap_{k\in\N}{H^{*}(\mathcal{P}_k)}= \{A\subseteq\N :\ \forall_{k\in\N}\ \exists_{b_k\in\{1,2,\ldots,k\}}\ A\subseteq^* \arithseq{k}{b_k}\}.$$
 We will check that $\bigcap_{k\in\N}{H^{*}(\mathcal{P}_k)}\subseteq\I_F$. Choose any set $A\subseteq\N$ such that: 
-$$\forall_{k\in\N}\ \exists_{b_k\in\{1,2,\ldots,k\}}\ A\subseteq^* \{kn+b_k\}.$$ 
-We need to show that $A$ is nowhere dense in the Furstenberg's topology, i.e., that for every $\{an+b\}\in \B_F$ there exists $\{cn+d\}\subseteq \{an+b\}$ with $\{cn+d\}\in \B_F$, such that $A\cap \{cn+d\} = \emptyset$. Fix any $\{an+b\}\in \B_F$ (we then know that $b\leq a$). Then there exists $b_a\in\{1,2,\ldots,a\}$ such that $A\subseteq^* \{an+b_a\}$.\\ 
+$$\forall_{k\in\N}\ \exists_{b_k\in\{1,2,\ldots,k\}}\ A\subseteq^* \arithseq{k}{b_k}.$$ 
+We need to show that $A$ is nowhere dense in the Furstenberg's topology, i.e., that for every $\arithseq{a}{b}\in \B_F$ there exists $\arithseq{c}{d}\subseteq \arithseq{a}{b}$ with $\arithseq{c}{d}\in \B_F$, such that $A\cap \arithseq{c}{d} = \emptyset$. Fix any $\arithseq{a}{b}\in \B_F$ (we then know that $b\leq a$). Then there exists $b_a\in\{1,2,\ldots,a\}$ such that $A\subseteq^* \arithseq{a}{b_a}$.\\ 
 Let us consider the two cases:
 \begin{itemize}
-	\item[(i)] If $b_a\neq b$, then $\{an+b\} \cap \{an+b_a\} = \emptyset$, so $\{an+b\}\cap A \in\Fin$. 
-	As the Furstenberg's topology is Hausdorff, $\{an+b\}$ without those finitely many points is open and disjoint from $A$, hence it contains a basic set $\{cn+d\}$ disjoint from $A$. 
-	\item[(ii)] If $b_a = b$, then $A\subseteq^* \{an+b\}$. Notice that $\{an+b\}=\{2an+b\}\cup \{2an+b+a\}$ (it follows from the splitting property of $\B_F$). By our assumption, there exists $b_{2a}\leq 2a$ such that $A\subseteq^* \{2an+b_{2a}\}$. Now, if $b_{2a} \neq b$, we proceed like in the case (i). If however $b_{2a}=b$, then we observe that $b_{2a}\neq b+a$, and, again, we proceed like in the case (i).
+	\item[(i)] If $b_a\neq b$, then $\arithseq{a}{b} \cap \arithseq{a}{b_a} = \emptyset$, so $\arithseq{a}{b}\cap A \in\Fin$. 
+	As the Furstenberg's topology is Hausdorff, $\arithseq{a}{b}$ without those finitely many points is open and disjoint from $A$, hence it contains a basic set $\arithseq{c}{d}$ disjoint from $A$. 
+	\item[(ii)] If $b_a = b$, then $A\subseteq^* \arithseq{a}{b}$. Notice that $\arithseq{a}{b}=\arithseq{2a}{b}\cup \arithseq{2a}{b + a}$ (it follows from the splitting property of $\B_F$). By our assumption, there exists $b_{2a}\leq 2a$ such that $A\subseteq^* \arithseq{2a}{b_{2a}}$. Now, if $b_{2a} \neq b$, we proceed like in the case (i). If however $b_{2a}=b$, then we observe that $b_{2a}\neq b+a$, and, again, we proceed like in the case (i).
 \end{itemize}
 
 The proof for $\I_G$ and $\I_K$ goes similarly.
@@ -748,7 +761,7 @@ In the paper \cite{H3}, R. Filip\'ow and P. Szuca solved this problem by proving
 An ideal on $\N$ has the Riemann property if and only if it cannot be extended to a summable ideal.
 \end{thm}
 
-Considering the examples mentioned in Section \ref{examples}, one can easily conclude that the ideals $\I_F$, $\I_G$, and $\I_K$ are not contained in the summable ideal $\I_{\frac{1}{n}}$ -- since neither the set of primes $\mathbb{P}$ nor the set of even numbers $\{2n+2\}$ belong to $\I_{\frac{1}{n}}$, the Example \ref{primes} proves that $\I_F \not\subseteq \I_{\frac{1}{n}}$, while the Example \ref{even} proves that $\I_G \not\subseteq \I_{\frac{1}{n}}$ and $\I_K \not\subseteq \I_{\frac{1}{n}}$.
+Considering the examples mentioned in Section \ref{examples}, one can easily conclude that the ideals $\I_F$, $\I_G$, and $\I_K$ are not contained in the summable ideal $\I_{\frac{1}{n}}$ -- since neither the set of primes $\mathbb{P}$ nor the set of even numbers $\arithseq{2}{2}$ belong to $\I_{\frac{1}{n}}$, the Example \ref{primes} proves that $\I_F \not\subseteq \I_{\frac{1}{n}}$, while the Example \ref{even} proves that $\I_G \not\subseteq \I_{\frac{1}{n}}$ and $\I_K \not\subseteq \I_{\frac{1}{n}}$.
 This may indicate that none of these ideals can be extended to a summable ideal.
 
 The result from the paper \cite{H3} allows to confirm these presumptions.
