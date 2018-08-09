@@ -46,6 +46,7 @@
 %%%@@@ stara wersja oznaczenia, a ponizej nowa:
 %%%\newcommand{\arithseq}[2]{\{#1n + #2\}}
 \newcommand{\arithseq}[2]{\langle#2, #1\rangle}
+\newcommand{\Arithseq}[2]{\Big\langle#2, #1\Big\rangle}
 
 \title[Ideals of nowhere dense sets in some topologies on positive integers]{Ideals of nowhere dense sets in some topologies on positive integers}
 
@@ -212,6 +213,7 @@ is closed with respect to each of the three topologies. To see this, suppose
 that $x$ is an accumulation point of $A$ with respect to $\T_K$. 
 Pick $p\in\mathbb{P}$ with $p > x$. Then $\arithseq{p}{x}$ is a 
 neighborhood of $x$ which hits $A$ in only finitely many points.
+
   Next note that the interior of $A$ is empty with respect to each 
 topology because $A$ contains no three term arithmetic progression.
 \end{proof}
@@ -231,7 +233,7 @@ $\SqrFr\in \I_F$, but $\SqrFr$ is dense in $\T_G$ and $\T_K$ (therefore it does 
 \end{ex}
 
 \begin{proof}
-Firstly, note that the set of squareful numbers is open in $\T_F$ as it is equal to the sum $\bigcup_{p\in\mathbb{P}}{\{p^2 n+p^2\}}$ of arithmetic progressions belonging to $\B_F$. Thus, the set $\SqrFr$ is closed as a complement of an open set (and hence it is equal to its closure). It suffices to show that $\SqrFr$ has empty interior.\\
+Firstly, note that the set of squareful numbers is open in $\T_F$ as it is equal to the sum $\bigcup_{p\in\mathbb{P}}{\arithseq{p^2}{p^2}}$ of arithmetic progressions belonging to $\B_F$. Thus, the set $\SqrFr$ is closed as a complement of an open set (and hence it is equal to its closure). It suffices to show that $\SqrFr$ has empty interior.\\
 Let us observe that in every arithmetic progression one can find a squareful number. Indeed, for an arbitrary arithmetic progression $\arithseq{a}{b}$ (with $a,b\in\N$) put $n_0 := a^2 +ab+2a+2b+1$. 
 Then,
 $$an_0 +b = a(a^2 +ab+2a+2b+1)+b = a((a+1)(a+b+1)+b)+b = $$
@@ -308,11 +310,11 @@ Assume that $a,b,a_1,b_1,a_2,b_2 \in\N$. If $\arithseq{a_1}{b_1}\subseteq \arith
 
 \begin{proof}
 Let $f\colon\N\to \arithseq{a}{b}$ be a bijection such that $f(n) = an+b$. Then: 
-$$f^{-1}[\{a_1 n+b_1\}] = \left\{\frac{a_1}{a} n+\frac{b_1-b}{a}\right\},\ \ \ f^{-1}[\{a_2 n+b_2\}] = \left\{\frac{a_2}{a} n+\frac{b_2-b}{a}\right\},$$
+$$f^{-1}[\arithseq{a_1}{b_1}] = \Arithseq{\frac{a_1}{a}}{\frac{b_1-b}{a}},\ \ \ f^{-1}[\arithseq{a_2}{b_2}] = \Arithseq{\frac{a_2}{a}}{\frac{b_2-b}{a}},$$
 and since $\left(\frac{a_1}{a},\frac{a_2}{a}\right)=1$, the Chinese remainder theorem guarantees that their intersection is nonempty. Thus,
 $$f^{-1}[\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2}] = f^{-1}[\arithseq{a_1}{b_1}]\cap f^{-1}[\arithseq{a_2}{b_2}]\neq\emptyset,$$
 and hence
-$$\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2} = f[f^{-1}[\{a_1 n+b_1\}\cap\{a_2 n+b_2\}]] \neq\emptyset.$$
+$$\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2} = f[f^{-1}[\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2}]] \neq\emptyset.$$
 \end{proof}
 
 \begin{thm}
@@ -331,7 +333,7 @@ For every $k\in\N$ pick $x_k$ such that:
 	\item $x_k\in C_k$,
 	\item $x_k\in \arithseq{2^k}{1}$.
 \end{itemize}
-Observe that such construction is possible since $C_k \cap \arithseq{2^k}{1}$ is always nonempty (if $C_k = \arithseq{a_k}{b_k}$, then $a_k$ is even and square-free, and $\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ as $\frac{a_k}{2}$ is odd; both $\arithseq{a_k}{b_k}$ and $\{2^k n+1\}$ are subsequences of $\arithseq{2}{1}$, so, by Lemma \ref{lemCRT}, their intersection is nonempty). Let $X := \{x_k :\ k\in\N\}$.
+Observe that such construction is possible since $C_k \cap \arithseq{2^k}{1}$ is always nonempty (if $C_k = \arithseq{a_k}{b_k}$, then $a_k$ is even and square-free, and $\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ as $\frac{a_k}{2}$ is odd; both $\arithseq{a_k}{b_k}$ and $\arithseq{2^k}{1}$ are subsequences of $\arithseq{2}{1}$, so, by Lemma \ref{lemCRT}, their intersection is nonempty). Let $X := \{x_k :\ k\in\N\}$.
 Firstly, note that $X \notin \I_K$. Indeed, the set $\arithseq{2}{1}\in\B_K$ has a property that for every $\arithseq{c}{d}\subseteq \arithseq{2}{1}$ with $\arithseq{c}{d}\in \B_K$ (so $\arithseq{c}{d}=C_{k_0}$ for some $k_0\in\N$) we have $X\cap \arithseq{c}{d} \neq \emptyset$ (as it contains $x_{k_0}$).
 %%%@@@ teraz nastepuje rozumowanie zasugerowane przez Recenzenta,
 %%%@@@ TODO: nalezy koniecznie przesledzic poprawosc rozumowania,
@@ -350,19 +352,19 @@ If $k > 1$, then $x_k \in \arithseq{4}{1}$ so $V\cap X = \emptyset$.
   Now assume that $2|a$ and pick the largest $m\in \N$
 such that $2^m|a$. If $b$ is even then $\arithseq{a}{b}\cap X = \emptyset$
 and we may let $V = \arithseq{a}{b}$. Thus we may assume
-that $b$ is odd. If $b\not\equiv 1 (\mod 2^m)$, let
+that $b$ is odd. If $b\not\equiv 1(\modulo 2^m)$, let
 $V = \arithseq{a}{b}\setminus \{x_1,\ldots, x_{m-1}\}$.
 Then $\arithseq{a}{b}\cap \arithseq{2^m}{1} = \emptyset$ so $V\cap X = \emptyset$.
 
-  Thus we may assume that $b\equiv 1 (\mod 2^m)$. Let 
+  Thus we may assume that $b\equiv 1(\modulo 2^m)$. Let 
 \[
-V = (\arithseq{a}{b} \cap \arithseq{2^{m+1}}{1 + 2^m}) \setminus \{x_1,\ldots, x_{m-1}\}.
+V = (\arithseq{a}{b} \cap \arithseq{2^{m+1}}{1 + 2^m}) \setminus \{x_1,\ldots, x_{m}\}.
 \]
 Then $V \not= \emptyset$ because $(\frac{a}{2^m} : \frac{2^{m+1}}{2^m}) = 1$
 and $\arithseq{a}{b}$ and $\arithseq{2^{m+1}}{1 + 2^m}$
 are contained in $\arithseq{2^m}{1}$. 
-If $k > m$, then $x_k \in \arithseq{2^m}{1}$ so 
-$V\cap X = \emptyset$ and, if $\arithseq{a}{b} \in \B_G$, then
+If $k > m$, then $x_k \in \arithseq{2^{m+1}}{1}$ so 
+$V\cap X = \emptyset$. Also $V\in\T_F$ and, if $\arithseq{a}{b} \in \B_G$, then
 $V \in \T_G$.
 
 %%% koniec wkopiowanego tekstu, zatem prawdopodobnie mozna ponizszy
