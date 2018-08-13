@@ -190,7 +190,7 @@ The families $\B_F$, $\B_G$, and $\B_K$ have the splitting property.
 
 At first, we present an example showing that the ideals of Furstenberg, Golomb, and Kirch contain some infinite set.
 
-\begin{ex} 
+\begin{ex}\label{n-factorial} 
 The set $A = \{n! :\ n\in\N\}$ belongs to $\I_F$, $\I_G$, and $\I_K$.
 \end{ex}
 
@@ -227,7 +227,7 @@ $\mathbb{P}\in \I_F$, but $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (therefore 
 %%%@@@a moze inaczej to napisac? Anyway, na razie zostawiamy tak:
 Notice that the density of $\P$ in $\T_G$ and $\T_K$ is an immediate consequence of Dirichlet's Theorem.
 
-\begin{ex} 
+\begin{ex}\label{exSqrFr} 
 $\SqrFr\in \I_F$, but $\SqrFr$ is dense in $\T_G$ and $\T_K$ (therefore it does not belong to $\I_G$ nor $\I_K$).
 \end{ex}
 
@@ -324,7 +324,7 @@ and hence
 $$\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2} = f[f^{-1}[\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2}]] \neq\emptyset.$$
 \end{proof}
 
-\begin{thm}
+\begin{thm}\label{GFnotK}
 %%%$\I_G \not\subseteq \I_K$.
 %%%@@@ zamieniam wedle sugestii Recenzenta na:
 $(\I_G\cap \I_F) \backslash \I_K \not= \emptyset$.
@@ -526,7 +526,8 @@ $\I_F$, $\I_G$, and $\I_K$ are $F_{\sigma\delta}$ but not $F_{\sigma}$ ideals.
 
 \section{Topological representations}
 
-We show that our new ideals (on a countable set) may be connected to some $\sigma$-ideals in separable metrizable spaces. This connection has been introduced by M. Sabok and J. Zapletal in \cite{Sabok}. 
+We show that our new ideals (on a countable set) may be connected to some $\sigma$-ideals in separable metrizable spaces. This connection has been introduced by M. Sabok and J. Zapletal in \cite{Sabok}. Recall that an ideal $\mathcal{I}\subseteq P(X)$ of subsets of
+$X$ is a $\sigma$-ideal iff is it closed under countable unions.
 
 \begin{df}[\cite{Sabok}]
 Suppose that $X$ is a separable metrizable space, $D\subseteq X$ -- a dense countable set, and $I$ -- a $\sigma$-ideal on $X$, containing all singletons. Then,
@@ -615,7 +616,7 @@ Notice that our ideals fulfill all of the above conditions, and we have shown th
 So far, only two examples of ideals with topological representations have been studied, namely:
 %%%@@@ wedlug sugestii Recenzenta dodalismy cl_\R ale moze taki zabieg
 %%%@@@ trzeba i wykonac nizej ? Bowiem i tam sa tez definicje w podobnym stylu...
-$$\NWD(\Q):=\left\{A\subseteq\mathbb{Q}\cap [0,1] :\ \cl(A) \textrm{ is nowhere dense}\right\},$$
+$$\NWD(\Q):=\left\{A\subseteq\mathbb{Q}\cap [0,1] :\ \cl_\R(A) \textrm{ is nowhere dense}\right\},$$
 $$\NULL(\Q):=\left\{A\subseteq\mathbb{Q}\cap [0,1] :\ \cl_\R(A) \textrm{ is of Lebesgue measure zero}\right\},$$
 which are the ideals represented on $[0,1]$ by the $\sigma$-ideals of meager sets and sets of Lebesgue measure zero, respectively. In \cite{FS}, I. Farah and S. Solecki proved that $\NWD(\Q)$ and $\NULL(\Q)$ are non-isomorphic.
 
@@ -630,9 +631,9 @@ Clearly, $\N$ with the Furstenberg's topology is homeomorphic to $\Q$ (with the 
 \end{proof}
 
 Let us now consider the following ideals on $\N$:
-$$\NWD :=\left\{A\subseteq\N :\ \cl(b[A]) \textrm{ is nowhere dense}\right\},$$
+$$\NWD :=\left\{A\subseteq\N :\ b[A] \textrm{ is nowhere dense}\right\},$$
 $$\NULL :=\left\{A\subseteq\N :\ \cl(b[A]) \textrm{ is of Lebesgue measure zero}\right\},$$
-where $b\colon\N\to\Q$ is any fixed bijection.
+where $b\colon\N\to\Q\cap [0,1]$ is any fixed bijection.
 
 \begin{remark}
 Clearly, $\NWD$ is $\MBC$ since it is isomorphic to $\I_F$. In fact, it can be shown that $\NWD = \MB(\mathcal{F})$, where:
@@ -747,7 +748,9 @@ Let us consider the two cases:
 \begin{itemize}
 	\item[(i)] If $b_a\neq b$, then $\arithseq{a}{b} \cap \arithseq{a}{b_a} = \emptyset$, so $\arithseq{a}{b}\cap A \in\Fin$. 
 	As the Furstenberg's topology is Hausdorff, $\arithseq{a}{b}$ without those finitely many points is open and disjoint from $A$, hence it contains a basic set $\arithseq{c}{d}$ disjoint from $A$. 
-	\item[(ii)] If $b_a = b$, then $A\subseteq^* \arithseq{a}{b}$. Notice that $\arithseq{a}{b}=\arithseq{2a}{b}\cup \arithseq{2a}{b + a}$ (it follows from the splitting property of $\B_F$). By our assumption, there exists $b_{2a}\leq 2a$ such that $A\subseteq^* \arithseq{2a}{b_{2a}}$. Now, if $b_{2a} \neq b$, we proceed like in the case (i). If however $b_{2a}=b$, then we observe that $b_{2a}\neq b+a$, and, again, we proceed like in the case (i).
+	\item[(ii)] If $b_a = b$, then $A\subseteq^* \arithseq{a}{b}$. Notice that $\arithseq{a}{b}=\arithseq{2a}{b}\cup \arithseq{2a}{b + a}$. 
+%(it follows from the splitting property of $\B_F$). 
+By our assumption, there exists $b_{2a}\leq 2a$ such that $A\subseteq^* \arithseq{2a}{b_{2a}}$. Now, if $b_{2a} \neq b$, we proceed like in the case (i). If however $b_{2a}=b$, then we observe that $b_{2a}\neq b+a$, and, again, we proceed like in the case (i).
 \end{itemize}
 
 The proof for $\I_G$ and $\I_K$ goes similarly.
