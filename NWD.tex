@@ -224,9 +224,8 @@ The following simple examples show that in some way the Furstenberg's ideal sign
 $\mathbb{P}\in \I_F$, but $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (therefore it does not belong to $\I_G$ nor $\I_K$).
 \end{ex}
 
-%%%@@@a moze "the density of" albo "the fact that P is dense"
-%%% lub cos w takowym stylu? Anyway, na razie zostawiamy tak:
-Notice that the latter fact is an immediate consequence of Dirichlet's Theorem.
+%%%@@@a moze inaczej to napisac? Anyway, na razie zostawiamy tak:
+Notice that the density of $\P$ in $\T_G$ and $\T_K$ is an immediate consequence of Dirichlet's Theorem.
 
 \begin{ex} 
 $\SqrFr\in \I_F$, but $\SqrFr$ is dense in $\T_G$ and $\T_K$ (therefore it does not belong to $\I_G$ nor $\I_K$).
@@ -236,11 +235,11 @@ $\SqrFr\in \I_F$, but $\SqrFr$ is dense in $\T_G$ and $\T_K$ (therefore it does 
 Firstly, note that the set of squareful numbers is open in $\T_F$ as it is equal to the sum $\bigcup_{p\in\mathbb{P}}{\arithseq{p^2}{p^2}}$ of arithmetic progressions belonging to $\B_F$. Thus, the set $\SqrFr$ is closed as a complement of an open set (and hence it is equal to its closure). It suffices to show that $\SqrFr$ has empty interior.\\
 Let us observe that in every arithmetic progression one can find a squareful number. Indeed, for an arbitrary arithmetic progression $\arithseq{a}{b}$ (with $a,b\in\N$) put $n_0 := a^2 +ab+2a+2b+1$. 
 Then,
-$$an_0 +b = a(a^2 +ab+2a+2b+1)+b = a((a+1)(a+b+1)+b)+b = $$
-%%%@@@ ponizsze dwie linijki wyliczenia zamaskowane ze wzgledu na sugestie Recenzenta
+$$an_0 +b = a(a^2 +ab+2a+2b+1)+b = (a+1)^2 (a+b),$$
+%%%@@@ ponizsze 3 linijki wyliczenia zamaskowane ze wzgledu na sugestie Recenzenta
+%%%$$ = a((a+1)(a+b+1)+b)+b = $$
 %%%$$= a(a+1)(a+b+1)+(a+1)b = (a+1)(a(a+b+1)+b) =$$
 %%%$$= (a+1)(a(a+1)+b(a+1))=$$
-$$ (a+1)^2 (a+b),$$
 which is always a squareful number, because $a+1  \neq 1$. Hence, no arithmetic progression (and, in particular, no set from $\B_F$) can be contained in $\SqrFr$, which proves that $\SqrFr$ has empty interior, and thus it is nowhere dense in $\T_F$.
 
 The density of $\SqrFr$ in $\T_G$ and $\T_K$ follows from the fact that $\mathbb{P}\subseteq \SqrFr$ and $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (hence so is every superset of $\mathbb{P}$).
@@ -267,13 +266,20 @@ The set of even numbers $\arithseq{2}{2}$ is in $\I_K$ hence in $\I_G$, but it b
 \end{ex}
 
 \begin{proof}
-We need to show that for any $\arithseq{a}{b} \in \B_G$ there exists $\arithseq{c}{d} \in \B_G$ with $\arithseq{c}{d} \subseteq \arithseq{a}{b}$, such that $\arithseq{c}{d} \cap \arithseq{2}{2} = \emptyset$. Let us fix $\arithseq{a}{b} \in \B_G$ (we assume that $(a,b)=1$ and $b<a$) and consider the two cases:
+We need to show that for any $\arithseq{a}{b} \in \B_K$ there exists $\arithseq{c}{d} \in \B_K$ with $\arithseq{c}{d} \subseteq \arithseq{a}{b}$, such that $\arithseq{c}{d} \cap \arithseq{2}{2} = \emptyset$. Let us fix $\arithseq{a}{b} \in \B_K$ (we assume that $(a,b)=1$, $b<a$ and $a \in \SqrFr$) and consider the two cases:
 \begin{itemize}
- \item[(i)] $2\mid b$. Then $2 \nmid a$ (otherwise, $a$ and $b$ would not be coprime). Take $\arithseq{c}{d} := \arithseq{2a}{a+b}$. As $(a,b)=1$, we know that $(a,a+b)=1$, and as $2 \nmid a$, we have $(2a,a+b)=1$. Thus, $\arithseq{2a}{a+b}\in\B_G$ and $\arithseq{2a}{a+b}\subseteq\arithseq{a}{b}$. Moreover, $\arithseq{2a}{a+b}$ consists only of odd numbers, so $\arithseq{2a}{a+b}\cap \arithseq{2}{2} = \emptyset$.
- \item[(ii)] $2\nmid b$. Take $\arithseq{c}{d} := \arithseq{2a}{b}$. As $2\nmid b$, we have $(2a,b)=1$. Thus, $\arithseq{2a}{b}\in\B_G$ and $\arithseq{2a}{b}\subseteq\arithseq{a}{b}$. Moreover, $\arithseq{2a}{b}$ consists only of odd numbers, so $\arithseq{2a}{b}\cap \arithseq{2}{2} = \emptyset$.
+ \item[(i)] $2\mid b$. Then $2 \nmid a$ (otherwise, $a$ and $b$ would not be coprime). Take $\arithseq{c}{d} := \arithseq{2a}{a+b}$. As $(a,b)=1$, we know that $(a,a+b)=1$, and as $2 \nmid a$, we have $(2a,a+b)=1$. 
+Also $2a\in\SqrFr$. Thus, $\arithseq{2a}{a+b}\in\B_K$ and $\arithseq{2a}{a+b}\subseteq\arithseq{a}{b}$. Moreover, $\arithseq{2a}{a+b}$ consists only of odd numbers, so $\arithseq{2a}{a+b}\cap \arithseq{2}{2} = \emptyset$.
+ \item[(ii)] $2\nmid b$. 
+If $2\mid a$ then take $\arithseq{c}{d} := \arithseq{a}{b}$
+as it is already disjoint form the set of even numbers $\arithseq{2}{2}$.
+If $2\nmid a$ then 
+take $\arithseq{c}{d} := \arithseq{2a}{b}$. Again $2a\in\SqrFr$. As $2\nmid b$, we have $(2a,b)=1$. 
+Thus, $\arithseq{2a}{b}\in\B_G$ and $\arithseq{2a}{b}\subseteq\arithseq{a}{b}$. 
+Moreover, $\arithseq{2a}{b}$ consists only of odd numbers, so $\arithseq{2a}{b}\cap \arithseq{2}{2} = \emptyset$.
 \end{itemize}
-
-The proof for $\I_K$ goes similarly. In item (i) we additionally need to observe that if $2 \nmid a$ and $a$ is square-free, then $2a$ will also be square-free. In item (ii), if $2 \nmid a$, we use the same argument as above, and if $2\mid a$, we take $\arithseq{c}{d} := \arithseq{a}{b}$ as it is already disjoint from the set of even numbers $\arithseq{2}{2}$.
+%%%@@@ to co ponizej zbedne z uwagi na to ze dowod przebiega juz dla T_K:
+%The proof for $\I_K$ goes similarly. In item (i) we additionally need to observe that if $2 \nmid a$ and $a$ is square-free, then $2a$ will also be square-free. In item (ii), if $2 \nmid a$, we use the same argument as above, and if $2\mid a$, we take $\arithseq{c}{d} := \arithseq{a}{b}$ as it is already disjoint from the set of even numbers $\arithseq{2}{2}$.
 \end{proof}
 
 The proof of the previous result can easily be generalized for sets of multiples of any prime number, as follows:
@@ -288,19 +294,20 @@ If $p_1, \ldots, p_k \in \mathbb{P}$, then $\{n\in\N :\ p_1\mid n\ \vee \ldots \
 
 Now, let us investigate a relation between the ideals of Golomb and Kirch.
 
-While searching for an example distinguishing these ideals, at first we have obtained a partial result, suggesting that an example of a set witnessing the lack of inclusion between them cannot be found among the sets from $\B_G \setminus \B_K$:
-
 %%%@@@ Recenzent napisal tak: "There doesn't seem to be any motive for including Proposition
 %%% 2.7 (czyli to ponizej). Pytanie: Czy usuwamy czy tez wymyslamy jakis "motive"
-%%% dla uzasadnienia racji bytu tego fragmentu?
-\begin{prop}
-Every set of the form $\arithseq{2s}{q}$, where $s \in\SqrFr$, $2\mid s$, $(s,q)=1$, and $q<s$, is in $\B_G$ but not in $\B_K$, but it does not belong to $\I_K$.
-\end{prop}
-
-\begin{proof}
-Let us first observe that $\arithseq{2s}{q}$, as defined above, satisfies $(2s,q)=1$ and $q<2s$ -- therefore it is in $\B_G$. Moreover, $2s$ is not square-free, so it cannot be in $\B_K$.
-Now, we want to show that there exists $\arithseq{a}{b}\in \B_K$ such that for every $\arithseq{c}{d}\subseteq \arithseq{a}{b}$ with $\arithseq{c}{d}\in \B_K$ we have $\arithseq{c}{d}\cap \arithseq{2s}{q} \neq \emptyset$. Let $\arithseq{a}{b} := \arithseq{s}{q}$ (it belongs to $\B_K$ since $s\in\SqrFr$, $(s,q)=1$, and $q<s$). Take any $\arithseq{c}{d}\subseteq \arithseq{s}{q}$ with $\arithseq{c}{d}\in \B_K$ -- we then know that $c\in\SqrFr$. Suppose that $\arithseq{c}{d}\cap \arithseq{2s}{q} = \emptyset$. As $\arithseq{c}{d}\subseteq \arithseq{s}{q}$ and $\arithseq{s}{q} \setminus \arithseq{2s}{q} = \arithseq{2s}{q+s}$, it means that $\arithseq{c}{d}\subseteq \arithseq{2s}{q+s}$ -- but then $2s$ must divide $c$, which hence cannot be square-free. A contradiction ends the proof.
-\end{proof}
+%%% dla uzasadnienia racji bytu tego fragmentu? Poki co to usuwamy ten ponizszy fragment, ale
+%%% w razie czego mozna go przywrocic
+%While searching for an example distinguishing these ideals, at first we have obtained a partial result, suggesting that an example of a set witnessing the lack of inclusion between them cannot be found among the sets from $\B_G \setminus \B_K$:
+%
+%\begin{prop}
+%Every set of the form $\arithseq{2s}{q}$, where $s \in\SqrFr$, $2\mid s$, $(s,q)=1$, and $q<s$, is in $\B_G$ but not in $\B_K$, but it does not belong to $\I_K$.
+%\end{prop}
+%
+%\begin{proof}
+%Let us first observe that $\arithseq{2s}{q}$, as defined above, satisfies $(2s,q)=1$ and $q<2s$ -- therefore it is in $\B_G$. Moreover, $2s$ is not square-free, so it cannot be in $\B_K$.
+%Now, we want to show that there exists $\arithseq{a}{b}\in \B_K$ such that for every $\arithseq{c}{d}\subseteq \arithseq{a}{b}$ with $\arithseq{c}{d}\in \B_K$ we have $\arithseq{c}{d}\cap \arithseq{2s}{q} \neq \emptyset$. Let $\arithseq{a}{b} := \arithseq{s}{q}$ (it belongs to $\B_K$ since $s\in\SqrFr$, $(s,q)=1$, and $q<s$). Take any $\arithseq{c}{d}\subseteq \arithseq{s}{q}$ with $\arithseq{c}{d}\in \B_K$ -- we then know that $c\in\SqrFr$. Suppose that $\arithseq{c}{d}\cap \arithseq{2s}{q} = \emptyset$. As $\arithseq{c}{d}\subseteq \arithseq{s}{q}$ and $\arithseq{s}{q} \setminus \arithseq{2s}{q} = \arithseq{2s}{q+s}$, it means that $\arithseq{c}{d}\subseteq \arithseq{2s}{q+s}$ -- but then $2s$ must divide $c$, which hence cannot be square-free. A contradiction ends the proof.
+%\end{proof}
 
 Eventually, we managed to prove an inclusion between the ideals of Golomb and Kirch -- however, it turns out that they are not the same. These results will be shown in the next two theorems. In their proofs we will use a technical lemma:
  
@@ -320,7 +327,7 @@ $$\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2} = f[f^{-1}[\arithseq{a_1}{b_1}\cap\
 \begin{thm}
 %%%$\I_G \not\subseteq \I_K$.
 %%%@@@ zamieniam wedle sugestii Recenzenta na:
-$(\I_G\cap \I_F) \not\subseteq \I_K$.
+$(\I_G\cap \I_F) \backslash \I_K \not= \emptyset$.
 \end{thm}
 
 \begin{proof}
@@ -360,7 +367,7 @@ Then $\arithseq{a}{b}\cap \arithseq{2^m}{1} = \emptyset$ so $V\cap X = \emptyset
 \[
 V = (\arithseq{a}{b} \cap \arithseq{2^{m+1}}{1 + 2^m}) \setminus \{x_1,\ldots, x_{m}\}.
 \]
-Then $V \not= \emptyset$ because $(\frac{a}{2^m} : \frac{2^{m+1}}{2^m}) = 1$
+Then $V \not= \emptyset$ because $(\frac{a}{2^m} , \frac{2^{m+1}}{2^m}) = 1$
 and $\arithseq{a}{b}$ and $\arithseq{2^{m+1}}{1 + 2^m}$
 are contained in $\arithseq{2^m}{1}$. 
 If $k > m$, then $x_k \in \arithseq{2^{m+1}}{1}$ so 
