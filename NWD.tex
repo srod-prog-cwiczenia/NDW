@@ -19,6 +19,7 @@
 \newtheorem{remark}[thm]{Remark}
 \newtheorem{ex}[thm]{Example}
 \newtheorem{conj}[thm]{Conjecture}
+\newtheorem*{acknowledgement}{Acknowledgement}
 
 \newcommand{\N}{{\mathbb N}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -47,6 +48,11 @@
 %%%\newcommand{\arithseq}[2]{\{#1n + #2\}}
 \newcommand{\arithseq}[2]{\langle#2, #1\rangle}
 \newcommand{\Arithseq}[2]{\Big\langle#2, #1\Big\rangle}
+%%% macros for the picture environment
+\newcommand{\putrectangle}[4]{
+  \multiput(#1,#2)(#3,0){2}{\line(0,1){#4}}
+  \multiput(#1,#2)(0,#4){2}{\line(1,0){#3}}
+}
 
 \title[Ideals of nowhere dense sets in some topologies on positive integers]{Ideals of nowhere dense sets in some topologies on positive integers}
 
@@ -78,6 +84,10 @@ By \emph{squareful numbers} we mean numbers which are not square-free, i.e., num
 Let $\InfSubs$ denote the family of all infinite subsets of $\N$. 
 
 By treating the power set $\mathcal{P}(\N)$ as the space $2^\N$ of all functions $f\colon\N\to 2$ (equipped with the product topology, where each space $2= \left\{0,1\right\}$ carries the discrete topology) and identifying subsets of $\N$ with their characteristic functions, we can talk about descriptive complexity of subsets of $\mathcal{P}(\N)$.
+
+For any partition $\{X_n\}_{n\in\N}$ of $\N$ a set $S\subseteq\N$
+is called a selector of the partition $\{X_n\}_{n\in\N}$ iff
+$\forall_{n\in\N} |X_n \cap S| = 1$. 
 
 For other basic notions concerning set theory and topology see, e.g., \cite{Kechris}.
 
@@ -225,7 +235,7 @@ $\mathbb{P}\in \I_F$, but $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (therefore 
 \end{ex}
 
 %%%@@@a moze inaczej to napisac? Anyway, na razie zostawiamy tak:
-Notice that the density of $\P$ in $\T_G$ and $\T_K$ is an immediate consequence of Dirichlet's Theorem.
+Notice that the density of $\mathbb{P}$ in $\T_G$ and $\T_K$ is an immediate consequence of Dirichlet's Theorem.
 
 \begin{ex}\label{exSqrFr} 
 $\SqrFr\in \I_F$, but $\SqrFr$ is dense in $\T_G$ and $\T_K$ (therefore it does not belong to $\I_G$ nor $\I_K$).
@@ -389,11 +399,37 @@ $V \in \T_G$.
 %\end{itemize}
 \end{proof}
 
+Let us summarize the relationships that hold among the three ideals as indicated in the 
+following diagram.
+
+\begin{center}
+\begin{picture}(180,110)
+\putrectangle{15}{15}{150}{75}
+\put(20,94){\makebox(0,0){$\I_G$}}
+\putrectangle{39}{30}{103}{48}
+\put(42,82){\makebox(0,0){$\I_K$}}
+\putrectangle{90}{8}{97}{76}
+\put(192,88){\makebox(0,0){$\I_F$}}
+
+\put(25,56){\makebox(0,0){?}}
+\put(62,56){\makebox(0,0){\ref{even}}}
+\put(110,56){\makebox(0,0){\ref{n-factorial}}}
+\put(152,56){\makebox(0,0){\ref{GFnotK}}}
+\put(176,56){\makebox(0,0){\ref{exSqrFr}}}
+\end{picture}
+\end{center}
+
+\begin{problem}
+Is it true that $\I_G\setminus (\I_K\cup \I_F) \not= \emptyset$?
+\end{problem}
 
 \section{Marczewski-Burstin representations}
 
-Recall that a set $A$ is \emph{nowhere dense in topology $\T$} if:
-$$\forall_{U\in\T\setminus\{\emptyset\}}\ \exists_{V\in\T\setminus\{\emptyset\},\ V\subseteq U}\ A\cap V = \emptyset.$$
+%%%@@@ usunalem to sformulowanie wedlug sugestii recenzenta, ale nie jestem
+%%% do konca przekonany czy to zdanie powinno faktycznie byc usuniete bo
+%%% bez niego to odwolanie sie do ''scheme defining(...)" traci z grubsza sens?
+%Recall that a set $A$ is \emph{nowhere dense in topology $\T$} if:
+%$$\forall_{U\in\T\setminus\{\emptyset\}}\ \exists_{V\in\T\setminus\{\emptyset\},\ V\subseteq U}\ A\cap V = \emptyset.$$
 The authors of \cite{MB} observed that the scheme defining the family of nowhere dense sets turns out to be interesting also if the family of open sets is substituted by a family of nonempty subsets of an arbitrary set $X$.
 
 \begin{df}[\cite{MB}] 
@@ -632,7 +668,7 @@ Clearly, $\N$ with the Furstenberg's topology is homeomorphic to $\Q$ (with the 
 
 Let us now consider the following ideals on $\N$:
 $$\NWD :=\left\{A\subseteq\N :\ b[A] \textrm{ is nowhere dense}\right\},$$
-$$\NULL :=\left\{A\subseteq\N :\ \cl(b[A]) \textrm{ is of Lebesgue measure zero}\right\},$$
+$$\NULL :=\left\{A\subseteq\N :\ \cl_\R(b[A]) \textrm{ is of Lebesgue measure zero}\right\},$$
 where $b\colon\N\to\Q\cap [0,1]$ is any fixed bijection.
 
 \begin{remark}
@@ -657,12 +693,12 @@ $\NULL$ is $\MBC$.
 \end{prop}
 
 \begin{proof}
-Again, define $\Seg$ as the family of all finite unions of closed intervals with rational endpoints, which have measure greater than $1$, and let $b\colon \N \to \Q$ be a fixed bijection.
+Again, define $\Seg$ as the family of all finite unions of closed intervals with rational endpoints, which have measure greater than $1$, and let $b\colon \N \to \Q\cap [0,1]$ be a fixed bijection.
 Define 
-$$\calF := \{b^{-1}[S\cap\Q] :\ S\in\Seg\}.$$
+$$\calF := \{b^{-1}[S\cap\Q] :\ S\in\Seg, S\subseteq [0,1]\}.$$
 We will check that $\MB(\calF) = \NULL$.\\
-Take $A\in \MB(\calF)$ and choose $S\in\Seg$. Then there exists $S_1\in\Seg$ such that $S_1\subseteq S$ and $A\cap b^{-1}[S_1\cap\Q] = \emptyset$. Hence, $b[A] \cap S_1 = \emptyset$. Thus, $b[A]\in\INULL$, so $A\in\NULL$.\\
-On the other hand, take $A\in \NULL$ and choose $S\in\Seg$. As $b[A]\in\INULL$, there exists $S_1\in \Seg$ such that $S_1\subseteq S$ and $b[A]\cap S_1 = \emptyset$. Thus, $A \cap b^{-1}[S_1\cap\Q] = \emptyset$, which proves that $A\in \MB(\calF)$.
+Take $A\in \MB(\calF)$ and choose $S\in\Seg$, $S\subseteq [0,1]$. Then there exists $S_1\in\Seg$ such that $S_1\subseteq S$ and $A\cap b^{-1}[S_1\cap\Q] = \emptyset$. Hence, $b[A] \cap S_1 = \emptyset$. Thus, $b[A]\in\INULL$, so $A\in\NULL$.\\
+On the other hand, take $A\in \NULL$ and choose $S\in\Seg$, $S\subseteq [0,1]$. As $b[A]\in\INULL$, there exists $S_1\in \Seg$ such that $S_1\subseteq S$ and $b[A]\cap S_1 = \emptyset$. Thus, $A \cap b^{-1}[S_1\cap\Q] = \emptyset$, which proves that $A\in \MB(\calF)$.
 \end{proof}
 
 
@@ -787,7 +823,15 @@ We obtain an immediate corollary:
 The ideals $\I_F$, $\I_G$, and $\I_K$ cannot be extended to summable ideals (hence, they have the Riemann property).
 \end{cor}
 
-
+\begin{acknowledgement}
+The authors would like to express their sincere gratitude to the Anonymous Referee
+for his/her useful all comments, in particular for 
+simplifying the proofs of Example \ref{n-factorial} and 
+Theorem \ref{GFnotK} and also for suggesting the diagram of 
+relationships among our ideals.
+%%%@@@ a moze tak?
+%%%who did a lot to improve the paper with a number of expert comments.
+\end{acknowledgement}
 
 \begin{thebibliography}{abc}
 
