@@ -44,7 +44,7 @@
 \newcommand{\INULL}{\I_\mathrm{NULL}}			  
 \newcommand{\cl}{\mathrm{cl}}
 \newcommand{\interior}{\mathrm{int}}
-%%%@@@ stara wersja oznaczenia, a ponizej nowa:
+%%%@@@ old notation and just below the new one
 %%%\newcommand{\arithseq}[2]{\{#1n + #2\}}
 \newcommand{\arithseq}[2]{\langle#2, #1\rangle}
 \newcommand{\Arithseq}[2]{\Big\langle#2, #1\Big\rangle}
@@ -68,6 +68,9 @@
 \begin{abstract}
 We investigate the ideals of nowhere dense sets in three topologies on $\N$ (namely, the Furstenberg's, Golomb's, and Kirch's topology) related to arithmetic progressions. In particular, we explore relationships between these ideals, and show that each of them has a topological representation and cannot be extended to a summable ideal. Moreover, we study a related notion of Marczewski-Burstin countable representability.
 \end{abstract}
+\subjclass[2010]{54H05, 03E05, 11B05, 11A41}
+\keywords{ideals, Furstenberg's topology, Golomb's topology, Kirch's topology,
+Marczewski-Burstin representability}
 \maketitle
 
 
@@ -115,7 +118,7 @@ The topologies of Golomb and Kirch both are Hausdorff but not regular, and conne
 
 An \emph{ideal} on $\N$ is a family of subsets of $\N$, closed under taking finite unions and subsets of its elements. We assume that an ideal is proper ($\neq \mathcal{P}(\N)$) and contains all finite sets. By $\Fin$ we denote the ideal of all finite subsets of $\N$.
 
-%%%@@@ podmienilem na razie tylko slowo "decent" na "non-trivial"
+%%%@@@  "decent" -> "non-trivial"
 Obviously, in any (non-trivial\footnote{\ The topology should have a base consisting only of 
 infinite sets -- otherwise, the ideal of nowhere dense sets would not contain all finite sets.}) topology, the nowhere dense sets form an ideal. Let us then define three ideals on $\N$:
 \begin{itemize}
@@ -129,9 +132,9 @@ infinite sets -- otherwise, the ideal of nowhere dense sets would not contain al
 
 Let us say that a family $\mathcal{F} \subseteq \InfSubs$ has the \emph{splitting property} if for any $F \in \mathcal{F}$ one can find $F_1, F_2 \in \mathcal{F}$ such that $F_1 \cup F_2 \subseteq F$ and $F_1 \cap F_2 = \emptyset$. Notice that if a family $\mathcal{F}$ has the splitting property, then it also has the \emph{countable splitting property}, i.e., for any $F \in \mathcal{F}$ there exists an infinite countable family $\mathcal{G} \subseteq \mathcal{F}$ such that $\bigcup{\mathcal{G}} \subseteq F$ and the family $\mathcal{G}$ is pairwise disjoint.
 
-%%%%@@@ z uwagi na sugestie Recenzenta na razie (poki co) biore to
-%%% w komentarz, alisci jednak nalezy to przeanalizowac czy jednak mozna
-%%% to w jakos sposob wplesc w tresc pracy zadoscuczyniajac jednoczesnie Recenzentowi
+%%%%@@@ part removed by the Referee comment 
+%%%
+%%%
 %\begin{prop}
 %The families $\B_F$, $\B_G$, and $\B_K$ have the splitting property.
 %\end{prop}
@@ -215,8 +218,7 @@ The set $A = \{n! :\ n\in\N\}$ belongs to $\I_F$, $\I_G$, and $\I_K$.
 %
 %Thus, the proof for $\I_G$ and $\I_K$ (both $\T_G$ and $\T_K$ are also Hausdorff) goes similarly (in basic sets of these topologies we assume that $b<a$, so we only need to consider case (i)).
 %\end{proof}
-%%%@@@ alternatywny, znacznie uproszczony dowod zaproponowany przez Recenzenta,
-%%%@@@ poprzedni powedrowal na razie w komentarz
+%%%%%%
 \begin{proof}
 We show that $A$ is closed with respect to $\T_K$, and thus
 is closed with respect to each of the three topologies. To see this, suppose
@@ -234,7 +236,6 @@ The following simple examples show that in some way the Furstenberg's ideal sign
 $\mathbb{P}\in \I_F$, but $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (therefore it does not belong to $\I_G$ nor $\I_K$).
 \end{ex}
 
-%%%@@@a moze inaczej to napisac? Anyway, na razie zostawiamy tak:
 Notice that the density of $\mathbb{P}$ in $\T_G$ and $\T_K$ is an immediate consequence of Dirichlet's Theorem.
 
 \begin{ex}\label{exSqrFr} 
@@ -246,16 +247,12 @@ Firstly, note that the set of squareful numbers is open in $\T_F$ as it is equal
 Let us observe that in every arithmetic progression one can find a squareful number. Indeed, for an arbitrary arithmetic progression $\arithseq{a}{b}$ (with $a,b\in\N$) put $n_0 := a^2 +ab+2a+2b+1$. 
 Then,
 $$an_0 +b = a(a^2 +ab+2a+2b+1)+b = (a+1)^2 (a+b),$$
-%%%@@@ ponizsze 3 linijki wyliczenia zamaskowane ze wzgledu na sugestie Recenzenta
-%%%$$ = a((a+1)(a+b+1)+b)+b = $$
-%%%$$= a(a+1)(a+b+1)+(a+1)b = (a+1)(a(a+b+1)+b) =$$
-%%%$$= (a+1)(a(a+1)+b(a+1))=$$
 which is always a squareful number, because $a+1  \neq 1$. Hence, no arithmetic progression (and, in particular, no set from $\B_F$) can be contained in $\SqrFr$, which proves that $\SqrFr$ has empty interior, and thus it is nowhere dense in $\T_F$.
 
 The density of $\SqrFr$ in $\T_G$ and $\T_K$ follows from the fact that $\mathbb{P}\subseteq \SqrFr$ and $\mathbb{P}$ is dense in $\T_G$ and $\T_K$ (hence so is every superset of $\mathbb{P}$).
 \end{proof}
 
-%%%%%%@@@ przeniesione nad Example 2.4 (czyli ten example ponizej)- poczatek fragmentu
+%%%%%%@@@ moved over Example 2.4 - beginning of the part
 \begin{thm}
 $\I_K \subseteq \I_G$.
 \end{thm}
@@ -269,7 +266,7 @@ Take any $\arithseq{c'}{d'} \subseteq \arithseq{a'}{b'}$ with $\arithseq{c'}{d'}
 Note that $\arithseq{a}{b}\subseteq \arithseq{a'}{b'}$, $\arithseq{c'}{d'}\subseteq \arithseq{a'}{b'}$, and observe that $\left(\frac{a}{a'}, \frac{c'}{a'}\right) = 1$ -- the only prime factors of $\frac{a}{a'}$ are those that have already appeared in the factorization of $a'$, whereas all prime factors of $\frac{c'}{a'}$ must be different from the prime factors of $a'$ since $c'$ is square-free. 
 Hence, $A:= \arithseq{a}{b}\cap\arithseq{c'}{d'} \neq \emptyset$ (by Lemma \ref{lemCRT}). Moreover, $A$ is an arithmetic progression, it belongs to $\T_G$ (as an intersection of two open sets in the Golomb's topology), and, obviously, $A \subseteq \arithseq{a}{b}$. From the assumption we know that $X\cap A \neq \emptyset$. Since we also have that $A \subseteq \arithseq{c'}{d'}$, it is clear that $X\cap \arithseq{c'}{d'} \neq \emptyset$.
 \end{proof}
-%%%%%%@@@ przeniesione nad Example 2.4 (czyli ten example ponizej)- koniec fragmentu
+%%%%%%@@@ moved over Example 2.4 - end of the part
 
 \begin{ex} \label{even}
 The set of even numbers $\arithseq{2}{2}$ is in $\I_K$ hence in $\I_G$, but it belongs to the base for $\T_F$ (therefore $\arithseq{2}{2}\notin \I_F$).
@@ -288,7 +285,7 @@ take $\arithseq{c}{d} := \arithseq{2a}{b}$. Again $2a\in\SqrFr$. As $2\nmid b$, 
 Thus, $\arithseq{2a}{b}\in\B_G$ and $\arithseq{2a}{b}\subseteq\arithseq{a}{b}$. 
 Moreover, $\arithseq{2a}{b}$ consists only of odd numbers, so $\arithseq{2a}{b}\cap \arithseq{2}{2} = \emptyset$.
 \end{itemize}
-%%%@@@ to co ponizej zbedne z uwagi na to ze dowod przebiega juz dla T_K:
+%%%@@@ superfluous since the proof works for T_K:
 %The proof for $\I_K$ goes similarly. In item (i) we additionally need to observe that if $2 \nmid a$ and $a$ is square-free, then $2a$ will also be square-free. In item (ii), if $2 \nmid a$, we use the same argument as above, and if $2\mid a$, we take $\arithseq{c}{d} := \arithseq{a}{b}$ as it is already disjoint from the set of even numbers $\arithseq{2}{2}$.
 \end{proof}
 
@@ -304,10 +301,8 @@ If $p_1, \ldots, p_k \in \mathbb{P}$, then $\{n\in\N :\ p_1\mid n\ \vee \ldots \
 
 Now, let us investigate a relation between the ideals of Golomb and Kirch.
 
-%%%@@@ Recenzent napisal tak: "There doesn't seem to be any motive for including Proposition
-%%% 2.7 (czyli to ponizej). Pytanie: Czy usuwamy czy tez wymyslamy jakis "motive"
-%%% dla uzasadnienia racji bytu tego fragmentu? Poki co to usuwamy ten ponizszy fragment, ale
-%%% w razie czego mozna go przywrocic
+%%%@@@ Removed by Referee's comment: "There doesn't seem to be any motive for including Proposition
+%%% 2.7" 
 %While searching for an example distinguishing these ideals, at first we have obtained a partial result, suggesting that an example of a set witnessing the lack of inclusion between them cannot be found among the sets from $\B_G \setminus \B_K$:
 %
 %\begin{prop}
@@ -335,15 +330,11 @@ $$\arithseq{a_1}{b_1}\cap\arithseq{a_2}{b_2} = f[f^{-1}[\arithseq{a_1}{b_1}\cap\
 \end{proof}
 
 \begin{thm}\label{GFnotK}
-%%%$\I_G \not\subseteq \I_K$.
-%%%@@@ zamieniam wedle sugestii Recenzenta na:
 $(\I_G\cap \I_F) \backslash \I_K \not= \emptyset$.
 \end{thm}
 
 \begin{proof}
 Define $\mathcal{C} := \{\arithseq{a}{b}\in \B_K :\ \arithseq{a}{b}\subseteq \arithseq{2}{1}\}$. Let $\{C_k :\ k\in\N\}$ be an enumeration of $\mathcal{C}$.
-%%%We will construct a set $X \in \I_G \setminus \I_K$. 
-%%%@@@ zamieniam wedle sugestii Recenzenta na:
 We will construct a set $X \in (\I_G\cap \I_F) \setminus \I_K$. 
 For every $k\in\N$ pick $x_k$ such that:
 \begin{itemize}
@@ -352,10 +343,6 @@ For every $k\in\N$ pick $x_k$ such that:
 \end{itemize}
 Observe that such construction is possible since $C_k \cap \arithseq{2^k}{1}$ is always nonempty (if $C_k = \arithseq{a_k}{b_k}$, then $a_k$ is even and square-free, and $\left(\frac{a_k}{2},\frac{2^k}{2}\right)=\left(\frac{a_k}{2},2^{k-1}\right)=1$ as $\frac{a_k}{2}$ is odd; both $\arithseq{a_k}{b_k}$ and $\arithseq{2^k}{1}$ are subsequences of $\arithseq{2}{1}$, so, by Lemma \ref{lemCRT}, their intersection is nonempty). Let $X := \{x_k :\ k\in\N\}$.
 Firstly, note that $X \notin \I_K$. Indeed, the set $\arithseq{2}{1}\in\B_K$ has a property that for every $\arithseq{c}{d}\subseteq \arithseq{2}{1}$ with $\arithseq{c}{d}\in \B_K$ (so $\arithseq{c}{d}=C_{k_0}$ for some $k_0\in\N$) we have $X\cap \arithseq{c}{d} \neq \emptyset$ (as it contains $x_{k_0}$).
-%%%@@@ teraz nastepuje rozumowanie zasugerowane przez Recenzenta,
-%%%@@@ TODO: nalezy koniecznie przesledzic poprawosc rozumowania,
-%%% i jesli bedzie OK, to trzeba bedzie zapewne usunac stare rozumowanie ponizej
-%%% konca wkopiowanego tekstu:
   Take any $\arithseq{a}{b} \in \B_F$. We will show that there exists
 nonempty $V \subseteq \arithseq{a}{b}$ with $X\cap V = \emptyset$ such
 that $V\in \T_F$ and, if $\arithseq{a}{b}\in \B_G$, then $V\in\T_G$.
@@ -425,9 +412,8 @@ Is it true that $\I_G\setminus (\I_K\cup \I_F) \not= \emptyset$?
 
 \section{Marczewski-Burstin representations}
 
-%%%@@@ usunalem to sformulowanie wedlug sugestii recenzenta, ale nie jestem
-%%% do konca przekonany czy to zdanie powinno faktycznie byc usuniete bo
-%%% bez niego to odwolanie sie do ''scheme defining(...)" traci z grubsza sens?
+%%%@@@ Removed (Referee's suggestion)
+%%% 
 %Recall that a set $A$ is \emph{nowhere dense in topology $\T$} if:
 %$$\forall_{U\in\T\setminus\{\emptyset\}}\ \exists_{V\in\T\setminus\{\emptyset\},\ V\subseteq U}\ A\cap V = \emptyset.$$
 The authors of \cite{MB} observed that the scheme defining the family of nowhere dense sets turns out to be interesting also if the family of open sets is substituted by a family of nonempty subsets of an arbitrary set $X$.
@@ -510,8 +496,6 @@ Take any $A\subseteq\N$ fulfilling the above conditions, and fix $F\in\mathcal{F
 The ideals $\I_F$, $\I_G$, and $\I_K$ are tall.
 \end{cor}
 
-%%%@@@ ta definicja dodana przez sugestie Recenzenta, oczywiscie do wygladzenia,
-%%%@@@ choc pewnie moze takowa pozostac?
 Recall that an ideal $\I$ on $\N$ is $F_{\sigma\delta}$ if
 $\I \subseteq P(\N) \simeq 2^\omega$
 is an $F_{\sigma\delta}$ in the usual product topology
@@ -650,8 +634,6 @@ Notice that our ideals fulfill all of the above conditions, and we have shown th
 
 
 So far, only two examples of ideals with topological representations have been studied, namely:
-%%%@@@ wedlug sugestii Recenzenta dodalismy cl_\R ale moze taki zabieg
-%%%@@@ trzeba i wykonac nizej ? Bowiem i tam sa tez definicje w podobnym stylu...
 $$\NWD(\Q):=\left\{A\subseteq\mathbb{Q}\cap [0,1] :\ \cl_\R(A) \textrm{ is nowhere dense}\right\},$$
 $$\NULL(\Q):=\left\{A\subseteq\mathbb{Q}\cap [0,1] :\ \cl_\R(A) \textrm{ is of Lebesgue measure zero}\right\},$$
 which are the ideals represented on $[0,1]$ by the $\sigma$-ideals of meager sets and sets of Lebesgue measure zero, respectively. In \cite{FS}, I. Farah and S. Solecki proved that $\NWD(\Q)$ and $\NULL(\Q)$ are non-isomorphic.
@@ -829,8 +811,6 @@ for his/her useful all comments, in particular for
 simplifying the proofs of Example \ref{n-factorial} and 
 Theorem \ref{GFnotK} and also for suggesting the diagram of 
 relationships among our ideals.
-%%%@@@ a moze tak?
-%%%who did a lot to improve the paper with a number of expert comments.
 \end{acknowledgement}
 
 \begin{thebibliography}{abc}
